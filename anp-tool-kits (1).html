@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ANP Marine Professional Tool Kits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 40px;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 { color: #003087; }
+    .header {
+      text-align: center;
+      border-bottom: 4px solid #c8102e;
+      padding-bottom: 30px;
+      margin-bottom: 50px;
+    }
+    .kit {
+      border: 2px solid #003087;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 10px;
+      page-break-inside: avoid;
+    }
+    .kit.popular { border-color: #c8102e; position: relative; }
+    .kit.popular::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: -14px;
+      right: 25px;
+      background: #c8102e;
+      color: white;
+      padding: 6px 18px;
+      font-size: 0.9rem;
+      border-radius: 20px;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #c8102e;
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: #003087;
+      color: white;
+    }
+    .total-row td {
+      font-weight: bold;
+      background: #f8f9fa;
+    }
+    .highlight {
+      background: #f8f9fa;
+      padding: 25px;
+      border-left: 6px solid #c8102e;
+      margin: 40px 0;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px;
+      background: #003087;
+      color: white;
+      border-radius: 8px;
+    }
+    @media print {
+      body { margin: 0; }
+      .no-print { display: none; }
+    }
+
+    /* ── SPARES SECTION ── */
+    .spares-section {
+      margin: 40px 0;
+      page-break-inside: avoid;
+    }
+    .spares-section h2 {
+      color: #003087;
+      margin-bottom: 8px;
+    }
+    .spares-subheading {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* Search bar */
+    .spares-search {
+      display: flex;
+      align-items: stretch;
+      border: 2px solid #003087;
+      border-radius: 6px;
+      overflow: hidden;
+      max-width: 660px;
+      margin-bottom: 18px;
+    }
+    .spares-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+    }
+    .spares-search button {
+      background: #003087;
+      color: white;
+      border: none;
+      padding: 0 24px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      white-space: nowrap;
+    }
+    .spares-search button:hover { background: #00256b; }
+
+    /* Category pills */
+    .spares-cats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .scat {
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1.5px solid #ccc;
+      background: white;
+      color: #555;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .scat.active, .scat:hover {
+      background: #003087;
+      color: white;
+      border-color: #003087;
+    }
+
+    /* Product cards */
+    .spares-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 900px) {
+      .spares-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .spares-grid { grid-template-columns: 1fr; }
+      .spares-search { flex-direction: column; }
+      .spares-search button { padding: 12px; }
+    }
+    .spare-card {
+      border: 1px solid #dde2ec;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+    .spare-img {
+      background: #f0f4fa;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #dde2ec;
+    }
+    .spare-img svg {
+      opacity: .45;
+    }
+    .spare-body {
+      padding: 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .spare-body h4 {
+      color: #003087;
+      font-size: 0.9rem;
+      margin: 0 0 6px;
+      line-height: 1.35;
+    }
+    .spare-body p {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 0 0 12px;
+      flex: 1;
+      line-height: 1.5;
+    }
+    .spare-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .stock-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .in-stock { background: #d4edda; color: #155724; }
+    .lead-time { background: #fff3cd; color: #856404; }
+    .enquire-btn {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #003087;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .enquire-btn:hover { color: #c8102e; }
+
+    /* CTA link */
+    .spares-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: #f0f4fa;
+      border: 1.5px solid #003087;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 8px;
+    }
+    .spares-cta-row p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #003087;
+      font-weight: 600;
+    }
+    .spares-cta-row span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #555;
+      display: block;
+      margin-top: 2px;
+    }
+    .btn-spares-cta {
+      background: #c8102e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .btn-spares-cta:hover { background: #a00d24; }
+
+    @media print {
+      .spares-section { page-break-before: always; }
+      .spares-search button { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .scat.active { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .spare-img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>ANP Marine & Industrial</h1>
+    <h2>Professional HVAC, Refrigeration & Compressed Air Tool Kits</h2>
+    <p style="font-size: 1.3rem; margin-top: 10px;">Built for Marine Engineers • Proven at Sea</p>
+  </div>
+
+  <h2>Our Professional Tool Kit Range</h2>
+
+  <!-- Basic Kit -->
+  <div class="kit">
+    <h3>1. ANP Basic Marine Service Kit</h3>
+    <p class="price">£595.00</p>
+    <p>Perfect for smaller vessels and general marine technicians.</p>
+    <ul>
+      <li>Imperial & Metric Flaring Tool + Tube Cutter + Bender</li>
+      <li>High-quality adjustable spanners (150-300mm)</li>
+      <li>Basic hand tool set (screwdrivers, pliers, hex keys)</li>
+      <li>Digital thermometer & basic leak detection spray</li>
+    </ul>
+  </div>
+
+  <!-- Advanced Kit -->
+  <div class="kit popular">
+    <h3>2. ANP Advanced Marine Service Kit</h3>
+    <p class="price">£2,495.00</p>
+    <p><strong>Best choice for experienced marine engineers and service teams.</strong></p>
+    <ul>
+      <li>Fieldpiece SMAN Digital Manifold + Wireless Scales</li>
+      <li>INFICON D-TEK Stratus Refrigerant Leak Detector</li>
+      <li>Gedore & FACOM premium torque wrenches & socket sets</li>
+      <li>Heavy-duty tube working tools + vacuum gauge</li>
+    </ul>
+  </div>
+
+  <!-- Full Pro Kit -->
+  <div class="kit">
+    <h3>3. ANP Full Pro Marine Service Kit</h3>
+    <p class="price">£6,295.00 <span style="color:#28a745; font-size:1.1rem;">(Save £550)</span></p>
+    <p>Complete professional solution for serious marine companies and fleet operators.</p>
+    <ul>
+      <li>Everything in the Advanced Kit</li>
+      <li>Fieldpiece MR45 Digital Recovery Machine</li>
+      <li>High-capacity 2-stage vacuum pump (8 CFM)</li>
+      <li>Smart digital torque wrench + full Gedore tool module set</li>
+      <li>Nitrogen regulator & pressure testing kit</li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    <strong>All kits are designed to fit inside the 200L Lockable Steel Storage Bin (490 × 1010 × 610mm)</strong><br>
+    Ideal for engine rooms and workshop organisation.
+  </div>
+
+  <!-- ══ SPARES SECTION ══ -->
+  <div class="spares-section" id="spares">
+    <h2>Marine Spares — UK Stock, Worldwide Delivery</h2>
+    <p class="spares-subheading">Genuine and high-quality compatible spares for all major marine HVAC, refrigeration and compressed air systems. Same-day dispatch from UK stock.</p>
+
+    <!-- Search bar -->
+    <div class="spares-search">
+      <input type="text" placeholder="Search by part number, brand, or description (e.g. BITZER valve plate, R404A filter drier)...">
+      <button>Search Parts</button>
+    </div>
+
+    <!-- Category pills -->
+    <div class="spares-cats">
+      <span class="scat active">All Parts</span>
+      <span class="scat">Refrigeration</span>
+      <span class="scat">HVAC &amp; AC</span>
+      <span class="scat">Compressed Air</span>
+      <span class="scat">Fire &amp; Safety</span>
+      <span class="scat">Electrical</span>
+    </div>
+
+    <!-- Product cards -->
+    <div class="spares-grid">
+
+      <!-- Card 1 -->
+      <div class="spare-card">
+        <div class="spare-img">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#003087" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <div class="spare-body">
+          <h4>BITZER Valve Plate Assembly</h4>
+          <p>Compatible with 4N, 4S, 6N series compressors. All sizes available.</p>
+          <div class="spare-footer">
+            <span class="stock-badge in-stock">&#10003; UK Stock</span>
+            <a class="enquire-btn" href="#">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="spare-card">
+        <div class="spare-img">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#003087" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+        </div>
+        <div class="spare-body">
+          <h4>Filter Drier — Marine Grade</h4>
+          <p>For R404A, R134a, R407C and R448A systems. All sizes in stock.</p>
+          <div class="spare-footer">
+            <span class="stock-badge in-stock">&#10003; UK Stock</span>
+            <a class="enquire-btn" href="#">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="spare-card">
+        <div class="spare-img">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#003087" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="spare-body">
+          <h4>Expansion Valve — Sporlan TEV</h4>
+          <p>Thermostatic expansion valves for marine provision plants. Full range stocked.</p>
+          <div class="spare-footer">
+            <span class="stock-badge in-stock">&#10003; UK Stock</span>
+            <a class="enquire-btn" href="#">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="spare-card">
+        <div class="spare-img">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#003087" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="spare-body">
+          <h4>Compressor Gasket Kit</h4>
+          <p>Full gasket sets for BITZER, Grasso and Carrier marine compressors.</p>
+          <div class="spare-footer">
+            <span class="stock-badge lead-time">Lead: 3&ndash;5 days</span>
+            <a class="enquire-btn" href="#">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /spares-grid -->
+
+    <!-- CTA row -->
+    <div class="spares-cta-row">
+      <div>
+        <p>Can't find the part you need?</p>
+        <span>We source globally. Send us a part number, photo or system details and we'll find it.</span>
+      </div>
+      <a href="#" class="btn-spares-cta">Browse Full Spares Catalogue &rarr;</a>
+    </div>
+  </div>
+  <!-- ══ END SPARES SECTION ══ -->
+
+  <!-- Full Individual Price List -->
+  <h2>Full Individual Tool Price List</h2>
+  <p><strong>Advanced & Full Pro Kit Components</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Brand / Model</th>
+        <th>Individual Price (ex. VAT)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Digital Manifold Gauge Set</td><td>Fieldpiece SMAN (SM482 / SM380)</td><td>£695</td></tr>
+      <tr><td>Wireless Refrigerant Scales</td><td>Fieldpiece SRS3 / JL2</td><td>£285</td></tr>
+      <tr><td>Refrigerant Leak Detector</td><td>INFICON D-TEK Stratus</td><td>£495</td></tr>
+      <tr><td>Digital Vacuum Gauge</td><td>Fieldpiece VG440 / DG6</td><td>£195</td></tr>
+      <tr><td>Premium Torque Wrench Set (2 pcs)</td><td>Gedore / FACOM</td><td>£320</td></tr>
+      <tr><td>Professional Socket & Spanner Set</td><td>FACOM / Gedore</td><td>£380</td></tr>
+      <tr><td>Heavy Duty Flaring + Cutting + Bending Kit</td><td>Ridgid / Imperial</td><td>£245</td></tr>
+      <tr><td>Digital Thermometer & Probes</td><td>Fieldpiece</td><td>£95</td></tr>
+      <tr><td>Nitrogen Regulator & Pressure Test Kit</td><td>Standard Marine Grade</td><td>£145</td></tr>
+      <tr><td>Fieldpiece MR45 Digital Recovery Machine</td><td>Fieldpiece MR45UK</td><td>£1,150</td></tr>
+      <tr><td>High Capacity 2-Stage Vacuum Pump (8 CFM)</td><td>Standard Pro Model</td><td>£425</td></tr>
+      <tr><td>Smart Digital Torque Wrench</td><td>FACOM E.516ST</td><td>£420</td></tr>
+      <tr><td>Full Gedore Tool Module Set (additional)</td><td>Gedore</td><td>£650</td></tr>
+      <tr class="total-row"><td colspan="2"><strong>Approximate Sum of Individual Items (Advanced Kit)</strong></td><td><strong>£2,930</strong></td></tr>
+      <tr class="total-row"><td colspan="2"><strong>Kit Bundle Price (Advanced)</strong></td><td><strong>£2,495</strong></td></tr>
+      <tr class="total-row"><td colspan="2"><strong>You Save on Advanced Kit</strong></td><td><strong>£435</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="cta">
+    <strong style="font-size: 1.4rem;">Ready to outfit your team?</strong><br><br>
+    &#128222; <strong>+44 151 440 3843</strong><br>
+    &#127760; <strong>www.ANPmarine.co.uk</strong><br><br>
+    <em>Custom configurations, company branding, and bulk discounts available</em>
+  </div>
+</body>
+</html>
