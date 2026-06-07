@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigerant Conversion Questionnaire | ANP Marine & Industrial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .progress-bar { transition: width 0.4s ease; }
+
+    /* ICE & CIRA persona cards */
+    .persona-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .persona-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+    .persona-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .persona-card.ice::before { background: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+    .persona-card.cira::before { background: linear-gradient(90deg, #047857, #10b981); }
+
+    /* Status pulse dot */
+    .pulse-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .pulse-dot.blue { background: #60a5fa; box-shadow: 0 0 0 0 rgba(96,165,250,0.4); }
+    .pulse-dot.green { background: #34d399; box-shadow: 0 0 0 0 rgba(52,211,153,0.4); }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(96,165,250,0.5); }
+      70%  { box-shadow: 0 0 0 8px rgba(96,165,250,0); }
+      100% { box-shadow: 0 0 0 0 rgba(96,165,250,0); }
+    }
+    .pulse-dot.green { animation: pulse-green 2s infinite; }
+    @keyframes pulse-green {
+      0%   { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
+      70%  { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+    }
+
+    /* Form field focus */
+    .form-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+
+    /* Step transition */
+    .step.active {
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Chat widget */
+    #chat-widget { transition: all 0.3s ease; }
+    #chat-messages { scroll-behavior: smooth; }
+    #chat-messages::-webkit-scrollbar { width: 4px; }
+    #chat-messages::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
+
+    /* Photo upload zone */
+    .upload-zone {
+      border: 2px dashed #d1d5db;
+      transition: all 0.2s ease;
+    }
+    .upload-zone:hover, .upload-zone.drag-over {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    /* Checkbox / radio custom */
+    .custom-check input[type="checkbox"],
+    .custom-radio input[type="radio"] {
+      accent-color: #2563eb;
+      width: 16px; height: 16px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<div class="max-w-4xl mx-auto p-4 md:p-6">
+  <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <div class="bg-gradient-to-r from-blue-800 to-blue-700 text-white p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <div class="text-blue-300 text-xs font-semibold tracking-widest uppercase mb-2">ANP Marine &amp; Industrial</div>
+          <h1 class="text-2xl md:text-3xl font-bold leading-tight">Refrigerant Conversion Questionnaire</h1>
+          <p class="text-blue-200 mt-2 text-sm">Chief Engineer On-Site Report &mdash; Photos Required</p>
+        </div>
+        <div class="text-right">
+          <div class="text-blue-300 text-xs font-semibold tracking-widest uppercase mb-1">Emergency Line</div>
+          <a href="tel:+441514403843" class="text-white font-bold text-lg tracking-wide hover:text-blue-200 transition-colors">+44 151 440 3843</a>
+          <div class="text-blue-300 text-xs mt-1">24/7 Engineering Response</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ICE & CIRA INTRO SECTION ══ -->
+    <div class="px-6 md:px-8 pt-6 pb-2">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-6">
+        <!-- Section heading -->
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-headset text-white text-sm"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-slate-800">Meet ICE &amp; CIRA — Your AI Engineering Assistants</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Available 24/7 to support this questionnaire and any engineering or commercial enquiry</p>
+          </div>
+        </div>
+
+        <!-- Persona cards — side by side on desktop, stacked on mobile -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- ICE card -->
+          <div class="persona-card ice bg-white rounded-xl border border-blue-100 p-5 shadow-sm">
+            <div class="flex items-start gap-4">
+              <!-- Avatar -->
+              <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <span class="text-white font-bold text-sm tracking-wide">ICE</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-sm font-bold text-slate-800">ICE</h3>
+                  <span class="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">Intelligent Cooling Expert</span>
+                </div>
+                <div class="flex items-center gap-1.5 mt-1 mb-3">
+                  <span class="pulse-dot blue"></span>
+                  <span class="text-xs text-blue-500 font-semibold uppercase tracking-wide">Online &mdash; Technical</span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Senior marine refrigeration engineer with 30+ years of field experience. ICE handles all <strong class="text-slate-700">technical questions</strong> — refrigerant conversions, system diagnostics, F-Gas compliance, compressor troubleshooting and installation guidance.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-100 font-medium">Refrigerant Conversion</span>
+                  <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-100 font-medium">Fault Diagnosis</span>
+                  <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-100 font-medium">F-Gas Compliance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CIRA card -->
+          <div class="persona-card cira bg-white rounded-xl border border-emerald-100 p-5 shadow-sm">
+            <div class="flex items-start gap-4">
+              <!-- Avatar -->
+              <div class="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <span class="text-white font-bold text-xs tracking-wide">CIRA</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-sm font-bold text-slate-800">CIRA</h3>
+                  <span class="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Cooling Intelligent Response Assistant</span>
+                </div>
+                <div class="flex items-center gap-1.5 mt-1 mb-3">
+                  <span class="pulse-dot green"></span>
+                  <span class="text-xs text-emerald-500 font-semibold uppercase tracking-wide">Online &mdash; Commercial</span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Former refrigeration chief engineer, now your dedicated commercial support specialist. CIRA handles <strong class="text-slate-700">spare parts, pricing, stock availability</strong>, delivery logistics, order tracking and all commercial enquiries.
+                </p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-100 font-medium">Spare Parts</span>
+                  <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-100 font-medium">Pricing &amp; RFQ</span>
+                  <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-100 font-medium">Worldwide Delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer note -->
+        <div class="mt-4 flex items-start gap-2.5 bg-white rounded-lg border border-slate-200 px-4 py-3">
+          <i class="fas fa-circle-info text-blue-500 text-sm mt-0.5 flex-shrink-0"></i>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Use the <strong class="text-slate-700">chat assistant</strong> (bottom right) to speak with ICE or CIRA at any point during this questionnaire. Type <strong class="text-slate-700">"ICE"</strong> for technical guidance or <strong class="text-slate-700">"CIRA"</strong> for parts and commercial support. Both are available 24/7.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PROGRESS BAR ══ -->
+    <div class="px-6 md:px-8 pt-5 pb-2">
+      <div class="flex justify-between text-xs mb-2">
+        <span id="stepText" class="font-semibold text-slate-600">Step 1 of 7</span>
+        <span id="progressPercent" class="font-semibold text-blue-600">14%</span>
+      </div>
+      <div class="h-2 bg-slate-200 rounded-full overflow-hidden">
+        <div id="progressBar" class="h-2 bg-blue-600 rounded-full progress-bar" style="width:14%"></div>
+      </div>
+      <!-- Step labels (desktop only) -->
+      <div class="hidden md:flex justify-between mt-2 px-0.5">
+        <span id="sl1" class="text-xs font-medium text-blue-600">System Details</span>
+        <span id="sl2" class="text-xs text-slate-400">Refrigerant</span>
+        <span id="sl3" class="text-xs text-slate-400">Compressor</span>
+        <span id="sl4" class="text-xs text-slate-400">Condition</span>
+        <span id="sl5" class="text-xs text-slate-400">Photos</span>
+        <span id="sl6" class="text-xs text-slate-400">Compliance</span>
+        <span id="sl7" class="text-xs text-slate-400">Summary</span>
+      </div>
+    </div>
+
+    <!-- ══ FORM ══ -->
+    <form id="conversionForm" class="px-6 md:px-8 pb-2">
+
+      <!-- STEP 1: System Details -->
+      <div class="step active" id="step1">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">System &amp; Vessel Details</h2>
+          <p class="text-sm text-slate-500">Basic identification information for the vessel and refrigeration system.</p>
+        </div>
+        <div class="py-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Vessel Name <span class="text-red-500">*</span></label>
+            <input type="text" name="vessel_name" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="MV Example / FPSO Name" required>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">IMO Number</label>
+            <input type="text" name="imo_number" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="IMO 1234567">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Vessel Type <span class="text-red-500">*</span></label>
+            <select name="vessel_type" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" required>
+              <option value="">Select vessel type...</option>
+              <option>FPSO / Offshore Platform</option>
+              <option>Crude / Product Tanker</option>
+              <option>LNG / LPG Carrier</option>
+              <option>Bulk Carrier</option>
+              <option>Container Vessel</option>
+              <option>Platform Supply Vessel (PSV)</option>
+              <option>Offshore Wind Installation Vessel</option>
+              <option>Cruise / Ferry</option>
+              <option>Superyacht</option>
+              <option>Research Vessel</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Current Port / Location <span class="text-red-500">*</span></label>
+            <input type="text" name="location" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="Port name or position" required>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Chief Engineer Name <span class="text-red-500">*</span></label>
+            <input type="text" name="ce_name" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="Full name" required>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Contact Number / Satellite</label>
+            <input type="tel" name="ce_phone" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="+44 or satellite number">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">System Description</label>
+            <input type="text" name="system_desc" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. Provision plant, cargo refrigeration, HVAC chiller">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Date of Inspection</label>
+            <input type="date" name="inspection_date" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Number of Refrigeration Circuits</label>
+            <select name="circuit_count" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+              <option value="">Select...</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Refrigerant Details -->
+      <div class="step" id="step2">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">Current Refrigerant &amp; Conversion Target</h2>
+          <p class="text-sm text-slate-500">Identify the existing refrigerant and the proposed conversion refrigerant.</p>
+        </div>
+        <div class="py-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Current Refrigerant <span class="text-red-500">*</span></label>
+            <select name="current_refrigerant" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" required>
+              <option value="">Select current refrigerant...</option>
+              <option>R22 (HCFC-22)</option>
+              <option>R404A</option>
+              <option>R407C</option>
+              <option>R410A</option>
+              <option>R134a</option>
+              <option>R507A</option>
+              <option>R12 (CFC-12)</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Target Refrigerant <span class="text-red-500">*</span></label>
+            <select name="target_refrigerant" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" required>
+              <option value="">Select target refrigerant...</option>
+              <option>R448A (N40)</option>
+              <option>R449A (XL41)</option>
+              <option>R452A</option>
+              <option>R454C</option>
+              <option>R513A</option>
+              <option>R32</option>
+              <option>R600a (Isobutane)</option>
+              <option>R290 (Propane)</option>
+              <option>R744 (CO₂)</option>
+              <option>Unsure — require ICE recommendation</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Total System Charge (kg)</label>
+            <input type="number" name="system_charge" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. 45">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Current GWP (if known)</label>
+            <input type="number" name="current_gwp" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. 3922 for R404A">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-semibold text-slate-700 mb-2 uppercase tracking-wide">Reason for Conversion <span class="text-red-500">*</span></label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_fgas" value="fgas"> <span class="text-sm text-slate-700">F-Gas Phase-Down Compliance</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_class" value="class"> <span class="text-sm text-slate-700">Class / Flag State Requirement</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_efficiency" value="efficiency"> <span class="text-sm text-slate-700">Energy Efficiency Improvement</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_phase_out" value="phase_out"> <span class="text-sm text-slate-700">Refrigerant Phase-Out / Unavailability</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_charter" value="charter"> <span class="text-sm text-slate-700">Charter / Charterer Requirement</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="reason_other" value="other"> <span class="text-sm text-slate-700">Other</span>
+              </label>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Additional Notes on Refrigerant Selection</label>
+            <textarea name="refrigerant_notes" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white h-24 resize-none" placeholder="Any additional context, previous conversion history, or ICE recommendations received..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Compressor Details -->
+      <div class="step" id="step3">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">Compressor Details</h2>
+          <p class="text-sm text-slate-500">Record make, model and current condition of the compressor(s).</p>
+        </div>
+        <div class="py-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Compressor Make <span class="text-red-500">*</span></label>
+            <select name="comp_make" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" required>
+              <option value="">Select make...</option>
+              <option>BITZER</option><option>Carrier / Carlyle</option><option>Grasso</option>
+              <option>Copeland (Emerson)</option><option>Danfoss / Maneurop</option>
+              <option>Mycom</option><option>Howden</option><option>Sabroe</option>
+              <option>Daikin</option><option>Trane</option><option>York</option>
+              <option>Sperre</option><option>Hamworthy</option><option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Compressor Model / Series</label>
+            <input type="text" name="comp_model" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. 4N-20.2, SEMI-222-K4">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Compressor Type</label>
+            <select name="comp_type" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+              <option value="">Select type...</option>
+              <option>Reciprocating (Piston)</option>
+              <option>Screw</option>
+              <option>Scroll</option>
+              <option>Rotary</option>
+              <option>Centrifugal</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Number of Compressors</label>
+            <select name="comp_count" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+              <option value="">Select...</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Serial Number(s)</label>
+            <input type="text" name="comp_serial" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="Nameplate serial number">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Year of Manufacture (approx)</label>
+            <input type="number" name="comp_year" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. 2008" min="1970" max="2025">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Lubrication Oil Type (current)</label>
+            <select name="oil_type" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+              <option value="">Select...</option>
+              <option>Mineral Oil (MO)</option>
+              <option>Alkylbenzene (AB)</option>
+              <option>Polyolester (POE)</option>
+              <option>Polyalkylene Glycol (PAG)</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Running Hours (approx)</label>
+            <input type="number" name="running_hours" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. 25000">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Known Defects or Recent Repairs</label>
+            <textarea name="comp_defects" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white h-24 resize-none" placeholder="Describe any known faults, recent repairs, or history of issues..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: System Condition -->
+      <div class="step" id="step4">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">System Condition Assessment</h2>
+          <p class="text-sm text-slate-500">Current operating parameters and component condition ratings.</p>
+        </div>
+        <div class="py-6 space-y-5">
+          <!-- Operating pressures -->
+          <div>
+            <h3 class="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center">A</span>
+              Current Operating Pressures
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Suction Pressure (bar)</label>
+                <input type="number" step="0.1" name="suction_pressure" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Discharge Pressure (bar)</label>
+                <input type="number" step="0.1" name="discharge_pressure" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Suction Temp (°C)</label>
+                <input type="number" step="0.1" name="suction_temp" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Discharge Temp (°C)</label>
+                <input type="number" step="0.1" name="discharge_temp" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm bg-white">
+              </div>
+            </div>
+          </div>
+
+          <!-- Component condition -->
+          <div>
+            <h3 class="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center">B</span>
+              Component Condition Ratings
+            </h3>
+            <div class="space-y-2">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Condenser</span>
+                  <select name="cond_condenser" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Evaporator</span>
+                  <select name="cond_evaporator" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Filter Drier</span>
+                  <select name="cond_drier" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Expansion Valve (TEV)</span>
+                  <select name="cond_tev" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Sight Glass</span>
+                  <select name="cond_sightglass" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+                <div class="flex items-center justify-between bg-slate-50 rounded-lg px-4 py-2.5 border border-slate-200">
+                  <span class="text-sm text-slate-700 font-medium">Seals / Gaskets</span>
+                  <select name="cond_seals" class="text-xs border border-slate-300 rounded px-2 py-1 bg-white">
+                    <option>Good</option><option>Fair</option><option>Poor</option><option>Replaced</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Known issues -->
+          <div>
+            <h3 class="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center">C</span>
+              Known Issues
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_leak" value="yes"> <span class="text-sm text-slate-700">Refrigerant leak detected</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_moisture" value="yes"> <span class="text-sm text-slate-700">Moisture contamination suspected</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_oil" value="yes"> <span class="text-sm text-slate-700">Oil system issues / oil carry-over</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_controls" value="yes"> <span class="text-sm text-slate-700">Control system / sensor faults</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_vibration" value="yes"> <span class="text-sm text-slate-700">Abnormal vibration or noise</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="issue_temp" value="yes"> <span class="text-sm text-slate-700">Unable to achieve design temperatures</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Additional Condition Notes</label>
+            <textarea name="condition_notes" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white h-24 resize-none" placeholder="Describe any other observations, fault history, or condition details relevant to the conversion..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5: Photos -->
+      <div class="step" id="step5">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">Photo Documentation</h2>
+          <p class="text-sm text-slate-500">Upload photos of the system to support the conversion assessment. Clear, labelled photos significantly improve accuracy of our engineering recommendation.</p>
+        </div>
+        <div class="py-6 space-y-5">
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-start gap-3">
+            <i class="fas fa-circle-info text-blue-500 mt-0.5 flex-shrink-0"></i>
+            <div class="text-sm text-blue-800">
+              <strong>Required photos:</strong> compressor nameplate, system overview, condenser, evaporator, expansion valve, filter drier, and any visible defects. Each file should be under 10MB. JPEG or PNG preferred.
+            </div>
+          </div>
+
+          <!-- Upload zones -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Compressor Nameplate <span class="text-red-500">*</span></label>
+              <div class="upload-zone rounded-xl p-5 text-center cursor-pointer" onclick="document.getElementById('photo_nameplate').click()">
+                <i class="fas fa-camera text-slate-400 text-2xl mb-2"></i>
+                <p class="text-sm text-slate-600 font-medium">Click to upload</p>
+                <p class="text-xs text-slate-400 mt-1">or drag &amp; drop</p>
+                <input type="file" id="photo_nameplate" name="photo_nameplate" accept="image/*" class="hidden" onchange="handleFileSelect(this, 'label_nameplate')">
+                <p id="label_nameplate" class="text-xs text-blue-600 mt-2 font-medium"></p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">System Overview</label>
+              <div class="upload-zone rounded-xl p-5 text-center cursor-pointer" onclick="document.getElementById('photo_overview').click()">
+                <i class="fas fa-image text-slate-400 text-2xl mb-2"></i>
+                <p class="text-sm text-slate-600 font-medium">Click to upload</p>
+                <p class="text-xs text-slate-400 mt-1">or drag &amp; drop</p>
+                <input type="file" id="photo_overview" name="photo_overview" accept="image/*" class="hidden" onchange="handleFileSelect(this, 'label_overview')">
+                <p id="label_overview" class="text-xs text-blue-600 mt-2 font-medium"></p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Condenser Unit</label>
+              <div class="upload-zone rounded-xl p-5 text-center cursor-pointer" onclick="document.getElementById('photo_condenser').click()">
+                <i class="fas fa-image text-slate-400 text-2xl mb-2"></i>
+                <p class="text-sm text-slate-600 font-medium">Click to upload</p>
+                <p class="text-xs text-slate-400 mt-1">or drag &amp; drop</p>
+                <input type="file" id="photo_condenser" name="photo_condenser" accept="image/*" class="hidden" onchange="handleFileSelect(this, 'label_condenser')">
+                <p id="label_condenser" class="text-xs text-blue-600 mt-2 font-medium"></p>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Expansion Valve / Filter Drier</label>
+              <div class="upload-zone rounded-xl p-5 text-center cursor-pointer" onclick="document.getElementById('photo_tev').click()">
+                <i class="fas fa-image text-slate-400 text-2xl mb-2"></i>
+                <p class="text-sm text-slate-600 font-medium">Click to upload</p>
+                <p class="text-xs text-slate-400 mt-1">or drag &amp; drop</p>
+                <input type="file" id="photo_tev" name="photo_tev" accept="image/*" class="hidden" onchange="handleFileSelect(this, 'label_tev')">
+                <p id="label_tev" class="text-xs text-blue-600 mt-2 font-medium"></p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Additional Photos (any visible defects, labels, controls)</label>
+            <div class="upload-zone rounded-xl p-5 text-center cursor-pointer" onclick="document.getElementById('photo_extra').click()">
+              <i class="fas fa-images text-slate-400 text-2xl mb-2"></i>
+              <p class="text-sm text-slate-600 font-medium">Click to upload multiple</p>
+              <p class="text-xs text-slate-400 mt-1">Up to 5 additional images</p>
+              <input type="file" id="photo_extra" name="photo_extra" accept="image/*" multiple class="hidden" onchange="handleFileSelect(this, 'label_extra')">
+              <p id="label_extra" class="text-xs text-blue-600 mt-2 font-medium"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6: Compliance -->
+      <div class="step" id="step6">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">Regulatory &amp; Compliance</h2>
+          <p class="text-sm text-slate-500">F-Gas, class and flag state compliance requirements for this conversion.</p>
+        </div>
+        <div class="py-6 space-y-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Flag State</label>
+              <input type="text" name="flag_state" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="e.g. Bahamas, Marshall Islands, UK">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Classification Society</label>
+              <select name="class_society" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+                <option value="">Select...</option>
+                <option>Lloyd's Register (LR)</option>
+                <option>DNV GL</option>
+                <option>Bureau Veritas (BV)</option>
+                <option>American Bureau of Shipping (ABS)</option>
+                <option>RINA</option>
+                <option>ClassNK</option>
+                <option>Korean Register (KR)</option>
+                <option>Other</option>
+                <option>None / Not applicable</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Next Class Survey Due</label>
+              <input type="date" name="class_survey_due" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Next Drydock Date (approx)</label>
+              <input type="month" name="drydock_date" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-2 uppercase tracking-wide">Compliance Requirements</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_fgas"> <span class="text-sm text-slate-700">F-Gas 2025+ Phase-Down documentation required</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_class_cert"> <span class="text-sm text-slate-700">Class certification of conversion required</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_mlc"> <span class="text-sm text-slate-700">MLC 2006 compliance for accommodation HVAC</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_imo"> <span class="text-sm text-slate-700">IMO / IGC Code compliance (cargo systems)</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_poc"> <span class="text-sm text-slate-700">Port State Control inspection due</span>
+              </label>
+              <label class="custom-check flex items-center gap-2.5 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="checkbox" name="comp_charterer"> <span class="text-sm text-slate-700">Charterer vetting / TMSA requirements</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Compliance Notes</label>
+            <textarea name="compliance_notes" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white h-24 resize-none" placeholder="Any additional regulatory context, previous non-conformities, or specific documentation requirements..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 7: Summary & Submit -->
+      <div class="step" id="step7">
+        <div class="py-6 border-b border-slate-100">
+          <h2 class="text-lg font-bold text-slate-800 mb-1">Review &amp; Submit</h2>
+          <p class="text-sm text-slate-500">Review your submission and confirm contact details for the engineering report.</p>
+        </div>
+        <div class="py-6 space-y-5">
+
+          <!-- Summary panel -->
+          <div class="bg-slate-50 rounded-xl border border-slate-200 p-5">
+            <h3 class="text-sm font-bold text-slate-700 mb-3">Submission Summary</h3>
+            <div id="summary-content" class="space-y-2 text-sm text-slate-600">
+              <p class="text-slate-400 italic">Complete the previous steps to see your summary here.</p>
+            </div>
+          </div>
+
+          <!-- Delivery preferences -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Report Delivery Email <span class="text-red-500">*</span></label>
+            <input type="email" name="report_email" id="report_email" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white" placeholder="your@company.com" required>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Preferred Contact Method for Follow-Up</label>
+            <div class="flex flex-wrap gap-3">
+              <label class="custom-radio flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="radio" name="contact_pref" value="email" checked> <span class="text-sm text-slate-700">Email</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="radio" name="contact_pref" value="phone"> <span class="text-sm text-slate-700">Phone / Satellite</span>
+              </label>
+              <label class="custom-radio flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-slate-200 hover:bg-slate-50">
+                <input type="radio" name="contact_pref" value="both"> <span class="text-sm text-slate-700">Both</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Urgency / Target Date</label>
+            <select name="urgency" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white">
+              <option value="">Select urgency...</option>
+              <option>Emergency — vessel at risk, immediate response required</option>
+              <option>Urgent — within 48 hours</option>
+              <option>Within 1 week</option>
+              <option>Within 1 month (drydock / planned)</option>
+              <option>Within 3 months</option>
+              <option>Planning stage — no immediate timeline</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide">Any Other Information for ANP Engineers</label>
+            <textarea name="final_notes" class="form-input w-full border border-slate-300 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 bg-white h-24 resize-none" placeholder="Anything else our engineers should know before reviewing this submission..."></textarea>
+          </div>
+
+          <!-- Engineering note -->
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-start gap-3">
+            <i class="fas fa-user-gear text-blue-500 mt-0.5 flex-shrink-0"></i>
+            <div class="text-sm text-blue-800">
+              <strong>Reviewed by a qualified marine engineer.</strong> Every submission is assessed by our technical engineering team before a conversion recommendation is issued. You will receive a detailed report with refrigerant recommendation, component requirements, oil change specification and compliance notes.
+            </div>
+          </div>
+
+          <!-- Terms -->
+          <label class="custom-check flex items-start gap-2.5 cursor-pointer">
+            <input type="checkbox" name="terms_agree" id="terms_agree" required class="mt-0.5">
+            <span class="text-sm text-slate-600">I confirm that the information provided in this questionnaire is accurate to the best of my knowledge, and I consent to ANP Marine &amp; Industrial contacting me regarding this refrigerant conversion project.</span>
+          </label>
+
+        </div>
+      </div>
+
+    </form>
+
+    <!-- ══ NAVIGATION BUTTONS ══ -->
+    <div class="flex justify-between items-center border-t border-slate-200 p-6 bg-slate-50">
+      <button onclick="prevStep()" id="prevBtn" class="px-6 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-100 transition-colors flex items-center gap-2">
+        <i class="fas fa-arrow-left text-xs"></i> Previous
+      </button>
+      <div class="text-xs text-slate-400 hidden md:block">All fields marked <span class="text-red-500">*</span> are required</div>
+      <div class="flex gap-3">
+        <button onclick="nextStep()" id="nextBtn" class="px-6 py-2.5 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2">
+          Next <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+        <button onclick="submitQuestionnaire()" id="submitBtn" class="hidden px-6 py-2.5 bg-emerald-600 text-white rounded-xl text-sm font-semibold hover:bg-emerald-700 transition-colors flex items-center gap-2">
+          <i class="fas fa-paper-plane text-xs"></i> Submit &amp; Generate PDF
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /card -->
+</div><!-- /container -->
+
+<!-- ══ CHAT WIDGET ══ -->
+<div id="chat-launcher" onclick="toggleChat()" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all z-50 group">
+  <i class="fas fa-headset text-white text-xl group-hover:scale-110 transition-transform" id="chat-icon-open"></i>
+  <i class="fas fa-times text-white text-xl hidden group-hover:scale-110 transition-transform" id="chat-icon-close"></i>
+  <span class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white"></span>
+</div>
+
+<div id="chat-widget" class="fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-50 hidden flex-col" style="height:480px">
+  <!-- Chat header -->
+  <div class="bg-gradient-to-r from-blue-800 to-blue-700 p-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex -space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-500 border-2 border-blue-700 flex items-center justify-center">
+            <span class="text-white font-bold text-xs">ICE</span>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-emerald-500 border-2 border-blue-700 flex items-center justify-center">
+            <span class="text-white font-bold text-xs">CIR</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-white font-bold text-sm">ICE &amp; CIRA</div>
+          <div class="text-blue-200 text-xs flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block"></span>
+            Both online &mdash; 24/7
+          </div>
+        </div>
+      </div>
+      <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50" style="height:320px">
+    <!-- Welcome message -->
+    <div class="flex gap-2 items-start">
+      <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <span class="text-white font-bold text-xs">ICE</span>
+      </div>
+      <div class="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-slate-100 max-w-xs">
+        <p class="text-xs font-bold text-blue-700 mb-1">ICE — Technical</p>
+        <p class="text-xs text-slate-700 leading-relaxed">Good day. I'm <strong>ICE</strong> — your Intelligent Cooling Expert. I'll handle all technical questions on this conversion: refrigerant selection, system compatibility, oil changes, F-Gas compliance and engineering guidance.</p>
+      </div>
+    </div>
+    <div class="flex gap-2 items-start">
+      <div class="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <span class="text-white font-bold text-xs">CIR</span>
+      </div>
+      <div class="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-slate-100 max-w-xs">
+        <p class="text-xs font-bold text-emerald-700 mb-1">CIRA — Commercial</p>
+        <p class="text-xs text-slate-700 leading-relaxed">And I'm <strong>CIRA</strong>. Once ICE has specified what's needed, I'll handle parts availability, pricing, lead times and delivery to your port. Just type <strong>"CIRA"</strong> to reach me directly.</p>
+      </div>
+    </div>
+    <div class="flex gap-2 items-start">
+      <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <span class="text-white font-bold text-xs">ICE</span>
+      </div>
+      <div class="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-slate-100 max-w-xs">
+        <p class="text-xs font-bold text-blue-700 mb-1">ICE — Technical</p>
+        <p class="text-xs text-slate-700 leading-relaxed">What can we help you with? You can ask about your current refrigerant, conversion options, component compatibility, or anything else on this questionnaire.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="p-3 border-t border-slate-200 bg-white">
+    <div class="flex gap-2">
+      <input type="text" id="chat-input" placeholder='Ask ICE or type "CIRA" for parts...' class="flex-1 text-xs border border-slate-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 bg-white" onkeydown="if(event.key==='Enter')sendChatMessage()">
+      <button onclick="sendChatMessage()" class="w-9 h-9 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+        <i class="fas fa-paper-plane text-white text-xs"></i>
+      </button>
+    </div>
+    <p class="text-xs text-slate-400 mt-2 text-center">Type "ICE" or "CIRA" to address a specific assistant</p>
+  </div>
+</div>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+// ── STEP MANAGEMENT ──
+let currentStep = 1;
+const totalSteps = 7;
+const stepLabels = ['System Details','Refrigerant','Compressor','Condition','Photos','Compliance','Summary'];
+
+function updateProgress() {
+  const pct = Math.round((currentStep / totalSteps) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressPercent').textContent = pct + '%';
+  document.getElementById('stepText').textContent = `Step ${currentStep} of ${totalSteps}`;
+
+  // Update step label colours
+  stepLabels.forEach((_, i) => {
+    const el = document.getElementById('sl' + (i + 1));
+    if (!el) return;
+    el.className = 'text-xs ' + (i + 1 === currentStep ? 'font-semibold text-blue-600' : i + 1 < currentStep ? 'text-slate-500' : 'text-slate-400');
+  });
+
+  // Buttons
+  document.getElementById('prevBtn').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  if (currentStep === totalSteps) {
+    nextBtn.classList.add('hidden');
+    submitBtn.classList.remove('hidden');
+    buildSummary();
+  } else {
+    nextBtn.classList.remove('hidden');
+    submitBtn.classList.add('hidden');
+  }
+}
+
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextStep() {
+  if (currentStep < totalSteps) {
+    currentStep++;
+    showStep(currentStep);
+    updateProgress();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    currentStep--;
+    showStep(currentStep);
+    updateProgress();
+  }
+}
+
+// ── SUMMARY BUILDER ──
+function buildSummary() {
+  const form = document.getElementById('conversionForm');
+  const data = new FormData(form);
+  const fields = {
+    vessel_name: 'Vessel Name',
+    vessel_type: 'Vessel Type',
+    location: 'Location',
+    ce_name: 'Chief Engineer',
+    current_refrigerant: 'Current Refrigerant',
+    target_refrigerant: 'Target Refrigerant',
+    system_charge: 'System Charge (kg)',
+    comp_make: 'Compressor Make',
+    comp_model: 'Compressor Model',
+    comp_year: 'Year of Manufacture',
+    oil_type: 'Oil Type',
+    flag_state: 'Flag State',
+    class_society: 'Class Society',
+    urgency: 'Urgency',
+  };
+
+  let html = '';
+  for (const [key, label] of Object.entries(fields)) {
+    const val = data.get(key);
+    if (val) {
+      html += `<div class="flex justify-between gap-4 py-1 border-b border-slate-100">
+        <span class="text-slate-500">${label}</span>
+        <span class="font-medium text-slate-800 text-right">${val}</span>
+      </div>`;
+    }
+  }
+  document.getElementById('summary-content').innerHTML = html || '<p class="text-slate-400 italic">No data entered yet.</p>';
+}
+
+// ── PHOTO UPLOAD ──
+function handleFileSelect(input, labelId) {
+  const label = document.getElementById(labelId);
+  if (input.files && input.files.length > 0) {
+    const names = Array.from(input.files).map(f => f.name).join(', ');
+    label.textContent = names.length > 50 ? names.substring(0, 47) + '...' : names;
+    input.closest('.upload-zone').style.borderColor = '#3b82f6';
+    input.closest('.upload-zone').style.background = '#eff6ff';
+  }
+}
+
+// Drag and drop
+document.querySelectorAll('.upload-zone').forEach(zone => {
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    zone.classList.remove('drag-over');
+    const input = zone.querySelector('input[type="file"]');
+    if (input && e.dataTransfer.files.length) {
+      input.files = e.dataTransfer.files;
+      const labelId = input.id.replace('photo_', 'label_');
+      handleFileSelect(input, labelId);
+    }
+  });
+});
+
+// ── FORM SUBMISSION ──
+function submitQuestionnaire() {
+  const termsCheck = document.getElementById('terms_agree');
+  if (!termsCheck.checked) {
+    termsCheck.closest('label').style.color = '#ef4444';
+    setTimeout(() => termsCheck.closest('label').style.color = '', 3000);
+    return;
+  }
+
+  const email = document.getElementById('report_email').value;
+  if (!email) {
+    document.getElementById('report_email').focus();
+    return;
+  }
+
+  generatePDF();
+}
+
+// ── PDF GENERATION ──
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const form = document.getElementById('conversionForm');
+  const data = new FormData(form);
+
+  doc.setFillColor(29, 78, 216);
+  doc.rect(0, 0, 210, 40, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(18);
+  doc.setFont('helvetica', 'bold');
+  doc.text('ANP Marine & Industrial', 20, 18);
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Refrigerant Conversion Questionnaire', 20, 28);
+  doc.setFontSize(9);
+  doc.text('Generated: ' + new Date().toLocaleDateString('en-GB', {day:'2-digit',month:'long',year:'numeric'}), 20, 36);
+
+  doc.setTextColor(30, 41, 59);
+  doc.setFontSize(13);
+  doc.setFont('helvetica', 'bold');
+  doc.text('System & Vessel Details', 20, 54);
+
+  const fields = [
+    ['Vessel Name', data.get('vessel_name') || '—'],
+    ['Vessel Type', data.get('vessel_type') || '—'],
+    ['Location', data.get('location') || '—'],
+    ['Chief Engineer', data.get('ce_name') || '—'],
+    ['Current Refrigerant', data.get('current_refrigerant') || '—'],
+    ['Target Refrigerant', data.get('target_refrigerant') || '—'],
+    ['System Charge (kg)', data.get('system_charge') || '—'],
+    ['Compressor Make', data.get('comp_make') || '—'],
+    ['Compressor Model', data.get('comp_model') || '—'],
+    ['Oil Type', data.get('oil_type') || '—'],
+    ['Flag State', data.get('flag_state') || '—'],
+    ['Class Society', data.get('class_society') || '—'],
+    ['Urgency', data.get('urgency') || '—'],
+    ['Contact Email', data.get('report_email') || '—'],
+  ];
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  let y = 62;
+  fields.forEach(([label, value], i) => {
+    if (i % 2 === 0) { doc.setFillColor(248, 250, 252); doc.rect(18, y - 4, 174, 10, 'F'); }
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(71, 85, 105);
+    doc.text(label + ':', 22, y + 2);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(30, 41, 59);
+    doc.text(String(value).substring(0, 80), 80, y + 2);
+    y += 11;
+    if (y > 270) { doc.addPage(); y = 20; }
+  });
+
+  // Footer
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i);
+    doc.setFillColor(248, 250, 252);
+    doc.rect(0, 285, 210, 15, 'F');
+    doc.setFontSize(8);
+    doc.setTextColor(148, 163, 184);
+    doc.text('ANP Marine & Industrial Ltd | +44 151 440 3843 | Hello@ANPmarine.co.uk', 20, 292);
+    doc.text('Page ' + i + ' of ' + pageCount, 180, 292);
+  }
+
+  doc.save('ANP_Refrigerant_Conversion_' + (data.get('vessel_name') || 'Report').replace(/\s+/g,'_') + '.pdf');
+
+  // Show confirmation
+  showSubmitConfirmation();
+}
+
+function showSubmitConfirmation() {
+  const form = document.querySelector('#conversionForm');
+  const nav = document.querySelector('.flex.justify-between.items-center.border-t');
+  form.innerHTML = `
+    <div class="py-16 text-center px-8">
+      <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fas fa-circle-check text-emerald-500 text-4xl"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-800 mb-3">Questionnaire Submitted</h2>
+      <p class="text-slate-600 mb-2">Your PDF report has been generated and downloaded. Please email it to:</p>
+      <a href="mailto:Hello@ANPmarine.co.uk" class="text-blue-600 font-bold text-lg hover:underline">Hello@ANPmarine.co.uk</a>
+      <p class="text-slate-500 text-sm mt-4 mb-6">Or call our engineering team directly to discuss your conversion requirements:</p>
+      <a href="tel:+441514403843" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors">
+        <i class="fas fa-phone"></i> +44 151 440 3843
+      </a>
+      <p class="text-xs text-slate-400 mt-6">24/7 engineering response &mdash; not a call centre</p>
+    </div>`;
+  nav.style.display = 'none';
+}
+
+// ── CHAT WIDGET ──
+let chatOpen = false;
+let chatPersona = 'ice';
+const conversationHistory = [];
+
+const SYSTEM_PROMPT = `You are an advanced AI support system for ANP Marine & Industrial, embedded in a Refrigerant Conversion Questionnaire. You role-play as two distinct expert personas.
+
+ICE (Intelligent Cooling Expert): Authoritative, experienced senior marine refrigeration engineer. Handles all technical questions — refrigerant conversions, system compatibility, oil changes, F-Gas compliance, compressor troubleshooting, engineering guidance. Ends every response with "— ICE".
+
+CIRA (Cooling Intelligent Response Assistant): Former refrigeration chief engineer, now commercial specialist. Handles spare parts, pricing, stock availability, delivery logistics, order tracking. Ends every response with "— CIRA".
+
+Rules:
+- No emojis.
+- Respond as ICE for technical questions, CIRA for commercial/parts questions.
+- If user types "ICE" or "CIRA", switch to that persona.
+- Keep responses concise and professional.
+- For refrigerant conversion questions, be specific about compatibility, oil requirements, and regulatory considerations.
+- For emergencies, always recommend calling +44 151 440 3843 immediately.`;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const widget = document.getElementById('chat-widget');
+  const iconOpen = document.getElementById('chat-icon-open');
+  const iconClose = document.getElementById('chat-icon-close');
+  widget.classList.toggle('hidden', !chatOpen);
+  widget.classList.toggle('flex', chatOpen);
+  iconOpen.classList.toggle('hidden', chatOpen);
+  iconClose.classList.toggle('hidden', !chatOpen);
+  if (chatOpen) {
+    setTimeout(() => document.getElementById('chat-input').focus(), 100);
+  }
+}
+
+function appendChatMessage(persona, text) {
+  const msgs = document.getElementById('chat-messages');
+  const isICE = persona === 'ice';
+  const div = document.createElement('div');
+  div.className = 'flex gap-2 items-start';
+  div.innerHTML = `
+    <div class="w-7 h-7 rounded-lg ${isICE ? 'bg-blue-600' : 'bg-emerald-600'} flex items-center justify-center flex-shrink-0 mt-0.5">
+      <span class="text-white font-bold text-xs">${isICE ? 'ICE' : 'CIR'}</span>
+    </div>
+    <div class="bg-white rounded-xl rounded-tl-sm p-3 shadow-sm border border-slate-100 max-w-xs">
+      <p class="text-xs font-bold ${isICE ? 'text-blue-700' : 'text-emerald-700'} mb-1">${isICE ? 'ICE — Technical' : 'CIRA — Commercial'}</p>
+      <p class="text-xs text-slate-700 leading-relaxed whitespace-pre-wrap">${escapeHtml(text)}</p>
+    </div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function appendUserMessage(text) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'flex justify-end';
+  div.innerHTML = `
+    <div class="bg-blue-600 rounded-xl rounded-tr-sm px-3 py-2.5 max-w-xs">
+      <p class="text-xs text-white leading-relaxed">${escapeHtml(text)}</p>
+    </div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function appendTyping(persona) {
+  const msgs = document.getElementById('chat-messages');
+  const isICE = persona === 'ice';
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.className = 'flex gap-2 items-start';
+  div.innerHTML = `
+    <div class="w-7 h-7 rounded-lg ${isICE ? 'bg-blue-600' : 'bg-emerald-600'} flex items-center justify-center flex-shrink-0">
+      <span class="text-white font-bold text-xs">${isICE ? 'ICE' : 'CIR'}</span>
+    </div>
+    <div class="bg-white rounded-xl rounded-tl-sm px-3 py-2.5 shadow-sm border border-slate-100 flex gap-1 items-center">
+      <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay:0s"></span>
+      <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay:.15s"></span>
+      <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay:.3s"></span>
+    </div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function detectPersona(text) {
+  const lower = text.toLowerCase();
+  const ciraIdx = lower.lastIndexOf('— cira');
+  const iceIdx = lower.lastIndexOf('— ice');
+  if (ciraIdx === -1 && iceIdx === -1) return chatPersona;
+  return ciraIdx > iceIdx ? 'cira' : 'ice';
+}
+
+function detectUserPersona(text) {
+  const lower = text.toLowerCase();
+  if (/\bice\b/.test(lower) && !/\bcira\b/.test(lower)) return 'ice';
+  if (/\bcira\b/.test(lower) && !/\bice\b/.test(lower)) return 'cira';
+  return null;
+}
+
+let chatLoading = false;
+
+async function sendChatMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text || chatLoading) return;
+  input.value = '';
+
+  const explicit = detectUserPersona(text);
+  if (explicit) chatPersona = explicit;
+
+  appendUserMessage(text);
+  conversationHistory.push({ role: 'user', content: text });
+
+  chatLoading = true;
+  appendTyping(chatPersona);
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 600,
+        system: SYSTEM_PROMPT,
+        messages: conversationHistory,
+      })
+    });
+
+    const data = await response.json();
+    const reply = data.content?.map(b => b.text || '').join('') || 'I apologise — there was a connection issue. Please call +44 151 440 3843 for immediate assistance.';
+
+    const respondingPersona = detectPersona(reply);
+    chatPersona = respondingPersona;
+
+    document.getElementById('typing-indicator')?.remove();
+    appendChatMessage(respondingPersona, reply);
+    conversationHistory.push({ role: 'assistant', content: reply });
+
+  } catch (err) {
+    document.getElementById('typing-indicator')?.remove();
+    appendChatMessage(chatPersona, 'I apologise — there was a connection issue. For immediate technical assistance, please call our engineering line: +44 151 440 3843.\n\n— ' + (chatPersona === 'ice' ? 'ICE' : 'CIRA'));
+  } finally {
+    chatLoading = false;
+    input.focus();
+  }
+}
+
+// Init
+updateProgress();
+</script>
+
+</body>
+</html>
