@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact ANP Marine & Industrial | 24/7 Emergency Engineering Support</title>
+<meta name="description" content="24/7 emergency marine engineering support line for breakdown and AOG callout. Separate enquiry routes for planned maintenance, RFQ and spare parts. Technical engineers review all urgent requests.">
+<link rel="canonical" href="https://www.anpmarine.co.uk/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c1e35;--navy2:#112847;--navy3:#1a3a5c;
+  --teal:#0d8f7e;--teal-light:#12b09c;
+  --accent:#f5a623;--accent2:#e8941a;
+  --red:#c0392b;--red2:#a93226;
+  --off-white:#f7f9fc;--light:#edf1f7;--mid:#d5dce8;
+  --muted:#6b7c93;--text:#1c2b3a;--text2:#2e4057;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+.icon-sm{width:14px;height:14px}
+.icon-md{width:18px;height:18px}
+.icon-lg{width:22px;height:22px}
+.container{max-width:1180px;margin:0 auto;padding:0 2rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:12px 24px;border-radius:4px;cursor:pointer;border:none;text-decoration:none;letter-spacing:0.3px;transition:all .18s;white-space:nowrap}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-light)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red2)}
+.btn-accent{background:var(--accent);color:var(--navy)}.btn-accent:hover{background:var(--accent2)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}.btn-outline:hover{background:rgba(255,255,255,.08)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+.btn-white{background:#fff;color:var(--red);font-weight:700}.btn-white:hover{background:var(--light)}
+
+/* ── ANN BAR ── */
+.ann-bar{background:var(--red);padding:9px 0;text-align:center}
+.ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;overflow:hidden}
+.ann-bar span{color:#fff;font-size:13px;font-weight:500;white-space:nowrap}
+.ann-bar strong{font-weight:700}
+.ann-sep{color:rgba(255,255,255,.4)}
+.ann-pulse{display:inline-block;width:8px;height:8px;background:#fff;border-radius:50%;animation:blink 1.5s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── HEADER ── */
+header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo-wrap{display:flex;align-items:center;text-decoration:none}
+.logo-img{height:60px;width:auto;mix-blend-mode:screen}
+nav{display:flex;align-items:center}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;padding:0 16px;height:70px;transition:color .15s;border:none;background:transparent;border-bottom:3px solid transparent}
+.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--teal-light)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:6px;min-width:220px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:100}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 18px;font-size:13px;color:rgba(255,255,255,.7);transition:all .12s}
+.dropdown a:hover{color:#fff;background:rgba(255,255,255,.05);padding-left:22px}
+.dropdown-divider{border-top:1px solid rgba(255,255,255,.07);margin:6px 0}
+.header-cta{display:flex;align-items:center;gap:10px;margin-left:1rem}
+.phone-link{display:flex;align-items:center;gap:6px;color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.07);padding:8px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
+.phone-link:hover{background:rgba(255,255,255,.12)}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.mob-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+
+/* ── EMERGENCY BANNER ── */
+.emerg-banner{background:var(--red);padding:2.5rem 0}
+.emerg-banner-inner{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.eb-left{}
+.eb-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.eb-label .ann-pulse{background:rgba(255,255,255,.8)}
+.eb-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:.5rem}
+.eb-sub{font-size:14px;color:rgba(255,255,255,.7);line-height:1.55;max-width:560px}
+.eb-sub strong{color:#fff}
+.eb-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0}
+.eb-phone{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;color:#fff;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.eb-phone .icon{color:rgba(255,255,255,.7)}
+.eb-hours{font-size:12px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.5px;text-align:right}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--navy);padding:3.5rem 0 0;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.5;pointer-events:none}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(13,143,126,.1) 0%,transparent 70%);pointer-events:none}
+.page-hero-content{position:relative;z-index:2;padding-bottom:3rem}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
+.breadcrumb a{font-size:12px;color:rgba(255,255,255,.4);transition:color .12s}
+.breadcrumb a:hover{color:rgba(255,255,255,.75)}
+.breadcrumb span{font-size:12px;color:rgba(255,255,255,.2)}
+.page-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.75rem}
+.page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1rem;max-width:640px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.65;max-width:560px}
+.page-wave{margin-top:-1px}
+
+/* ── ENQUIRY TYPE SELECTOR ── */
+.enquiry-select-section{padding:3rem 0 0}
+.enquiry-select-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem}
+.enquiry-types{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem}
+.eq-card{border-radius:10px;padding:1.5rem;border:2px solid var(--mid);background:#fff;cursor:pointer;transition:all .2s;position:relative}
+.eq-card:hover{border-color:var(--teal);box-shadow:0 4px 20px rgba(13,143,126,.1)}
+.eq-card.active{border-color:var(--teal);background:rgba(13,143,126,.04);box-shadow:0 4px 20px rgba(13,143,126,.1)}
+.eq-card.active-red{border-color:var(--red);background:rgba(192,57,43,.03);box-shadow:0 4px 20px rgba(192,57,43,.08)}
+.eq-card-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:.875rem}
+.eq-icon{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.eq-icon.red{background:rgba(192,57,43,.1);color:var(--red)}
+.eq-icon.teal{background:rgba(13,143,126,.1);color:var(--teal)}
+.eq-card-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--navy);line-height:1.1}
+.eq-card-subtitle{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.eq-card.active-red .eq-card-subtitle{color:var(--red)}
+.eq-card:not(.active-red) .eq-card-subtitle{color:var(--teal)}
+.eq-card-desc{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:1rem}
+.eq-response-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.3px}
+.eq-response-tag.urgent{background:rgba(192,57,43,.1);color:var(--red)}
+.eq-response-tag.standard{background:rgba(13,143,126,.1);color:var(--teal)}
+.eq-select-indicator{position:absolute;top:1rem;right:1rem;width:20px;height:20px;border-radius:50%;border:2px solid var(--mid);transition:all .2s;display:flex;align-items:center;justify-content:center}
+.eq-card.active .eq-select-indicator{background:var(--teal);border-color:var(--teal)}
+.eq-card.active-red .eq-select-indicator{background:var(--red);border-color:var(--red)}
+.eq-select-indicator .icon{width:10px;height:10px;color:#fff;opacity:0;transition:opacity .2s}
+.eq-card.active .eq-select-indicator .icon,.eq-card.active-red .eq-select-indicator .icon{opacity:1}
+
+/* ── MAIN LAYOUT ── */
+.contact-layout{display:grid;grid-template-columns:1fr 360px;gap:3rem;padding-bottom:5rem}
+
+/* ── FORM ── */
+.form-section{}
+.form-context{background:#fff;border:1px solid var(--mid);border-radius:10px;padding:1.5rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:12px}
+.form-context-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-context.emergency .form-context-icon{background:rgba(192,57,43,.1);color:var(--red)}
+.form-context.planned .form-context-icon{background:rgba(13,143,126,.1);color:var(--teal)}
+.form-context-body{}
+.form-context-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.form-context-note{font-size:13px;color:var(--muted);line-height:1.5}
+.form-context-note strong{color:var(--text);font-weight:600}
+
+.contact-form{background:#fff;border:1px solid var(--mid);border-radius:12px;padding:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:700;color:var(--text2);letter-spacing:.3px}
+.form-label .req{color:var(--red);margin-left:2px}
+.form-input,.form-select,.form-textarea{font-family:'Barlow',sans-serif;font-size:14px;color:var(--text);background:#fff;border:1.5px solid var(--mid);border-radius:6px;padding:10px 14px;outline:none;transition:border-color .15s;width:100%}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--teal)}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.55}
+.form-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7c93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-hint{font-size:11px;color:var(--muted);margin-top:2px}
+.form-divider{grid-column:1/-1;border-top:1px solid var(--light);margin:.25rem 0}
+
+.engineer-note{grid-column:1/-1;background:rgba(13,143,126,.06);border:1px solid rgba(13,143,126,.2);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:10px}
+.engineer-note.urgent-note{background:rgba(192,57,43,.05);border-color:rgba(192,57,43,.2)}
+.en-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.engineer-note .en-icon{background:rgba(13,143,126,.12);color:var(--teal)}
+.engineer-note.urgent-note .en-icon{background:rgba(192,57,43,.1);color:var(--red)}
+.en-text{font-size:13px;color:var(--text2);line-height:1.55}
+.en-text strong{color:var(--navy);font-weight:700;display:block;margin-bottom:2px}
+
+.form-submit-row{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.form-submit-note{font-size:12px;color:var(--muted);line-height:1.5;flex:1}
+.form-submit-note strong{color:var(--text);font-weight:600}
+.btn-submit{font-size:15px;padding:14px 32px}
+.btn-submit-red{background:var(--red);color:#fff}.btn-submit-red:hover{background:var(--red2)}
+.btn-submit-teal{background:var(--teal);color:#fff}.btn-submit-teal:hover{background:var(--teal-light)}
+
+/* ── SIDEBAR ── */
+.contact-sidebar{}
+.sidebar-block{background:#fff;border:1px solid var(--mid);border-radius:10px;overflow:hidden;margin-bottom:1.25rem}
+.sb-header{padding:1rem 1.25rem;border-bottom:1px solid var(--light);display:flex;align-items:center;gap:8px}
+.sb-header-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.sb-body{padding:1.25rem}
+
+.contact-method{display:flex;align-items:flex-start;gap:12px;padding:.875rem 0;border-bottom:1px solid var(--light)}
+.contact-method:last-child{border-bottom:none;padding-bottom:0}
+.cm-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cm-icon.red{background:rgba(192,57,43,.1);color:var(--red)}
+.cm-icon.teal{background:rgba(13,143,126,.1);color:var(--teal)}
+.cm-icon.navy{background:rgba(12,30,53,.08);color:var(--navy)}
+.cm-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.cm-value{font-size:14px;font-weight:700;color:var(--navy)}
+.cm-value a{color:var(--navy);transition:color .12s}
+.cm-value a:hover{color:var(--teal)}
+.cm-sub{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4}
+
+.response-table{width:100%;border-collapse:collapse}
+.response-table tr{border-bottom:1px solid var(--light)}
+.response-table tr:last-child{border-bottom:none}
+.response-table td{padding:.625rem 0;font-size:12.5px;vertical-align:top}
+.response-table td:first-child{color:var(--muted);padding-right:.75rem;white-space:nowrap}
+.response-table td:last-child{font-weight:700;color:var(--navy);text-align:right}
+.resp-red{color:var(--red) !important}
+.resp-teal{color:var(--teal) !important}
+
+.sb-address{font-size:13px;color:var(--muted);line-height:1.7}
+.sb-address strong{display:block;color:var(--navy);font-weight:700;margin-bottom:.25rem}
+
+/* ── AOG BLOCK ── */
+.aog-block{background:var(--red);border-radius:10px;padding:1.5rem;margin-bottom:1.25rem}
+.aog-badge{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:6px;margin-bottom:.625rem}
+.aog-badge .ann-pulse{background:rgba(255,255,255,.8)}
+.aog-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:.375rem}
+.aog-sub{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.5;margin-bottom:1rem}
+.aog-phone{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.875rem}
+.aog-actions{display:flex;flex-direction:column;gap:8px}
+.aog-note{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4;margin-top:.5rem}
+
+/* ── SUCCESS STATE ── */
+.form-success{display:none;text-align:center;padding:3rem 2rem}
+.form-success.show{display:block}
+.success-icon{width:64px;height:64px;background:rgba(13,143,126,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--teal)}
+.success-icon .icon{width:32px;height:32px}
+.success-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--navy);margin-bottom:.5rem}
+.success-sub{font-size:14px;color:var(--muted);line-height:1.6;max-width:380px;margin:0 auto}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:4rem 0 0}
+.footer-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem}
+.footer-addr{font-size:12px;color:rgba(255,255,255,.3);margin-top:.75rem;line-height:1.6}
+.footer-col h5{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);padding:4px 0;transition:color .12s}
+.footer-col a:hover{color:var(--teal-light)}
+.footer-social{display:flex;gap:8px;margin-top:.5rem}
+.social-btn{width:34px;height:34px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;color:rgba(255,255,255,.5);font-size:13px;font-weight:700}
+.social-btn:hover{background:rgba(13,143,126,.2);border-color:rgba(13,143,126,.4);color:var(--teal-light)}
+.footer-portal{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--accent);font-size:12px;font-weight:600;padding:8px 14px;border-radius:6px;margin-top:1rem;transition:all .15s}
+.footer-portal:hover{background:rgba(245,166,35,.18)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,.25);transition:color .12s}
+.footer-legal a:hover{color:rgba(255,255,255,.55)}
+
+/* ── MOBILE NAV ── */
+.mob-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;padding:1.5rem;overflow-y:auto;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.mob-close{background:none;border:none;color:#fff;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+.mob-nav a{display:block;padding:14px 0;font-size:18px;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07);font-weight:500}
+.mob-nav-cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:10px}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.fade-up.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{display:none}.mob-toggle{display:flex}
+  .header-cta .phone-link,.header-cta .btn-accent{display:none}
+  .contact-layout{grid-template-columns:1fr}
+  .contact-sidebar{order:-1}
+  .enquiry-types{grid-template-columns:1fr}
+  .emerg-banner-inner{grid-template-columns:1fr;gap:1.5rem}
+  .eb-right{align-items:flex-start}
+  .eb-hours{text-align:left}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{padding:0 1rem}
+  .header-inner{height:60px}
+  .logo-img{height:48px}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full{grid-column:1}
+  .form-submit-row{flex-direction:column;align-items:stretch}
+  .btn-submit{width:100%;justify-content:center}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .ann-bar span:last-child,.ann-bar .ann-sep:last-of-type{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-inner">
+    <span><span class="ann-pulse" aria-hidden="true"></span></span>
+    <span><strong>24/7 Global Emergency Response</strong></span>
+    <span class="ann-sep">|</span>
+    <span>Call now: <strong>+44 151 440 3843</strong></span>
+    <span class="ann-sep">|</span>
+    <span>Engineers dispatched worldwide within hours</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="ANP_Web_Logo.png" style="mix-blend-mode:screen" alt="ANP Marine & Industrial" class="logo-img">
+    </a>
+    <nav aria-label="Main navigation">
+      <div class="nav-item">
+        <a class="nav-link" href="services.html">Services
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="services.html#refrigeration">Marine Refrigeration</a>
+          <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+          <a href="services.html#compressed-air">Compressed Air Systems</a>
+          <a href="services.html#fire-safety">Fire &amp; Safety Systems</a>
+          <div class="dropdown-divider"></div>
+          <a href="services.html#emergency">Emergency Callout</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="spares.html">Spares
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="spares.html#refrigeration">Refrigeration Spares</a>
+          <a href="spares.html#hvac">HVAC &amp; AC Spares</a>
+          <a href="spares.html#compressed-air">Compressed Air Spares</a>
+          <div class="dropdown-divider"></div>
+          <a href="spares.html">Search All Parts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="markets.html">Markets</a></div>
+      <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
+      <div class="nav-item"><a class="nav-link" href="ice.html">ICE</a></div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+441514403843" class="phone-link">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +44 151 440 3843
+      </a>
+      <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-accent" style="font-size:13px;padding:9px 16px;">ANP Online
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+    <button class="mob-toggle" id="mob-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mob-nav" role="dialog" aria-label="Mobile navigation">
+  <div class="mob-nav-top">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff">ANP Marine &amp; Industrial</span>
+    <button class="mob-close" id="mob-close" aria-label="Close menu">
+      <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="spares.html">Spares</a>
+  <a href="markets.html">Markets</a>
+  <a href="resources.html">Resources</a>
+  <a href="ice.html">ICE AI Assistant</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-nav-cta">
+    <a href="tel:+441514403843" class="btn btn-red">Emergency: +44 151 440 3843</a>
+    <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-accent">ANP Online Portal</a>
+  </div>
+</div>
+
+<!-- EMERGENCY BANNER -->
+<div class="emerg-banner" id="emergency">
+  <div class="container emerg-banner-inner">
+    <div class="eb-left">
+      <div class="eb-label"><span class="ann-pulse" aria-hidden="true"></span> 24 Hours / 7 Days / 365 Days</div>
+      <div class="eb-title">Vessel Breakdown or AOG Situation?<br>Call Our Engineering Line Directly.</div>
+      <p class="eb-sub">This line is answered by a <strong>qualified marine engineer</strong> — not a call centre or answering service. Average time from first call to engineer mobilised: <strong>under 2 hours</strong>. Worldwide port coverage, 24/7.</p>
+    </div>
+    <div class="eb-right">
+      <a href="tel:+441514403843" class="eb-phone">
+        <svg class="icon" style="width:28px;height:28px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +44 151 440 3843
+      </a>
+      <div class="eb-hours">Available 24 hours, 7 days a week<br>Including bank holidays and weekends</div>
+      <a href="tel:+441514403843" class="btn btn-white">Call Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,.6)">Contact</span>
+    </div>
+    <div class="page-label">Get in Touch</div>
+    <h1>Engineering Support, Parts Enquiries &amp; Emergency Response</h1>
+    <p>Select the type of support you need below. Urgent breakdown and AOG requests are routed directly to our on-call engineering team — not passed to sales. All other enquiries are acknowledged within 4 business hours.</p>
+  </div>
+  <div class="page-wave">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:50px;display:block;width:100%" aria-hidden="true">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,50 L0,50 Z" fill="#f7f9fc"/>
+    </svg>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- ENQUIRY TYPE SELECTOR -->
+  <div class="enquiry-select-section fade-up">
+    <div class="enquiry-select-label">Select enquiry type</div>
+    <div class="enquiry-types" role="radiogroup" aria-label="Enquiry type">
+      <div class="eq-card active-red" id="eq-emergency" onclick="selectEnquiry('emergency')" role="radio" aria-checked="true" tabindex="0">
+        <div class="eq-select-indicator">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="eq-card-header">
+          <div class="eq-icon red">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <div class="eq-card-title">Breakdown / AOG Support</div>
+            <div class="eq-card-subtitle">Emergency &amp; Urgent Response</div>
+          </div>
+        </div>
+        <p class="eq-card-desc">Vessel breakdown, system failure, emergency callout request, or any situation where your asset is at risk. Includes compressor failure, refrigerant loss, HVAC outage and compressed air system failure.</p>
+        <span class="eq-response-tag urgent">
+          <svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Response within 2 hours — engineering team
+        </span>
+      </div>
+      <div class="eq-card" id="eq-planned" onclick="selectEnquiry('planned')" role="radio" aria-checked="false" tabindex="0">
+        <div class="eq-select-indicator">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="eq-card-header">
+          <div class="eq-icon teal">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div>
+            <div class="eq-card-title">Planned Maintenance / RFQ</div>
+            <div class="eq-card-subtitle">Scheduled Work &amp; Parts</div>
+          </div>
+        </div>
+        <p class="eq-card-desc">Scheduled maintenance, drydock scopes, refrigerant conversion projects, spare parts enquiries, quotation requests and general technical or commercial enquiries.</p>
+        <span class="eq-response-tag standard">
+          <svg class="icon" style="width:11px;height:11px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Acknowledged within 4 business hours
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-layout fade-up" style="transition-delay:.1s">
+
+    <!-- FORM -->
+    <div class="form-section">
+
+      <!-- Context note (changes with selection) -->
+      <div class="form-context emergency" id="form-context-emergency">
+        <div class="form-context-icon">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="form-context-body">
+          <div class="form-context-title">Breakdown / AOG — Engineering Response</div>
+          <div class="form-context-note">This form routes directly to our <strong>on-call engineering team</strong>, not to sales. If your situation is critical and you need an immediate response, <strong>call +44 151 440 3843 now</strong>. For non-critical breakdowns, complete the form and an engineer will contact you within 2 hours.</div>
+        </div>
+      </div>
+      <div class="form-context planned" id="form-context-planned" style="display:none">
+        <div class="form-context-icon">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="form-context-body">
+          <div class="form-context-title">Planned Maintenance / RFQ</div>
+          <div class="form-context-note">Our technical team reviews all planned maintenance and parts enquiries. <strong>RFQ responses include engineering input</strong> — not just pricing — so you receive the correct specification for your application. Acknowledgement within <strong>4 business hours</strong>.</div>
+        </div>
+      </div>
+
+      <div class="contact-form" id="contact-form">
+        <div class="form-success" id="form-success">
+          <div class="success-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="success-title">Enquiry Submitted</div>
+          <p class="success-sub" id="success-message">Your enquiry has been received and routed to the appropriate team. You will hear from us shortly.</p>
+        </div>
+        <div id="form-fields">
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label class="form-label" for="f-name">Full Name <span class="req">*</span></label>
+              <input class="form-input" type="text" id="f-name" name="name" required placeholder="Chief Engineer / Superintendent">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-company">Company / Operator <span class="req">*</span></label>
+              <input class="form-input" type="text" id="f-company" name="company" required placeholder="Vessel operator or management company">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">Email Address <span class="req">*</span></label>
+              <input class="form-input" type="email" id="f-email" name="email" required placeholder="your@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-phone">Direct Phone / Satellite <span class="req">*</span></label>
+              <input class="form-input" type="tel" id="f-phone" name="phone" required placeholder="+44 or satellite number">
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-vessel">Vessel Name</label>
+              <input class="form-input" type="text" id="f-vessel" name="vessel" placeholder="MV Example / FPSO Name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-location">Vessel Location / Port</label>
+              <input class="form-input" type="text" id="f-location" name="location" placeholder="Current port or position">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-vesseltype">Vessel / Asset Type</label>
+              <select class="form-select" id="f-vesseltype" name="vesseltype">
+                <option value="">Select type...</option>
+                <option>FPSO / Offshore Platform</option>
+                <option>Crude / Product Tanker</option>
+                <option>LNG / LPG Carrier</option>
+                <option>Bulk Carrier</option>
+                <option>Container Vessel</option>
+                <option>Platform Supply Vessel (PSV)</option>
+                <option>Offshore Wind Installation Vessel</option>
+                <option>Cruise / Ferry</option>
+                <option>Superyacht</option>
+                <option>Naval / Defence</option>
+                <option>Research Vessel</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-system">System / Equipment Affected</label>
+              <select class="form-select" id="f-system" name="system">
+                <option value="">Select system...</option>
+                <option>Marine Refrigeration / Provision Plant</option>
+                <option>Cargo Refrigeration</option>
+                <option>HVAC / Air Conditioning</option>
+                <option>Compressed Air / Starting Air</option>
+                <option>Pump System / Ballast</option>
+                <option>Valve / Pipeline</option>
+                <option>Fire &amp; Gas Detection</option>
+                <option>CO₂ Suppression System</option>
+                <option>Spare Parts Only</option>
+                <option>Other / Multiple Systems</option>
+              </select>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-group full">
+              <label class="form-label" for="f-message">Description of Requirement <span class="req">*</span></label>
+              <textarea class="form-textarea" id="f-message" name="message" required placeholder="Please describe the fault, scope of work, or parts required. Include any relevant system details, refrigerant type, make/model, or urgency context."></textarea>
+              <span class="form-hint">The more detail you provide, the faster our engineers can prepare a solution or quotation.</span>
+            </div>
+
+            <div class="engineer-note" id="engineer-note-emergency">
+              <div class="en-icon">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div class="en-text">
+                <strong>Reviewed by a qualified marine engineer — not sales</strong>
+                Breakdown and AOG submissions go directly to our on-call engineering team. An engineer will contact you within 2 hours to assess the situation and confirm mobilisation or remote diagnosis.
+              </div>
+            </div>
+            <div class="engineer-note" id="engineer-note-planned" style="display:none">
+              <div class="en-icon">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div class="en-text">
+                <strong>Technical review included with every RFQ</strong>
+                Our engineers review all planned maintenance and parts enquiries before a quotation is issued — ensuring you receive the correct specification, not just a price. Acknowledgement within 4 business hours.
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <div class="form-submit-note" id="submit-note-emergency">
+                <strong>Submitting as: Breakdown / AOG</strong><br>
+                Your request will be routed to the on-call engineering team. Expected response: within 2 hours. For immediate assistance, call <strong>+44 151 440 3843</strong>.
+              </div>
+              <div class="form-submit-note" id="submit-note-planned" style="display:none">
+                <strong>Submitting as: Planned Maintenance / RFQ</strong><br>
+                Your enquiry will be reviewed by our technical team. Acknowledgement within 4 business hours during Mon–Fri 08:00–18:00 GMT.
+              </div>
+              <button type="button" class="btn btn-submit btn-submit-red" id="submit-btn" onclick="submitForm()">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span id="submit-btn-label">Submit Breakdown Request</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="contact-sidebar">
+
+      <!-- AOG block -->
+      <div class="aog-block">
+        <div class="aog-badge"><span class="ann-pulse" aria-hidden="true"></span> Emergency Line</div>
+        <div class="aog-title">24/7 Engineering Response</div>
+        <p class="aog-sub">Answered by a qualified marine engineer. Not a call centre. Not an answering machine.</p>
+        <a href="tel:+441514403843" class="aog-phone">
+          <svg class="icon" style="width:22px;height:22px;color:rgba(255,255,255,.7)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +44 151 440 3843
+        </a>
+        <div class="aog-actions">
+          <a href="tel:+441514403843" class="btn btn-white">Call Now</a>
+        </div>
+        <p class="aog-note">Available 24 hours, 7 days a week, 365 days a year — including bank holidays. Worldwide port coverage.</p>
+      </div>
+
+      <!-- Response times -->
+      <div class="sidebar-block">
+        <div class="sb-header">
+          <svg class="icon icon-sm" style="color:var(--muted)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="sb-header-title">Response Times</span>
+        </div>
+        <div class="sb-body">
+          <table class="response-table">
+            <tbody>
+              <tr>
+                <td>Breakdown / AOG call</td>
+                <td class="resp-red">Immediate</td>
+              </tr>
+              <tr>
+                <td>AOG form submission</td>
+                <td class="resp-red">Within 2 hrs</td>
+              </tr>
+              <tr>
+                <td>Engineer mobilisation</td>
+                <td class="resp-red">Within 24 hrs</td>
+              </tr>
+              <tr>
+                <td>Parts enquiry / RFQ</td>
+                <td class="resp-teal">Within 4 hrs</td>
+              </tr>
+              <tr>
+                <td>Planned maintenance</td>
+                <td class="resp-teal">Same day</td>
+              </tr>
+              <tr>
+                <td>General enquiry</td>
+                <td style="font-weight:700;color:var(--navy);text-align:right">Next business day</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:11px;color:var(--muted);margin-top:.875rem;line-height:1.5">Business hours: Monday to Friday, 08:00–18:00 GMT. Emergency line operates 24/7.</p>
+        </div>
+      </div>
+
+      <!-- Direct contacts -->
+      <div class="sidebar-block">
+        <div class="sb-header">
+          <svg class="icon icon-sm" style="color:var(--muted)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          <span class="sb-header-title">Direct Contacts</span>
+        </div>
+        <div class="sb-body" style="padding-top:.5rem;padding-bottom:.5rem">
+          <div class="contact-method">
+            <div class="cm-icon red">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <div class="cm-label">24/7 Emergency</div>
+              <div class="cm-value"><a href="tel:+441514403843">+44 151 440 3843</a></div>
+              <div class="cm-sub">Engineering team — answered directly</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon teal">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="cm-label">Parts &amp; Commercial</div>
+              <div class="cm-value"><a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a></div>
+              <div class="cm-sub">Spares, RFQs and general enquiries</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon teal">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <div class="cm-label">Technical AI — 24/7</div>
+              <div class="cm-value"><a href="ice.html">ICE &amp; CIRA Assistant</a></div>
+              <div class="cm-sub">Instant fault diagnosis and parts support</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon navy">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="cm-label">Office Address</div>
+              <div class="cm-value" style="font-size:13px;font-weight:400;line-height:1.5;color:var(--text2)">Cholmondley House, Dee Hills Park<br>Chester, CH3 5AR, United Kingdom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANP Online -->
+      <div class="sidebar-block">
+        <div class="sb-header">
+          <svg class="icon icon-sm" style="color:var(--muted)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          <span class="sb-header-title">Customer Portal</span>
+        </div>
+        <div class="sb-body">
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:1rem">Track orders, access service reports, manage parts requests and communicate directly with your account engineer via the ANP Online portal.</p>
+          <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-navy" style="width:100%;justify-content:center;font-size:13px">
+            Access ANP Online
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" style="display:inline-flex;margin-bottom:.5rem">
+          <img src="ANP_Web_Logo.png" alt="ANP Marine & Industrial" style="mix-blend-mode:screen;height:60px;width:auto">
+        </a>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;margin-top:.85rem;max-width:240px">Marine HVAC, refrigeration and compressed air specialists. UK-based, worldwide reach. 24/7 emergency cover.</p>
+        <div class="footer-addr">ANP Marine &amp; Industrial Ltd<br>Cholmondley House, Dee Hills Park<br>Chester, CH3 5AR, United Kingdom</div>
+        <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="footer-portal">
+          ANP Online — Customer Portal
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <div class="footer-social" style="margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61564650136333" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/company/104927595/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="https://x.com/ANPMarine" target="_blank" rel="noopener" class="social-btn" aria-label="X / Twitter">X</a>
+          <a href="https://www.instagram.com/anpmarine/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html#refrigeration">Marine Refrigeration</a>
+        <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+        <a href="services.html#compressed-air">Compressed Air</a>
+        <a href="services.html#fire-safety">Fire &amp; Safety Systems</a>
+        <a href="services.html#emergency">Emergency Response</a>
+        <a href="spares.html">Spares Supply</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About ANP</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="markets.html">Markets</a>
+        <a href="resources.html">Resources &amp; Guides</a>
+        <a href="ice.html">ICE &amp; CIRA</a>
+        <a href="news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+441514403843">+44 151 440 3843</a>
+        <a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a>
+        <a href="contact.html#emergency">Emergency Callout</a>
+        <a href="contact.html">Request a Quote</a>
+        <a href="contact.html#parts">Parts Enquiry</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ANP Marine &amp; Industrial Ltd. Company No. 15925711. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── ENQUIRY TYPE SWITCHING ──
+let currentEnquiry = 'emergency';
+
+function selectEnquiry(type) {
+  currentEnquiry = type;
+
+  // Update cards
+  document.getElementById('eq-emergency').className = 'eq-card' + (type === 'emergency' ? ' active-red' : '');
+  document.getElementById('eq-planned').className = 'eq-card' + (type === 'planned' ? ' active' : '');
+  document.getElementById('eq-emergency').setAttribute('aria-checked', type === 'emergency');
+  document.getElementById('eq-planned').setAttribute('aria-checked', type === 'planned');
+
+  // Toggle context notes
+  document.getElementById('form-context-emergency').style.display = type === 'emergency' ? 'flex' : 'none';
+  document.getElementById('form-context-planned').style.display = type === 'planned' ? 'flex' : 'none';
+
+  // Toggle engineer notes
+  document.getElementById('engineer-note-emergency').style.display = type === 'emergency' ? 'flex' : 'none';
+  document.getElementById('engineer-note-planned').style.display = type === 'planned' ? 'flex' : 'none';
+
+  // Toggle submit notes
+  document.getElementById('submit-note-emergency').style.display = type === 'emergency' ? 'block' : 'none';
+  document.getElementById('submit-note-planned').style.display = type === 'planned' ? 'block' : 'none';
+
+  // Update submit button
+  const btn = document.getElementById('submit-btn');
+  const label = document.getElementById('submit-btn-label');
+  if (type === 'emergency') {
+    btn.className = 'btn btn-submit btn-submit-red';
+    label.textContent = 'Submit Breakdown Request';
+  } else {
+    btn.className = 'btn btn-submit btn-submit-teal';
+    label.textContent = 'Submit Enquiry';
+  }
+}
+
+// Keyboard accessibility for enquiry cards
+document.querySelectorAll('.eq-card').forEach(card => {
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+
+// ── FORM SUBMISSION ──
+function submitForm() {
+  const required = document.querySelectorAll('#form-fields [required]');
+  let valid = true;
+
+  required.forEach(field => {
+    field.style.borderColor = '';
+    if (!field.value.trim()) {
+      field.style.borderColor = 'var(--red)';
+      valid = false;
+    }
+  });
+
+  if (!valid) {
+    const firstInvalid = document.querySelector('#form-fields [required][style*="red"]');
+    if (firstInvalid) firstInvalid.focus();
+    return;
+  }
+
+  // Show success state
+  document.getElementById('form-fields').style.display = 'none';
+  const success = document.getElementById('form-success');
+  success.classList.add('show');
+
+  const successMsg = document.getElementById('success-message');
+  if (currentEnquiry === 'emergency') {
+    successMsg.textContent = 'Your breakdown request has been received and routed directly to our on-call engineering team. An engineer will contact you within 2 hours. If you need immediate assistance, call +44 151 440 3843 now.';
+  } else {
+    successMsg.textContent = 'Your enquiry has been received and will be reviewed by our technical team. You will receive an acknowledgement within 4 business hours during Mon–Fri 08:00–18:00 GMT.';
+  }
+}
+
+// ── MOBILE NAV ──
+const tog = document.getElementById('mob-toggle');
+const mobNav = document.getElementById('mob-nav');
+const cls = document.getElementById('mob-close');
+if (tog) tog.addEventListener('click', () => { mobNav.classList.add('open'); tog.setAttribute('aria-expanded','true'); });
+if (cls) cls.addEventListener('click', () => { mobNav.classList.remove('open'); tog.setAttribute('aria-expanded','false'); });
+
+// ── URL HASH ROUTING ──
+// If page loaded with #parts, switch to planned
+if (window.location.hash === '#parts') selectEnquiry('planned');
+
+// ── SCROLL ANIMATIONS ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
