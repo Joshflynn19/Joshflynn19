@@ -1,5 +1,5 @@
 # config
-name = "newsletters"
+name = "josh-anp-web"
 main = "src/worker.js"
 workers_dev = true
 compatibility_date = "2000-01-01"
