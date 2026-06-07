@@ -234,6 +234,25 @@ footer{background:var(--navy);padding:4rem 0 0}
 .mob-close{background:none;border:none;color:#fff;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
 .mob-nav a{display:block;padding:14px 0;font-size:18px;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07);font-weight:500}
 .mob-nav-cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:10px}
+.mob-cta-emergency,.mob-cta-portal{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:10px;text-decoration:none;transition:all .2s}
+.mob-cta-emergency{background:rgba(192,57,43,.18);border:1px solid rgba(220,80,80,.32)}
+.mob-cta-emergency:hover{background:rgba(192,57,43,.28);border-color:rgba(220,80,80,.55)}
+.mob-cta-portal{background:rgba(13,110,140,.18);border:1px solid rgba(45,155,195,.28)}
+.mob-cta-portal:hover{background:rgba(13,110,140,.3);border-color:rgba(45,155,195,.55)}
+.mob-cta-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mob-cta-emergency .mob-cta-icon{background:rgba(220,70,70,.2);color:#f87171}
+.mob-cta-portal .mob-cta-icon{background:rgba(45,155,195,.18);color:#60c4e8}
+.mob-cta-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.mob-cta-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.mob-cta-emergency .mob-cta-label{color:rgba(252,165,165,.65)}
+.mob-cta-portal .mob-cta-label{color:rgba(103,196,232,.6)}
+.mob-cta-value{font-size:14px;font-weight:600;margin-top:3px;line-height:1}
+.mob-cta-emergency .mob-cta-value{color:#fca5a5}
+.mob-cta-portal .mob-cta-value{color:#a5d8f0}
+.mob-cta-pulse{width:8px;height:8px;border-radius:50%;background:#f87171;flex-shrink:0;animation:mob-pulse 1.8s ease-in-out infinite}
+@keyframes mob-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.mob-cta-arrow{color:rgba(103,196,232,.45);flex-shrink:0;transition:transform .15s,color .15s}
+.mob-cta-portal:hover .mob-cta-arrow{transform:translate(2px,-2px);color:rgba(103,196,232,.9)}
 
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
 .fade-up.visible{opacity:1;transform:none}
@@ -345,8 +364,26 @@ footer{background:var(--navy);padding:4rem 0 0}
   <a href="about.html">About Us</a>
   <a href="contact.html">Contact</a>
   <div class="mob-nav-cta">
-    <a href="tel:+441514403843" class="btn btn-red">Emergency: +44 151 440 3843</a>
-    <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-accent">ANP Online Portal</a>
+    <a href="tel:+441514403843" class="mob-cta-emergency">
+      <span class="mob-cta-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </span>
+      <span class="mob-cta-body">
+        <span class="mob-cta-label">24/7 Emergency</span>
+        <span class="mob-cta-value">+44 151 440 3843</span>
+      </span>
+      <span class="mob-cta-pulse" aria-hidden="true"></span>
+    </a>
+    <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="mob-cta-portal">
+      <span class="mob-cta-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </span>
+      <span class="mob-cta-body">
+        <span class="mob-cta-label">Customer Portal</span>
+        <span class="mob-cta-value">ANP Online</span>
+      </span>
+      <svg class="mob-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
   </div>
 </div>
 
