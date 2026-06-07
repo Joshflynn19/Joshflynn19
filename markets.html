@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markets | ANP Marine & Industrial — HVAC & Refrigeration for Every Vessel Type</title>
+<meta name="description" content="ANP Marine & Industrial serves commercial shipping, offshore & FPSO, North Sea platforms, cruise & ferry, superyachts, naval and renewables markets. UK-based engineers, worldwide deployment.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://www.anpmarine.co.uk/markets.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c1e35;--navy2:#112847;--navy3:#1a3a5c;
+  --teal:#0d8f7e;--teal-light:#12b09c;
+  --accent:#f5a623;--accent2:#e8941a;
+  --red:#c0392b;--red2:#a93226;
+  --off-white:#f7f9fc;--light:#edf1f7;--mid:#d5dce8;
+  --muted:#6b7c93;--text:#1c2b3a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+.icon-sm{width:14px;height:14px}
+.container{max-width:1180px;margin:0 auto;padding:0 2rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:12px 24px;border-radius:4px;cursor:pointer;border:none;text-decoration:none;transition:all .18s;white-space:nowrap}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-light)}
+.btn-accent{background:var(--accent);color:var(--navy)}.btn-accent:hover{background:var(--accent2)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}.btn-outline:hover{background:rgba(255,255,255,.08)}
+.btn-outline-navy{background:transparent;color:var(--navy);border:1.5px solid var(--mid);font-size:13px}.btn-outline-navy:hover{background:var(--light);border-color:var(--teal)}
+.section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--navy);line-height:1.05;margin-bottom:.75rem}
+
+/* ANN BAR */
+.ann-bar{background:var(--red);padding:9px 0;text-align:center}
+.ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;overflow:hidden}
+.ann-bar span{color:#fff;font-size:13px;font-weight:500;white-space:nowrap}
+.ann-bar strong{font-weight:700}
+.ann-sep{color:rgba(255,255,255,.4)}
+.ann-pulse{display:inline-block;width:8px;height:8px;background:#fff;border-radius:50%;animation:blink 1.5s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* HEADER */
+header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo-wrap{display:flex;align-items:center;text-decoration:none}
+.logo-img{height:60px;width:auto;mix-blend-mode:screen}
+nav{display:flex;align-items:center}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;padding:0 16px;height:70px;transition:color .15s;border:none;background:transparent;border-bottom:3px solid transparent}
+.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--teal-light)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:6px;min-width:220px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:100}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 18px;font-size:13px;color:rgba(255,255,255,.7);transition:all .12s}
+.dropdown a:hover{color:#fff;background:rgba(255,255,255,.05);padding-left:22px}
+.dropdown-divider{border-top:1px solid rgba(255,255,255,.07);margin:6px 0}
+.header-cta{display:flex;align-items:center;gap:10px;margin-left:1rem}
+.phone-link{display:flex;align-items:center;gap:6px;color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.07);padding:8px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
+.phone-link:hover{background:rgba(255,255,255,.12)}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.mob-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+
+/* PAGE HERO */
+.page-hero{background:var(--navy);padding:4rem 0 0;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.5;pointer-events:none}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(13,143,126,.1) 0%,transparent 70%);pointer-events:none}
+.page-hero-content{position:relative;z-index:2;padding-bottom:3rem}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
+.breadcrumb a{font-size:12px;color:rgba(255,255,255,.4)}.breadcrumb a:hover{color:rgba(255,255,255,.75)}
+.breadcrumb span{font-size:12px;color:rgba(255,255,255,.2)}
+.page-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.75rem}
+.page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1rem;max-width:740px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:620px;margin-bottom:2rem}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.hstat{text-align:left}
+.hstat-num{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:#fff;line-height:1}
+.hstat-label{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-top:2px}
+.page-wave{margin-top:-1px}
+
+/* MARKETS GRID */
+.markets-section{padding:5rem 0}
+.markets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+
+/* MARKET CARD */
+.market-card{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--mid);cursor:pointer;transition:all .22s;display:flex;flex-direction:column}
+.market-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.12);transform:translateY(-4px);border-color:rgba(13,143,126,.25)}
+.market-card:hover .mc-arrow{transform:translate(3px,-3px);color:var(--teal)}
+
+/* Card illustration panel */
+.mc-visual{height:180px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mc-visual svg.bg-pattern{position:absolute;inset:0;width:100%;height:100%}
+.mc-icon-wrap{position:relative;z-index:2;width:72px;height:72px;border-radius:18px;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
+.mc-icon-wrap svg{width:36px;height:36px;color:#fff}
+.mc-label-pill{position:absolute;bottom:14px;left:14px;z-index:3;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,0,0,.35);color:#fff;padding:4px 10px;border-radius:4px;backdrop-filter:blur(4px)}
+
+/* Photo backgrounds per market */
+.mc-visual{background-size:cover;background-position:center;background-repeat:no-repeat}
+.mc-visual::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45);pointer-events:none}
+.mc-visual .mc-icon-wrap,.mc-visual .mc-label-pill{z-index:3}
+.mc-visual.tanker{background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80');background-color:#0c1e35}
+.mc-visual.offshore{background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80');background-color:#0d3b4f}
+.mc-visual.northsea{background-image:url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80');background-color:#1a2d4a}
+.mc-visual.cruise{background-image:url('https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=800&q=80');background-color:#1c3a5e}
+.mc-visual.yacht{background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80');background-color:#0a2a4a}
+.mc-visual.naval{background-image:url('https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=800&q=80');background-color:#1a2030}
+.mc-visual.renewables{background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80');background-color:#0d3a2a}
+.mc-visual.research{background-image:url('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=800&q=80');background-color:#2a1a4a}
+
+/* Card body */
+.mc-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.mc-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--navy);margin-bottom:.5rem;line-height:1.1}
+.mc-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1rem;flex:1}
+.mc-services{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem}
+.mc-service-tag{font-size:11px;font-weight:600;color:var(--teal);background:rgba(13,143,126,.08);border:1px solid rgba(13,143,126,.15);padding:3px 9px;border-radius:4px}
+.mc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--light)}
+.mc-cta{font-size:13px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:5px}
+.mc-arrow{transition:transform .18s,color .18s;color:var(--muted)}
+
+/* FEATURED LARGE CARD (spans 2 cols) */
+.market-card.featured{grid-column:span 2}
+.market-card.featured .mc-visual{height:240px}
+.market-card.featured .mc-title{font-size:28px}
+.market-card.featured .mc-desc{font-size:14px}
+
+/* QUOTE SECTION */
+.quote-section{background:var(--navy2);padding:4rem 0}
+.quote-inner{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.quote-text{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:600;color:#fff;line-height:1.3;font-style:italic}
+.quote-text::before{content:'\201C';color:var(--teal-light);font-size:1.5em;line-height:0;vertical-align:-.3em;margin-right:.1em}
+.quote-text::after{content:'\201D';color:var(--teal-light);font-size:1.5em;line-height:0;vertical-align:-.3em;margin-left:.1em}
+.quote-source{font-size:13px;color:rgba(255,255,255,.4);margin-top:1rem}
+.quote-cta{flex-shrink:0;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+
+/* CTA STRIP */
+.cta-strip{background:var(--navy);padding:4rem 0;position:relative;overflow:hidden}
+.cta-strip-glow{position:absolute;bottom:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(13,143,126,.1) 0%,transparent 70%);pointer-events:none}
+.cta-strip-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.cta-strip-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;margin-bottom:.5rem}
+.cta-strip-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6;max-width:520px}
+.cta-strip-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-shrink:0}
+
+/* EMERG */
+.emerg-section{background:var(--red);padding:3.5rem 0}
+.emerg-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.emerg-text h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3.5vw,36px);font-weight:800;color:#fff;margin-bottom:.4rem}
+.emerg-text p{color:rgba(255,255,255,.75);font-size:15px}
+.emerg-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.emerg-phone{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:#fff}
+
+/* FOOTER */
+footer{background:var(--navy);padding:4rem 0 0}
+.footer-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem}
+.footer-addr{font-size:12px;color:rgba(255,255,255,.3);margin-top:.75rem;line-height:1.6}
+.footer-portal{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--accent);font-size:12px;font-weight:600;padding:8px 14px;border-radius:6px;margin-top:1rem;transition:all .15s}
+.footer-portal:hover{background:rgba(245,166,35,.18)}
+.footer-col h5{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);padding:4px 0;transition:color .12s}
+.footer-col a:hover{color:var(--teal-light)}
+.footer-social{display:flex;gap:8px;margin-top:.5rem}
+.social-btn{width:34px;height:34px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .15s;color:rgba(255,255,255,.5);font-size:13px;font-weight:700}
+.social-btn:hover{background:rgba(13,143,126,.2);border-color:rgba(13,143,126,.4);color:var(--teal-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,.25);transition:color .12s}
+.footer-legal a:hover{color:rgba(255,255,255,.55)}
+
+/* MOBILE NAV */
+.mob-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;padding:1.5rem;overflow-y:auto;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.mob-close{background:none;border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mob-nav a{display:block;padding:14px 0;font-size:18px;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07);font-weight:500}
+.mob-nav-cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:10px}
+.mob-cta-emergency,.mob-cta-portal{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:10px;text-decoration:none;transition:all .2s}
+.mob-cta-emergency{background:rgba(192,57,43,.18);border:1px solid rgba(220,80,80,.32)}
+.mob-cta-portal{background:rgba(13,110,140,.18);border:1px solid rgba(45,155,195,.28)}
+.mob-cta-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mob-cta-emergency .mob-cta-icon{background:rgba(220,70,70,.2);color:#f87171}
+.mob-cta-portal .mob-cta-icon{background:rgba(45,155,195,.18);color:#60c4e8}
+.mob-cta-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.mob-cta-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.mob-cta-emergency .mob-cta-label{color:rgba(252,165,165,.65)}
+.mob-cta-portal .mob-cta-label{color:rgba(103,196,232,.6)}
+.mob-cta-value{font-size:14px;font-weight:600;margin-top:3px;line-height:1}
+.mob-cta-emergency .mob-cta-value{color:#fca5a5}
+.mob-cta-portal .mob-cta-value{color:#a5d8f0}
+.mob-cta-pulse{width:8px;height:8px;border-radius:50%;background:#f87171;flex-shrink:0;animation:mob-pulse 1.8s ease-in-out infinite}
+@keyframes mob-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.mob-cta-arrow{color:rgba(103,196,232,.45);flex-shrink:0}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:960px){
+  nav{display:none}.mob-toggle{display:flex}
+  .header-cta .phone-link,.header-cta .btn-accent{display:none}
+  .markets-grid{grid-template-columns:1fr 1fr}
+  .market-card.featured{grid-column:span 2}
+  .quote-inner{grid-template-columns:1fr}
+  .quote-cta{align-items:flex-start}
+  .cta-strip-inner{grid-template-columns:1fr}
+  .cta-strip-actions{align-items:flex-start}
+  .emerg-inner{flex-direction:column;text-align:center}
+  .emerg-actions{justify-content:center}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{padding:0 1rem}
+  .header-inner{height:60px}
+  .logo-img{height:48px}
+  .markets-grid{grid-template-columns:1fr}
+  .market-card.featured{grid-column:span 1}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .ann-bar span:last-child,.ann-bar .ann-sep:last-of-type{display:none}
+  .emerg-phone{font-size:22px}
+  .hero-stats{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-inner">
+    <span><span class="ann-pulse" aria-hidden="true"></span></span>
+    <span><strong>24/7 Global Emergency Response</strong></span>
+    <span class="ann-sep">|</span>
+    <span>Call now: <strong>+44 151 440 3843</strong></span>
+    <span class="ann-sep">|</span>
+    <span>Serving 150+ ports worldwide</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="ANP_Web_Logo.png" style="mix-blend-mode:screen" alt="ANP Marine & Industrial" class="logo-img">
+    </a>
+    <nav aria-label="Main navigation">
+      <div class="nav-item">
+        <a class="nav-link" href="services.html">Services
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="services.html#refrigeration">Marine Refrigeration</a>
+          <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+          <a href="services.html#compressed-air">Compressed Air Systems</a>
+          <a href="services.html#fire-safety">Fire &amp; Safety Systems</a>
+          <a href="services.html#drydock">Dry Dock &amp; Port Call Support</a>
+          <div class="dropdown-divider"></div>
+          <a href="contact.html#emergency">Emergency Callout</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="spares.html">Spares
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="spares.html#refrigeration">Refrigeration Spares</a>
+          <a href="spares.html#hvac">HVAC &amp; AC Spares</a>
+          <a href="spares.html#compressed-air">Compressed Air Spares</a>
+          <a href="spares.html#fire-safety">Fire &amp; Safety Spares</a>
+          <div class="dropdown-divider"></div>
+          <a href="spares.html">Search All Parts</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link active" href="markets.html">Markets</a></div>
+      <div class="nav-item"><a class="nav-link" href="tool-kits.html">Tool Kits</a></div>
+      <div class="nav-item"><a class="nav-link" href="ice.html">ICE</a></div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+441514403843" class="phone-link">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +44 151 440 3843
+      </a>
+      <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-accent" style="font-size:13px;padding:9px 16px;">ANP Online
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+    <button class="mob-toggle" id="mob-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mob-nav" role="dialog" aria-label="Mobile navigation">
+  <div class="mob-nav-top">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff">ANP Marine &amp; Industrial</span>
+    <button class="mob-close" id="mob-close" aria-label="Close menu">
+      <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="spares.html">Spares</a>
+  <a href="markets.html">Markets</a>
+  <a href="tool-kits.html">Tool Kits</a>
+  <a href="ice.html">ICE AI Assistant</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-nav-cta">
+    <a href="tel:+441514403843" class="mob-cta-emergency">
+      <span class="mob-cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+      <span class="mob-cta-body"><span class="mob-cta-label">24/7 Emergency</span><span class="mob-cta-value">+44 151 440 3843</span></span>
+      <span class="mob-cta-pulse" aria-hidden="true"></span>
+    </a>
+    <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="mob-cta-portal">
+      <span class="mob-cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+      <span class="mob-cta-body"><span class="mob-cta-label">Customer Portal</span><span class="mob-cta-value">ANP Online</span></span>
+      <svg class="mob-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <span style="color:rgba(255,255,255,.6)">Markets</span>
+    </div>
+    <div class="page-label">Who We Serve</div>
+    <h1>Marine &amp; Offshore Engineering Support — Every Vessel Type, Every Market</h1>
+    <p>From crude tankers and FPSOs to superyachts and offshore wind installation vessels — ANP Marine delivers specialist HVAC, refrigeration and compressed air engineering to every sector of the maritime industry. UK-based engineers, deployed worldwide, 24 hours a day.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">8</div><div class="hstat-label">Markets Served</div></div>
+      <div class="hstat"><div class="hstat-num">150+</div><div class="hstat-label">Ports Worldwide</div></div>
+      <div class="hstat"><div class="hstat-num">500+</div><div class="hstat-label">Vessels Supported</div></div>
+      <div class="hstat"><div class="hstat-num">24/7</div><div class="hstat-label">Emergency Cover</div></div>
+    </div>
+  </div>
+  <div class="page-wave">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:50px;display:block;width:100%" aria-hidden="true"><path d="M0,30 C360,60 1080,0 1440,30 L1440,50 L0,50 Z" fill="#f7f9fc"/></svg>
+  </div>
+</section>
+
+<!-- MARKETS GRID -->
+<section class="markets-section">
+  <div class="container">
+    <div style="margin-bottom:3rem" class="fade-up">
+      <div class="section-label">Market Sectors</div>
+      <h2 class="section-title">Every Sector. Every Asset Type.</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:600px">Whatever the vessel or asset, our engineers understand the operational constraints, classification requirements and compliance obligations that apply to your sector.</p>
+    </div>
+
+    <div class="markets-grid">
+
+      <!-- MERCHANT / TANKERS — FEATURED -->
+      <a href="contact.html" class="market-card featured fade-up">
+        <div class="mc-visual tanker">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18M5 17V9l7-5 7 5v8"/><path d="M9 17v-5h6v5"/></svg>
+          </div>
+          <div class="mc-label-pill">Commercial Shipping</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Merchant &amp; Commercial Shipping</div>
+          <p class="mc-desc">Tankers, bulk carriers, container vessels and general cargo ships operated by major shipping companies and independent owners. We support technical superintendents and fleet managers with planned maintenance programmes, F-Gas compliant refrigeration servicing and 24/7 emergency response to any port worldwide. Our engineers understand the commercial pressures of vessel turnaround times and work to minimise off-hire risk.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">Provision Plant Overhaul</span>
+            <span class="mc-service-tag">F-Gas Compliance</span>
+            <span class="mc-service-tag">Starting Air Systems</span>
+            <span class="mc-service-tag">HVAC Maintenance</span>
+            <span class="mc-service-tag">OEM Spare Parts</span>
+            <span class="mc-service-tag">Emergency Response</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire about this market <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- OFFSHORE & FPSO -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.05s">
+        <div class="mc-visual offshore">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div class="mc-label-pill">Offshore &amp; FPSO</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Offshore &amp; FPSO</div>
+          <p class="mc-desc">FPSOs, semi-submersibles and fixed platforms operating in the North Sea, West Africa and beyond. We deploy engineers to offshore assets with complex multi-system HVAC, refrigeration and compressed air requirements and strict permit-to-work procedures.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">FPSO HVAC Systems</span>
+            <span class="mc-service-tag">Offshore Compliance</span>
+            <span class="mc-service-tag">Pump &amp; Valve Service</span>
+            <span class="mc-service-tag">F-Gas Inspection</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- NORTH SEA -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.1s">
+        <div class="mc-visual northsea">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="mc-label-pill">North Sea</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">North Sea Platforms &amp; PSVs</div>
+          <p class="mc-desc">Platform supply vessels, anchor handlers and North Sea installations. Rapid mobilisation from our UK base, with engineers familiar with UKCS permit-to-work systems, COSHH requirements and offshore safety regulations.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">PSV Support</span>
+            <span class="mc-service-tag">UKCS Compliant</span>
+            <span class="mc-service-tag">Rapid UK Mobilisation</span>
+            <span class="mc-service-tag">Compressed Air</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CRUISE & FERRY -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.05s">
+        <div class="mc-visual cruise">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18M5 17V9l7-5 7 5v8"/><path d="M9 17v-5h6v5"/><circle cx="12" cy="3" r="1"/></svg>
+          </div>
+          <div class="mc-label-pill">Cruise &amp; Ferry</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Cruise &amp; Ferry</div>
+          <p class="mc-desc">Large-scale passenger vessel HVAC systems, chiller plants and public area air conditioning. We support cruise and ferry operators with planned dry dock overhauls, MLC 2006 compliance surveys and emergency repair to minimise passenger disruption.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">Chiller Overhaul</span>
+            <span class="mc-service-tag">MLC 2006 Compliance</span>
+            <span class="mc-service-tag">AHU Servicing</span>
+            <span class="mc-service-tag">Drydock Support</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SUPERYACHTS -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.1s">
+        <div class="mc-visual yacht">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="mc-label-pill">Superyacht</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Superyachts</div>
+          <p class="mc-desc">Discreet, high-quality HVAC and refrigeration engineering for private superyachts. We work alongside yacht management companies and captains to schedule maintenance around charter programmes, with minimum disruption to guests and owners.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">VRF Systems</span>
+            <span class="mc-service-tag">Provision Plant</span>
+            <span class="mc-service-tag">Discreet Service</span>
+            <span class="mc-service-tag">OEM Parts</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- NAVAL & DEFENCE -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.05s">
+        <div class="mc-visual naval">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="mc-label-pill">Naval &amp; Defence</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Naval &amp; Defence</div>
+          <p class="mc-desc">Royal Navy vessels, defence support ships and government-operated assets. We carry the necessary security clearances and comply with MOD procurement and engineering standards for all defence-sector work.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">MOD Standards</span>
+            <span class="mc-service-tag">Confidential Service</span>
+            <span class="mc-service-tag">HVAC &amp; Refrigeration</span>
+            <span class="mc-service-tag">Compressed Air</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- RENEWABLES — FEATURED -->
+      <a href="contact.html" class="market-card featured fade-up" style="transition-delay:.1s">
+        <div class="mc-visual renewables">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div class="mc-label-pill">Renewables</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Offshore Wind &amp; Renewables</div>
+          <p class="mc-desc">Wind turbine installation vessels (WTIVs), cable-laying ships, crew transfer vessels (CTVs) and service operation vessels (SOVs) supporting the UK and European offshore wind sector. As the renewables fleet grows rapidly, these vessels demand the same engineering standards as traditional offshore assets — with the added complexity of fixed maintenance windows dictated by weather and installation schedules. ANP Marine is positioned to support the full renewables supply chain from vessel commissioning through in-service maintenance.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">WTIV Support</span>
+            <span class="mc-service-tag">SOV &amp; CTV Service</span>
+            <span class="mc-service-tag">HVAC Commissioning</span>
+            <span class="mc-service-tag">F-Gas Compliance</span>
+            <span class="mc-service-tag">Refrigeration</span>
+            <span class="mc-service-tag">Compressed Air</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire about this market <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- RESEARCH & SPECIALIST -->
+      <a href="contact.html" class="market-card fade-up" style="transition-delay:.05s">
+        <div class="mc-visual research">
+          <div class="mc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="mc-label-pill">Research &amp; Specialist</div>
+        </div>
+        <div class="mc-body">
+          <div class="mc-title">Research &amp; Specialist Vessels</div>
+          <p class="mc-desc">Research ships, survey vessels, dredgers and cable ships with specialised HVAC and laboratory refrigeration requirements. We work with vessel operators and scientific institutions to maintain critical cold-chain and environmental control systems.</p>
+          <div class="mc-services">
+            <span class="mc-service-tag">Lab Refrigeration</span>
+            <span class="mc-service-tag">Specialist HVAC</span>
+            <span class="mc-service-tag">Survey Vessels</span>
+            <span class="mc-service-tag">Custom Solutions</span>
+          </div>
+          <div class="mc-footer">
+            <span class="mc-cta">Enquire <svg class="mc-arrow icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="container quote-inner">
+    <div>
+      <p class="quote-text">When your vessel is in port for 36 hours and you have a refrigeration failure, you need engineers who understand the commercial stakes — not just the technical ones. That's what ANP delivers.</p>
+      <div class="quote-source">ANP Marine Engineering Team — available 24/7 for all market sectors</div>
+    </div>
+    <div class="quote-cta">
+      <a href="contact.html" class="btn btn-teal">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Contact Us
+      </a>
+      <a href="case-studies.html" class="btn btn-outline">View Case Studies</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip-glow" aria-hidden="true"></div>
+  <div class="container cta-strip-inner">
+    <div>
+      <div class="section-label" style="color:rgba(255,255,255,.4)">Work With Us</div>
+      <h2 class="cta-strip-title">Your Market. Our Engineers.</h2>
+      <p class="cta-strip-sub">Whatever sector you operate in, ANP Marine has the certification, the experience and the logistics to support your vessels and offshore assets. Get in touch to discuss your engineering requirements.</p>
+    </div>
+    <div class="cta-strip-actions">
+      <a href="contact.html" class="btn btn-teal" style="font-size:15px;padding:14px 28px">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Request Engineering Support
+      </a>
+      <a href="services.html" class="btn btn-outline">All Services
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section class="emerg-section">
+  <div class="container emerg-inner">
+    <div class="emerg-text">
+      <h2>Emergency Engineering — Any Market, Any Port.</h2>
+      <p>24/7 response line answered by a qualified marine engineer. Average mobilisation: under 2 hours.</p>
+    </div>
+    <div class="emerg-actions">
+      <div class="emerg-phone">+44 151 440 3843</div>
+      <a href="tel:+441514403843" class="btn" style="background:#fff;color:var(--red);font-weight:700">Call Now</a>
+      <a href="contact.html#emergency" class="btn btn-outline">Emergency Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" style="display:inline-flex;margin-bottom:.5rem">
+          <img src="ANP_Web_Logo.png" alt="ANP Marine & Industrial" style="mix-blend-mode:screen;height:60px;width:auto">
+        </a>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;margin-top:.85rem;max-width:240px">Marine HVAC, refrigeration and compressed air specialists. UK-based, worldwide reach. 24/7 emergency cover.</p>
+        <div class="footer-addr">ANP Marine &amp; Industrial Ltd<br>Cholmondley House, Dee Hills Park<br>Chester, CH3 5AR, United Kingdom</div>
+        <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="footer-portal">
+          ANP Online — Customer Portal
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <div class="footer-social" style="margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61564650136333" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/company/104927595/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="https://x.com/ANPMarine" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+          <a href="https://www.instagram.com/anpmarine/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Markets</h5>
+        <a href="markets.html">Merchant &amp; Commercial</a>
+        <a href="markets.html">Offshore &amp; FPSO</a>
+        <a href="markets.html">North Sea Platforms</a>
+        <a href="markets.html">Cruise &amp; Ferry</a>
+        <a href="markets.html">Superyachts</a>
+        <a href="markets.html">Naval &amp; Defence</a>
+        <a href="markets.html">Renewables</a>
+        <a href="markets.html">Research &amp; Specialist</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html#refrigeration">Marine Refrigeration</a>
+        <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+        <a href="services.html#compressed-air">Compressed Air</a>
+        <a href="services.html#drydock">Dry Dock Support</a>
+        <a href="hvac-refrigeration.html">F-Gas Services</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+441514403843">+44 151 440 3843</a>
+        <a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a>
+        <a href="contact.html">Request Engineering Support</a>
+        <a href="contact.html#emergency">Emergency Callout</a>
+        <a href="spares.html">Parts Enquiry</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ANP Marine &amp; Industrial Ltd. Company No. 15925711. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const tog=document.getElementById('mob-toggle');
+const mobNav=document.getElementById('mob-nav');
+const cls=document.getElementById('mob-close');
+if(tog)tog.addEventListener('click',()=>{mobNav.classList.add('open');tog.setAttribute('aria-expanded','true')});
+if(cls)cls.addEventListener('click',()=>{mobNav.classList.remove('open');tog.setAttribute('aria-expanded','false')});
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
