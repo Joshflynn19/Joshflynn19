@@ -279,30 +279,6 @@ footer{background:var(--navy);padding:4rem 0 0}
   .snav-link{padding:12px 14px;font-size:12px}
   .emerg-phone{font-size:22px}
 }
-/* ── SERVICE TIERS ── */
-.tiers-section{padding:5rem 0;background:var(--light)}
-.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem}
-.tier-card{background:#fff;border:1.5px solid var(--mid);border-radius:14px;padding:2rem;display:flex;flex-direction:column;gap:0;transition:all .2s;position:relative}
-.tier-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.tier-card.popular{border-color:var(--teal);border-width:2px}
-.tier-card.popular::before{content:'MOST POPULAR';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:10px;font-weight:800;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;white-space:nowrap}
-.tier-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.tier-name{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--navy);margin-bottom:.25rem}
-.tier-tagline{font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.5;padding-bottom:1.5rem;border-bottom:1px solid var(--light)}
-.tier-features{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem;flex:1}
-.tier-feat{display:flex;align-items:flex-start;gap:10px}
-.tier-feat-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.tier-card:not(.popular) .tier-feat-icon{background:rgba(13,143,126,.1);color:var(--teal)}
-.tier-card.popular .tier-feat-icon{background:rgba(13,143,126,.15);color:var(--teal)}
-.tier-feat-icon svg{width:10px;height:10px}
-.tier-feat-text{font-size:13px;color:var(--text);line-height:1.45}
-.tier-feat-text strong{color:var(--navy);font-weight:600}
-.tier-cta{width:100%;padding:13px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;cursor:pointer;border:none;font-family:'Barlow',sans-serif;transition:all .15s;display:block;text-decoration:none}
-.tier-card:not(.popular) .tier-cta{background:var(--navy);color:#fff}
-.tier-card:not(.popular) .tier-cta:hover{background:var(--navy2)}
-.tier-card.popular .tier-cta{background:var(--teal);color:#fff}
-.tier-card.popular .tier-cta:hover{background:var(--teal-light)}
-@media(max-width:900px){.tiers-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -830,175 +806,6 @@ footer{background:var(--navy);padding:4rem 0 0}
   </div>
 </section>
 
-<!-- SERVICE AGREEMENTS -->
-<section class="tiers-section" id="service-agreements">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:640px;margin:0 auto 0">
-      <div class="section-label">Service Agreements</div>
-      <div class="section-title">Choose Your Level of Cover</div>
-      <p class="section-sub" style="margin:0 auto">Flexible service agreements designed for fleet managers, technical superintendents and ship operators. All tiers include 24/7 emergency response and global engineer deployment.</p>
-    </div>
-    <div class="tiers-grid">
-
-      <div class="tier-card fade-up" style="transition-delay:.05s">
-        <div class="tier-num">Tier 1</div>
-        <div class="tier-name">Essential</div>
-        <p class="tier-tagline">Core emergency cover and annual maintenance for vessels requiring reliable, cost-effective support.</p>
-        <div class="tier-features">
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>2-hour emergency response</strong> — 24/7 telephone line</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>4 remote support hours</strong> per month</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>1 planned maintenance visit</strong> per year with service report</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>ANP Online portal</strong> — read access, fault logging</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>ICE &amp; CIRA AI assistant</strong> — 24/7 fault diagnosis</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Priority UK spare parts</strong> — same-day dispatch</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Global engineer deployment</strong> — 150+ ports, within 24hrs</div>
-          </div>
-        </div>
-        <a href="contact.html" class="tier-cta">Enquire — Essential</a>
-      </div>
-
-      <div class="tier-card popular fade-up" style="transition-delay:.1s">
-        <div class="tier-num">Tier 2</div>
-        <div class="tier-name">Advanced</div>
-        <p class="tier-tagline">Enhanced cover with a bespoke maintenance matrix, named engineer and full portal access.</p>
-        <div class="tier-features">
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>1-hour emergency response</strong> — 24/7 priority line</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>10 remote support hours</strong> per month — 24/7 access</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>2 planned maintenance visits</strong> per year</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Bespoke maintenance matrix</strong> — tailored to your vessel and trading pattern</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Named account engineer</strong> — your dedicated ANP contact</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Full ANP Online access</strong> — service history, parts tracking, reports</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>White-label service reports</strong> — issued under your branding</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Priority reserved spare parts</strong> — held at ANP UK warehouse</div>
-          </div>
-        </div>
-        <a href="contact.html" class="tier-cta">Enquire — Advanced</a>
-      </div>
-
-      <div class="tier-card fade-up" style="transition-delay:.15s">
-        <div class="tier-num">Tier 3</div>
-        <div class="tier-name">Premium</div>
-        <p class="tier-tagline">Fully managed fleet engineering partnership — unlimited visits, dedicated fleet manager and proactive asset control.</p>
-        <div class="tier-features">
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>30-minute emergency response</strong> — direct Fleet Manager escalation</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Unlimited remote support</strong> — no caps, no extra charges</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Unlimited planned visits</strong> — frequency driven by maintenance matrix</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Senior Fleet Manager</strong> — dedicated to your account</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Fully managed maintenance matrix</strong> — dynamic, live updates</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Fleet dashboard</strong> — real-time status across all vessels</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Proactive spare parts management</strong> — monitored and replenished</div>
-          </div>
-          <div class="tier-feat">
-            <div class="tier-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="tier-feat-text"><strong>Regulatory compliance management</strong> — F-Gas, MLC 2006, class surveys</div>
-          </div>
-        </div>
-        <a href="contact.html" class="tier-cta">Enquire — Premium</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REGULATORY SECTION -->
-<section style="padding:5rem 0;background:#fff">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
-      <div class="fade-up">
-        <div class="section-label">Regulatory Requirement</div>
-        <div class="section-title">Class-Standard Maintenance Demands Class-Standard Service</div>
-        <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Lloyd's Register Part 7, Chapter 15 requires that centralised refrigeration systems — covering provision stores and air-conditioning aboard passenger and cargo vessels — are designed, installed and maintained to class standard.</p>
-        <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">This encompasses the full primary refrigerant circuit: compressors, condensers, evaporators, air handling units, fan coil units and all interconnecting pipework. Every component must be serviceable to a standard that satisfies flag state, class society and MLC 2006 requirements.</p>
-        <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:2rem">ANP Marine engineers are trained and equipped to work to these standards — providing documented, compliant service that satisfies class requirements on every vessel we attend.</p>
-        <a href="contact.html" class="btn btn-teal">
-          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Discuss Your Requirements
-        </a>
-      </div>
-      <div class="fade-up" style="transition-delay:.1s">
-        <div style="background:var(--navy2);border-radius:14px;padding:2rem;display:flex;flex-direction:column;gap:1rem">
-          <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.25rem">Regulatory Reference</div>
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:1.25rem">
-            <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.5rem">Lloyd's Register — LR Pt 7, Ch 15</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;font-style:italic">"The refrigeration system is to include the refrigeration compressor(s), condenser(s), evaporator(s), direct expansion air handling and fan coil units, interconnecting primary refrigerant piping system and fittings."</p>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:1.25rem">
-            <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.5rem">Class Notation — RPA</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">Ships complying with LR Ch 15 requirements are eligible for the optional machinery class notation <strong style="color:#fff">RPA</strong> — Refrigeration Machinery for Provision Stores and Air-conditioning.</p>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:1.25rem">
-            <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.5rem">Also Applicable</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">LR Pt 5 Main &amp; Auxiliary Machinery &nbsp;·&nbsp; LR Pt 6 Control, Electrical, Refrigeration &amp; Fire &nbsp;·&nbsp; MLC 2006 &nbsp;·&nbsp; F-Gas Regulation &nbsp;·&nbsp; ISO 7547:2002</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -1043,7 +850,7 @@ footer{background:var(--navy);padding:4rem 0 0}
         <a href="tel:+441514403843">+44 151 440 3843</a>
         <a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a>
         <a href="contact.html#emergency">Emergency Callout</a>
-        <a href="contact.html">Request a Quote</a>
+        <a href="contact.html#quote">Request a Quote</a>
         <a href="contact.html?type=drydock">Dry Dock Work Pack</a>
         <a href="spares.html">Parts Enquiry</a>
       </div>

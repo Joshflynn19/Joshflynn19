@@ -282,10 +282,6 @@ footer{background:var(--navy);padding:4rem 0 0}
   .ann-bar span:last-child,.ann-bar .ann-sep:last-of-type{display:none}
 }
 </style>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 </head>
 <body>
 
@@ -794,7 +790,7 @@ footer{background:var(--navy);padding:4rem 0 0}
         <a href="tel:+441514403843">+44 151 440 3843</a>
         <a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a>
         <a href="contact.html#emergency">Emergency Callout</a>
-        <a href="contact.html">Request a Quote</a>
+        <a href="contact.html#quote">Request a Quote</a>
         <a href="contact.html#parts">Parts Enquiry</a>
       </div>
     </div>
@@ -897,7 +893,8 @@ if (cls) cls.addEventListener('click', () => { mobNav.classList.remove('open'); 
 
 // ── URL HASH ROUTING ──
 // If page loaded with #parts, switch to planned
-if (window.location.hash === '#parts') selectEnquiry('planned');
+if (window.location.hash === '#parts' || window.location.hash === '#quote') selectEnquiry('planned');
+if (window.location.hash === '#emergency') { selectEnquiry('emergency'); document.getElementById('emergency').scrollIntoView({behavior:'smooth'}); }
 
 // ── SCROLL ANIMATIONS ──
 const obs = new IntersectionObserver(entries => {
