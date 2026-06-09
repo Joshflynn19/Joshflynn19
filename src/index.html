@@ -64,9 +64,9 @@ a{color:inherit;text-decoration:none}
 
 /* ── HEADER ── */
 header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:80px;transition:height .3s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
 .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-img{height:72px;width:auto;mix-blend-mode:screen;transition:height .3s}
+.logo-img{height:60px;width:auto;mix-blend-mode:screen}
 nav{display:flex;align-items:center;gap:0}
 .nav-item{position:relative}
 .nav-link{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;padding:0 16px;height:70px;letter-spacing:.3px;transition:color .15s;cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent}
@@ -358,17 +358,6 @@ footer{background:var(--navy);padding:4rem 0 0}
   .ice-inner{gap:2rem}
   .why-visual{display:none}
 }
-
-/* ── LOGO ENHANCEMENTS ── */
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;padding-right:1.5rem;margin-right:1rem;border-right:1px solid rgba(255,255,255,.12);position:relative}
-.logo-wrap::before{content:'';position:absolute;inset:-4px 0;background:radial-gradient(ellipse at 40% 50%,rgba(13,143,126,.18) 0%,transparent 70%);border-radius:8px;pointer-events:none}
-.logo-img:hover{opacity:.85}
-header.scrolled .header-inner{height:60px}
-header.scrolled .logo-img{height:48px}
-@media(max-width:900px){
-  .logo-wrap{padding-right:0;margin-right:0;border-right:none}
-  .logo-wrap::before{display:none}
-}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -435,6 +424,7 @@ header.scrolled .logo-img{height:48px}
       <div class="nav-item"><a class="nav-link" href="markets.html">Markets</a></div>
       <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
       <div class="nav-item"><a class="nav-link" href="ice.html">ICE</a></div>
+      <div class="nav-item"><a class="nav-link" href="refrigerants.html">Refrigerants</a></div>
       <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
     </nav>
     <div class="header-cta">
@@ -467,6 +457,7 @@ header.scrolled .logo-img{height:48px}
   <a href="markets.html">Markets</a>
   <a href="resources.html">Resources</a>
   <a href="ice.html">ICE &amp; CIRA</a>
+  <a href="refrigerants.html">Refrigerants</a>
   <a href="about.html">About Us</a>
   <a href="contact.html">Contact</a>
   <div class="mob-nav-cta">
@@ -1073,19 +1064,6 @@ document.querySelectorAll('.scat').forEach(cat=>{cat.addEventListener('click',()
 </script>
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="w9QBhzl6S69s463ue7QW5";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-
-// ── SCROLL SHRINK ──
-(function(){
-  var hdr = document.querySelector('header');
-  var onScroll = function(){
-    if(window.scrollY > 60){
-      hdr.classList.add('scrolled');
-    } else {
-      hdr.classList.remove('scrolled');
-    }
-  };
-  window.addEventListener('scroll', onScroll, {passive:true});
-})();
 </script>
 </body>
 </html>
