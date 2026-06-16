@@ -675,6 +675,14 @@ let currentPersona = 'ice';
 let conversationHistory = [];
 let isLoading = false;
 
+// ── API ENDPOINT ──
+// ICE/CIRA must call the Cloudflare Worker proxy (which holds the Anthropic
+// API key as a secret and adds the auth + version headers). Calling
+// api.anthropic.com directly from the browser CANNOT work: it's blocked by
+// CORS and there's no way to authenticate without leaking a key in client JS.
+// >>> Confirm this matches YOUR deployed worker URL <<<
+const ICE_API_URL = 'https://anp-proxy.josh-e5f.workers.dev';
+
 const SYSTEM_PROMPT = `You are an advanced AI support system for ANP Marine & Industrial, a professional marine refrigeration and cooling company. You role-play as two distinct expert personas: ICE and CIRA.
 
 1. ICE - Intelligent Cooling Expert
@@ -885,7 +893,7 @@ async function sendMessage() {
   showTyping(currentPersona);
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch(ICE_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
