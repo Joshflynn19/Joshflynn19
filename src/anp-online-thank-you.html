@@ -3,32 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>F-Gas 2026: What the Phase-Down Means for Your Fleet | ANP Marine</title>
-<meta name="description" content="A marine-focused briefing on the 2026 F-Gas milestone: the GWP 2,500 service ban, what it means for R-404A on your vessels, and how the EU and Great Britain regimes differ for mixed fleets.">
+<title>Request received — ANP Online | ANP Marine</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Thanks — your ANP Online access request has been received. Our team will set up your portal and be in touch shortly.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0c1e35;
-    --navy-2:#13294a;
-    --teal:#0d8f7e;
-    --teal-d:#0a7567;
-    --ink:#1a2433;
-    --muted:#5b6675;
-    --line:#dfe4ea;
-    --bg:#ffffff;
-    --bg-soft:#f4f6f8;
-    --amber:#c9871f;
-    --red:#b3402f;
+    --navy:#0c1e35;--navy-2:#13294a;--teal:#0d8f7e;--teal-d:#0a7567;
+    --ink:#1a2433;--muted:#5b6675;--line:#dfe4ea;--bg:#fff;--bg-soft:#f4f6f8;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Barlow',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
-  h1,h2,h3,.cond{font-family:'Barlow Condensed',sans-serif;letter-spacing:.01em;line-height:1.1}
+  body{font-family:'Barlow',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;width:100%}
+  h1,h2,h3{font-family:'Barlow Condensed',sans-serif;letter-spacing:.01em;line-height:1.08}
 
-  /* Top bar */
   header.site{background:var(--navy);color:#fff}
   .site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;letter-spacing:.06em;color:#fff;text-decoration:none}
@@ -38,89 +28,29 @@
   .nav a:hover{color:#fff}
   @media(max-width:640px){.nav{display:none}}
 
-  /* Hero */
-  .hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:56px 0 64px}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
-  .eyebrow .bar{width:28px;height:2px;background:var(--teal);display:inline-block}
-  .hero h1{font-size:clamp(38px,6vw,58px);font-weight:700;margin:20px 0 18px;max-width:18ch}
-  .hero p.lede{font-size:19px;color:#cfd6df;max-width:60ch}
-  .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:#9aa6b4}
-  .meta b{color:#fff;font-weight:600}
+  main{flex:1 0 auto;display:flex;align-items:center;background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);padding:64px 0}
+  .panel{max-width:620px;margin:0 auto;text-align:center}
+  .badge{width:84px;height:84px;border-radius:50%;background:#dbeee9;display:flex;align-items:center;justify-content:center;margin:0 auto 26px;animation:pop .5s ease both}
+  @keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+  .eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+  h1{font-size:clamp(36px,5.6vw,52px);font-weight:700;color:var(--navy);margin:10px 0 16px}
+  .panel .lede{font-size:19px;color:var(--ink);max-width:50ch;margin:0 auto 30px}
 
-  /* Key points */
-  .keypoints{background:var(--bg-soft);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:4px;padding:24px 26px;margin:-32px 0 40px;position:relative}
-  .keypoints h2{font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
-  .keypoints ul{list-style:none;display:grid;gap:11px}
-  .keypoints li{display:flex;gap:12px;font-size:16px}
-  .keypoints li svg{flex:0 0 auto;margin-top:3px}
+  .steps{text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin:0 auto 32px;max-width:520px;box-shadow:0 10px 30px rgba(12,30,53,.05)}
+  .steps h2{font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:16px}
+  .steps ul{list-style:none;display:grid;gap:15px}
+  .steps li{display:flex;gap:13px;font-size:16px;color:var(--ink)}
+  .steps li .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px}
 
-  /* Article body */
-  article{padding-bottom:24px}
-  article h2{font-size:30px;font-weight:600;color:var(--navy);margin:46px 0 14px}
-  article h3{font-size:22px;font-weight:600;color:var(--navy);margin:30px 0 8px}
-  article p{margin:0 0 16px;font-size:17px}
-  article p a{color:var(--teal-d);font-weight:500}
-  .sec-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:block;margin-top:46px}
-  .sec-eyebrow + h2{margin-top:6px}
-
-  /* Status table */
-  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;margin:22px 0}
-  table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
-  thead th{background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.04em;text-align:left;padding:13px 16px;font-size:16px}
-  tbody td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top}
-  tbody tr:nth-child(even){background:var(--bg-soft)}
-  td .ref{font-weight:600;color:var(--navy)}
-  .pill{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.03em;padding:3px 9px;border-radius:999px;white-space:nowrap}
-  .pill.high{background:#f7e3df;color:var(--red)}
-  .pill.watch{background:#f7eed8;color:var(--amber)}
-  .pill.ok{background:#dbeee9;color:var(--teal-d)}
-
-  /* Dual regime */
-  .dual{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
-  @media(max-width:640px){.dual{grid-template-columns:1fr}}
-  .regime{border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .regime .top{padding:14px 18px;color:#fff;display:flex;align-items:center;gap:10px}
-  .regime.eu .top{background:var(--navy)}
-  .regime.gb .top{background:var(--teal-d)}
-  .regime .top h3{color:#fff;margin:0;font-size:20px}
-  .regime .body{padding:16px 18px}
-  .regime .body p{font-size:15px;margin-bottom:10px}
-  .regime .body p:last-child{margin-bottom:0}
-  .regime .body strong{color:var(--navy)}
-
-  /* Action cards */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
-  @media(max-width:640px){.cards{grid-template-columns:1fr}}
-  .card{border:1px solid var(--line);border-radius:6px;padding:20px 20px 22px;background:#fff}
-  .card .ic{width:38px;height:38px;border-radius:7px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;margin-bottom:13px}
-  .card h3{font-size:19px;margin:0 0 6px}
-  .card p{font-size:15px;color:var(--muted);margin:0}
-
-  /* Checklist */
-  .check{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:24px 26px;margin:22px 0}
-  .check h3{margin:0 0 14px;font-size:21px}
-  .check ul{list-style:none;display:grid;gap:12px}
-  .check li{display:flex;gap:12px;font-size:16px}
-  .check li svg{flex:0 0 auto;margin-top:3px}
-
-  /* Callout */
-  .note{border-left:3px solid var(--amber);background:#fdf8ee;padding:16px 20px;border-radius:4px;margin:24px 0;font-size:15px;color:#6a5a33}
-  .note b{color:var(--amber)}
-
-  /* CTA */
-  .cta{background:var(--navy);color:#fff;border-radius:8px;padding:40px 36px;margin:48px 0 12px;text-align:center}
-  .cta h2{color:#fff;font-size:32px;margin:0 0 10px}
-  .cta p{color:#cfd6df;max-width:54ch;margin:0 auto 22px;font-size:17px}
-  .btn{display:inline-block;background:var(--teal);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:18px;letter-spacing:.05em;text-transform:uppercase;padding:14px 30px;border-radius:5px;text-decoration:none;transition:background .15s}
+  .links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .btn{display:inline-block;background:var(--teal);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:17px;letter-spacing:.05em;text-transform:uppercase;padding:13px 28px;border-radius:5px;text-decoration:none;transition:background .15s}
   .btn:hover{background:var(--teal-d)}
-  .btn.ghost{background:transparent;border:1.5px solid #44546b;margin-left:10px}
-  .btn.ghost:hover{background:rgba(255,255,255,.06);border-color:var(--teal)}
-  @media(max-width:520px){.btn.ghost{margin-left:0;margin-top:10px}}
+  .btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+  .btn.ghost:hover{background:#fff;border-color:var(--teal);color:var(--teal-d)}
 
-  footer.site{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
+  footer.site{flex-shrink:0;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .disclaimer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin-top:32px}
-  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media(prefers-reduced-motion:reduce){.badge{animation:none}}
 .brand{display:inline-flex;align-items:center}.brand img{height:38px;width:auto;display:block}</style>
 </head>
 <body>
@@ -131,158 +61,38 @@
     <nav class="nav">
       <a href="/services">Services</a>
       <a href="/spares">Spares</a>
-      <a href="/refrigerants">Refrigerants</a>
-      <a href="/">Home</a>
+      <a href="/f-gas-2026">F-Gas 2026</a>
+      <a href="/anp-online">ANP Online</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
+<main>
   <div class="wrap">
-    <span class="eyebrow"><span class="bar"></span>Technical Briefing · Refrigerant Compliance</span>
-    <h1>F-Gas 2026: what the phase-down means for your fleet</h1>
-    <p class="lede">A January 2026 milestone tightens the rules on the refrigerants in your vessels' AC and refrigeration plant. Here is what changes, what stays legal, and how the EU and Great Britain regimes differ for a mixed fleet.</p>
-    <div class="meta">
-      <span><b>Audience:</b> Superintendents &amp; technical managers</span>
-      <span><b>Read:</b> 6 minutes</span>
-      <span><b>Updated:</b> June 2026</span>
+    <div class="panel">
+      <div class="badge">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <span class="eyebrow">Request received</span>
+      <h1>You're on board.</h1>
+      <p class="lede">Thanks — your ANP Online request is with our team. We'll set up your access and be in touch shortly. No cost, no obligation.</p>
+
+      <div class="steps">
+        <h2>What happens next</h2>
+        <ul>
+          <li><span class="n">1</span><span>Our team reviews your fleet details and prepares your ANP Online access.</span></li>
+          <li><span class="n">2</span><span>We'll email you to confirm access and walk through getting your vessels set up.</span></li>
+          <li><span class="n">3</span><span>You start tracking equipment, running F-Gas reports, and getting spares to the right port — backed by ANP engineers worldwide.</span></li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <a href="/f-gas-2026" class="btn">Read the F-Gas 2026 briefing</a>
+        <a href="/" class="btn ghost">Back to home</a>
+      </div>
     </div>
   </div>
-</section>
-
-<div class="wrap">
-  <div class="keypoints">
-    <h2>The short version</h2>
-    <ul>
-      <li>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
-        <span>From <b>1 January 2026</b>, the EU bans <b>virgin</b> F-gas with a GWP of 2,500 or more for servicing <b>air-conditioning and heat-pump</b> equipment. The same ban already hit <b>refrigeration</b> plant on 1 January 2025.</span>
-      </li>
-      <li>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><b>R-404A and R-507A are the main casualties</b> — their GWP sits far above the threshold. Your plant can keep running, but you can no longer top it up with newly produced gas.</span>
-      </li>
-      <li>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><b>Reclaimed and recycled gas is still legal</b> for servicing existing systems — in the EU until 2032, in Great Britain until 2030.</span>
-      </li>
-      <li>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><b>Flag and trading area decide which rules bite.</b> EU-flagged vessels and EU port calls follow the EU regulation; UK operations follow the GB retained regime. Most fleets need to track both.</span>
-      </li>
-    </ul>
-  </div>
-
-  <article>
-    <p>If you manage refrigeration and HVAC across a fleet, "F-Gas" is no longer a once-a-year compliance line. The phase-down of high global-warming-potential (GWP) refrigerants has reached the point where it changes how — and whether — you can service the plant already installed on your vessels. The headline date is January 2026, but the practical squeeze is the steady fall in supply and the steep rise in price of the legacy gases your older plant depends on.</p>
-
-    <span class="sec-eyebrow">What actually changed</span>
-    <h2>The GWP 2,500 service ban, in plain terms</h2>
-    <p>The mechanism is a "service ban". It does not make your equipment illegal and it does not force you to switch off a working plant. What it prohibits is using <strong>virgin</strong> (newly manufactured) refrigerant above a GWP threshold to charge or top up that equipment. Once a system leaks down or needs a recharge, virgin high-GWP gas is off the table.</p>
-    <p>Under the revised EU F-Gas Regulation, the GWP 2,500 service ban applied to <strong>refrigeration</strong> equipment from 1 January 2025, and extends to <strong>air-conditioning and heat-pump</strong> equipment from 1 January 2026. That second date is the "F-Gas 2026" milestone superintendents are searching for. Reclaimed or recycled refrigerant of the same type can still be used to keep existing systems running, which is the relief valve most operators will lean on in the short term.</p>
-
-    <h3>Which refrigerants this hits</h3>
-    <p>The threshold is a hard line at GWP 2,500. The table below shows where the common marine refrigerants fall and what that means in practice. Treat it as a working reference, not a legal determination — your obligations depend on system charge, flag and trading area.</p>
-
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr><th>Refrigerant</th><th>GWP (approx.)</th><th>Position</th><th>What it means for servicing</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><span class="ref">R-507A</span></td><td>3,985</td><td><span class="pill high">Above threshold</span></td><td>Virgin gas banned for service. Reclaimed/recycled only, or retrofit.</td></tr>
-          <tr><td><span class="ref">R-404A</span></td><td>3,922</td><td><span class="pill high">Above threshold</span></td><td>The big one across marine reefer and provision plant. Virgin banned; reclaimed only, or retrofit/replace.</td></tr>
-          <tr><td><span class="ref">R-422D</span></td><td>~2,730</td><td><span class="pill high">Above threshold</span></td><td>An earlier R-22 replacement now itself above the line. Same restriction band.</td></tr>
-          <tr><td><span class="ref">R-410A</span></td><td>2,088</td><td><span class="pill watch">Below — watch</span></td><td>Virgin servicing still permitted, but quota cuts mean rising price and tightening supply.</td></tr>
-          <tr><td><span class="ref">R-134a</span></td><td>1,430</td><td><span class="pill watch">Below — watch</span></td><td>Common in chillers and provision rooms; still serviceable but on the same downward supply curve.</td></tr>
-          <tr><td><span class="ref">R-407F</span></td><td>~1,825</td><td><span class="pill ok">Low-GWP route</span></td><td>Widely used as a drop-in path for R-404A systems — roughly half the GWP.</td></tr>
-          <tr><td><span class="ref">R-513A</span></td><td>573</td><td><span class="pill ok">Low-GWP route</span></td><td>A lower-GWP replacement for R-134a duties.</td></tr>
-          <tr><td><span class="ref">R-454B</span></td><td>466</td><td><span class="pill ok">Low-GWP route</span></td><td>Low-GWP option for newer plant; mildly flammable (A2L) — needs the right system design and safety measures.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="note"><b>Note —</b> "Above threshold" does not mean you must shut down or rip out the plant tomorrow. It means the path to keeping it charged narrows to reclaimed gas, and the economics increasingly favour a planned retrofit or replacement before a forced one.</div>
-
-    <span class="sec-eyebrow">The fleet-management nuance</span>
-    <h2>EU vs Great Britain: not the same rulebook</h2>
-    <p>This is where most generic guidance falls down. Since leaving the EU, Great Britain has run its own retained F-Gas regime, enforced by the Environment Agency, and it does not automatically follow the EU's 2024 revision. For a mixed fleet — EU-flagged vessels, UK-flagged vessels, and ships calling at both — you are managing two timelines at once.</p>
-
-    <div class="dual">
-      <div class="regime eu">
-        <div class="top">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          <h3>European Union</h3>
-        </div>
-        <div class="body">
-          <p><strong>Refrigeration:</strong> virgin GWP ≥ 2,500 banned for service since <strong>1 Jan 2025</strong>.</p>
-          <p><strong>AC &amp; heat pumps:</strong> same ban from <strong>1 Jan 2026</strong>.</p>
-          <p><strong>Reclaimed/recycled:</strong> permitted for existing systems until <strong>2032</strong>; threshold then falls toward GWP 750.</p>
-          <p><strong>Applies to:</strong> EU member states and EU-flagged vessels; relevant on EU port calls.</p>
-        </div>
-      </div>
-      <div class="regime gb">
-        <div class="top">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/><rect x="3" y="4" width="18" height="16" rx="1.5"/></svg>
-          <h3>Great Britain</h3>
-        </div>
-        <div class="body">
-          <p><strong>Service ban:</strong> virgin GWP &gt; 2,500 banned for systems of <strong>40 tonnes CO₂e or more</strong> since <strong>2020</strong>.</p>
-          <p><strong>Reclaimed/recycled:</strong> permitted for existing equipment until <strong>2030</strong> (per REFCOM guidance).</p>
-          <p><strong>Next phase:</strong> DEFRA is consulting on a tighter regime, with new legislation anticipated around <strong>2027</strong>.</p>
-          <p><strong>Applies to:</strong> GB operations and UK-flagged vessels.</p>
-        </div>
-      </div>
-    </div>
-    <p>The takeaway: a vessel that is compliant under one regime is not automatically compliant under the other, and the dates that matter to <em>your</em> ship depend on its flag and where it trades. If you operate across both, plan to the <strong>earliest</strong> applicable deadline.</p>
-
-    <span class="sec-eyebrow">What to do about it</span>
-    <h2>Four moves for the superintendent's desk</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h3>Inventory your refrigerants</h3>
-        <p>Know which gas, what charge, and which vessels for every plant. R-404A and R-507A systems are your priority list.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>Plan retrofits before forced ones</h3>
-        <p>A scheduled retrofit during a yard period costs far less than an emergency one when a system leaks down mid-charter.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-        <h3>Secure reclaimed-gas supply</h3>
-        <p>If you are keeping plant on R-404A for now, line up a certified reclaimed-gas source — supply tightens and prices climb as the phase-down bites.</p>
-      </div>
-      <div class="card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
-        <h3>Keep records inspection-ready</h3>
-        <p>Leak checks, repairs, charges and recovery must be logged and available. A clean F-Gas log is your defence at survey.</p>
-      </div>
-    </div>
-
-    <div class="check">
-      <h3>Your standing F-Gas obligations</h3>
-      <ul>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg><span>Carry out leak checks at the frequency set by the system's CO₂-equivalent charge, and repair any leak without delay.</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg><span>Recover refrigerant for reclamation, recycling or destruction at service and end of life — venting to atmosphere is prohibited.</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg><span>Keep records of refrigerant type and quantity, maintenance, leak checks and recovery, ready for inspection.</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d8f7e" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg><span>Use appropriately certified personnel for any work on F-gas systems.</span></li>
-      </ul>
-    </div>
-
-    <p>The direction of travel is clear and it only runs one way: legacy high-GWP gases get scarcer and dearer, and the question stops being "if" and becomes "when, and on whose timetable". Plan the switch on yours.</p>
-
-    <div class="disclaimer">This briefing is general guidance for fleet planning, not legal advice. F-Gas obligations vary with system charge, equipment type, flag state and trading area, and the rules are under active review in both the EU and Great Britain. Confirm the current position for your specific vessels before acting. ANP Marine can assess your plant and advise on a compliant route.</div>
-  </article>
-
-  <div class="cta">
-    <h2>Not sure where your fleet stands?</h2>
-    <p>We'll review your refrigeration and HVAC plant, flag the systems most exposed to the phase-down, and set out a costed retrofit-or-replace plan vessel by vessel.</p>
-    <a href="/contact" class="btn">Request an F-Gas review</a>
-    <a href="/r404a-retrofit-or-replace" class="btn ghost">Retrofit or replace?</a>
-  </div>
-</div>
+</main>
 
 <footer class="site">
   <div class="wrap">
