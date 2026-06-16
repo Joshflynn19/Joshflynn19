@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Resources & Guides | Marine HVAC & Refrigeration | ANP Marine</title>
+<meta name="description" content="Free technical guides, F-Gas compliance resources, refrigerant conversion advice and marine HVAC documentation from ANP Marine & Industrial. Filterable knowledge base for ship superintendents and fleet managers.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://www.anpmarine.co.uk/resources.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c1e35;--navy2:#112847;--navy3:#1a3a5c;
+  --teal:#0d8f7e;--teal-light:#12b09c;
+  --accent:#f5a623;--accent2:#e8941a;
+  --red:#c0392b;--red2:#a93226;
+  --off-white:#f7f9fc;--light:#edf1f7;--mid:#d5dce8;
+  --muted:#6b7c93;--text:#1c2b3a;--text2:#2e4057;
+  --green:#16a34a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.icon{display:inline-block;vertical-align:middle;flex-shrink:0}
+.icon-sm{width:14px;height:14px}
+.container{max-width:1180px;margin:0 auto;padding:0 2rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:12px 24px;border-radius:4px;cursor:pointer;border:none;text-decoration:none;transition:all .18s;white-space:nowrap}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-light)}
+.btn-accent{background:var(--accent);color:var(--navy)}.btn-accent:hover{background:var(--accent2)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}.btn-outline:hover{background:rgba(255,255,255,.08)}
+.btn-outline-navy{background:transparent;color:var(--navy);border:1.5px solid var(--mid);font-size:13px}.btn-outline-navy:hover{background:var(--light);border-color:var(--teal)}
+.section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;color:var(--navy);line-height:1.05;margin-bottom:.75rem}
+
+/* ANN BAR */
+.ann-bar{background:var(--red);padding:9px 0;text-align:center}
+.ann-bar-inner{display:flex;align-items:center;justify-content:center;gap:1rem;overflow:hidden}
+.ann-bar span{color:#fff;font-size:13px;font-weight:500;white-space:nowrap}
+.ann-bar strong{font-weight:700}
+.ann-sep{color:rgba(255,255,255,.4)}
+.ann-pulse{display:inline-block;width:8px;height:8px;background:#fff;border-radius:50%;animation:blink 1.5s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* HEADER */
+header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo-wrap{display:flex;align-items:center}
+.logo-img{height:60px;width:auto;mix-blend-mode:screen}
+nav{display:flex;align-items:center}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:4px;color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;padding:0 16px;height:70px;transition:color .15s;border:none;background:transparent;border-bottom:3px solid transparent}
+.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--teal-light)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:6px;min-width:220px;padding:8px 0;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:100}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:9px 18px;font-size:13px;color:rgba(255,255,255,.7);transition:all .12s}
+.dropdown a:hover{color:#fff;background:rgba(255,255,255,.05);padding-left:22px}
+.dropdown-divider{border-top:1px solid rgba(255,255,255,.07);margin:6px 0}
+.header-cta{display:flex;align-items:center;gap:10px;margin-left:1rem}
+.phone-link{display:flex;align-items:center;gap:6px;color:#fff;font-size:13px;font-weight:600;background:rgba(255,255,255,.07);padding:8px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
+.phone-link:hover{background:rgba(255,255,255,.12)}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.mob-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+
+/* PAGE HERO */
+.page-hero{background:var(--navy);padding:4rem 0 0;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.5;pointer-events:none}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(13,143,126,.1) 0%,transparent 70%);pointer-events:none}
+.page-hero-content{position:relative;z-index:2;padding-bottom:3rem}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
+.breadcrumb a{font-size:12px;color:rgba(255,255,255,.4)}.breadcrumb a:hover{color:rgba(255,255,255,.75)}
+.breadcrumb span{font-size:12px;color:rgba(255,255,255,.2)}
+.page-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.75rem}
+.page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,5vw,54px);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1rem;max-width:700px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:600px;margin-bottom:2rem}
+.page-wave{margin-top:-1px}
+
+/* FEATURED RESOURCE */
+.featured-section{padding:4rem 0;background:#fff;border-bottom:1px solid var(--mid)}
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.featured-card{background:var(--navy);border-radius:14px;padding:2.5rem;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:260px}
+.featured-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(13,143,126,.2) 0%,transparent 70%);pointer-events:none}
+.featured-card.amber::before{background:radial-gradient(circle,rgba(245,166,35,.15) 0%,transparent 70%)}
+.fc-type{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal-light);margin-bottom:.75rem;display:flex;align-items:center;gap:6px}
+.fc-type.amber{color:var(--accent)}
+.fc-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:.75rem;flex:1}
+.fc-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1.5rem}
+.fc-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-fc-teal{background:var(--teal);color:#fff;font-size:13px;padding:10px 20px;border-radius:6px;font-weight:600;display:inline-flex;align-items:center;gap:7px;transition:background .15s}
+.btn-fc-teal:hover{background:var(--teal-light)}
+.btn-fc-outline{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);font-size:13px;padding:10px 20px;border-radius:6px;font-weight:600;display:inline-flex;align-items:center;gap:7px;transition:all .15s}
+.btn-fc-outline:hover{background:rgba(255,255,255,.08);color:#fff}
+
+/* FILTER BAR */
+.filter-section{background:var(--off-white);border-bottom:1px solid var(--mid);padding:1.5rem 0;position:sticky;top:70px;z-index:100}
+.filter-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.filter-group{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.filter-divider{width:1px;height:24px;background:var(--mid);flex-shrink:0}
+.ftag{font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;border:1.5px solid var(--mid);color:var(--muted);cursor:pointer;transition:all .15s;background:#fff}
+.ftag:hover,.ftag.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.ftag.active-cat{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* SEARCH */
+.search-box{display:flex;align-items:stretch;border:1.5px solid var(--mid);border-radius:8px;overflow:hidden;background:#fff;margin-left:auto}
+.search-box input{border:none;outline:none;padding:8px 14px;font-size:13px;font-family:'Barlow',sans-serif;color:var(--text);min-width:200px}
+.search-box button{background:var(--teal);color:#fff;border:none;padding:0 16px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .15s}
+.search-box button:hover{background:var(--teal-light)}
+
+/* RESOURCE COUNT */
+.resource-count{font-size:13px;color:var(--muted);margin:2rem 0 1rem;display:flex;align-items:center;justify-content:space-between}
+.resource-count strong{color:var(--navy)}
+
+/* RESOURCE CARDS GRID */
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding-bottom:5rem}
+.resource-card{background:#fff;border:1px solid var(--mid);border-radius:10px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
+.resource-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);border-color:rgba(13,143,126,.25);transform:translateY(-2px)}
+.resource-card.hidden{display:none}
+.rc-top{padding:1.25rem 1.25rem .875rem;flex:1;display:flex;flex-direction:column}
+.rc-type-row{display:flex;align-items:center;gap:8px;margin-bottom:.75rem}
+.rc-type-badge{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:4px}
+.rc-type-badge.guide{background:rgba(13,143,126,.1);color:var(--teal)}
+.rc-type-badge.checklist{background:rgba(245,166,35,.1);color:var(--accent2)}
+.rc-type-badge.tool{background:rgba(12,30,53,.07);color:var(--navy)}
+.rc-type-badge.regulation{background:rgba(192,57,43,.08);color:var(--red)}
+.rc-type-badge.template{background:rgba(103,65,217,.08);color:#6741d9}
+.rc-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto}
+.rc-icon.teal{background:rgba(13,143,126,.08);color:var(--teal)}
+.rc-icon.amber{background:rgba(245,166,35,.1);color:var(--accent2)}
+.rc-icon.navy{background:rgba(12,30,53,.07);color:var(--navy)}
+.rc-icon.red{background:rgba(192,57,43,.08);color:var(--red)}
+.rc-icon svg{width:18px;height:18px}
+.rc-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:.5rem;line-height:1.3;flex:1}
+.rc-desc{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:.875rem}
+.rc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.75rem}
+.rc-tag{font-size:10px;font-weight:600;color:var(--muted);background:var(--light);border:1px solid var(--mid);padding:2px 8px;border-radius:3px}
+.rc-bottom{padding:.875rem 1.25rem;border-top:1px solid var(--light);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.rc-read-time{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.rc-actions{display:flex;gap:8px}
+.rc-btn{font-size:12px;font-weight:700;padding:6px 14px;border-radius:5px;display:inline-flex;align-items:center;gap:5px;transition:all .15s;cursor:pointer}
+.rc-btn-teal{background:var(--teal);color:#fff}.rc-btn-teal:hover{background:var(--teal-light)}
+.rc-btn-outline{background:transparent;color:var(--teal);border:1.5px solid rgba(13,143,126,.25)}.rc-btn-outline:hover{background:rgba(13,143,126,.06)}
+
+/* INLINE CONTENT SECTIONS */
+.content-section{background:#fff;border:1px solid var(--mid);border-radius:12px;padding:2rem;margin-bottom:1.25rem;display:none}
+.content-section.open{display:block}
+.content-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;gap:1rem}
+.content-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--navy)}
+.content-chevron{transition:transform .2s;color:var(--muted)}
+.content-body{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--light)}
+.content-body h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:.5rem;margin-top:1.5rem}
+.content-body h3:first-child{margin-top:0}
+.content-body p{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:.875rem}
+.content-body ul{margin:.5rem 0 .875rem 1.25rem;display:flex;flex-direction:column;gap:6px}
+.content-body ul li{font-size:13.5px;color:var(--text2);line-height:1.55}
+.content-body ul li strong{color:var(--navy);font-weight:600}
+.info-box{background:rgba(13,143,126,.06);border:1px solid rgba(13,143,126,.2);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0;font-size:13.5px;color:var(--text2);line-height:1.6}
+.info-box strong{color:var(--teal);font-weight:700}
+.warn-box{background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.25);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0;font-size:13.5px;color:var(--text2);line-height:1.6}
+.warn-box strong{color:var(--accent2);font-weight:700}
+.checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:var(--off-white);border:1px solid var(--mid);border-radius:8px;font-size:13px;color:var(--text);line-height:1.45}
+.check-item strong{display:block;font-weight:600;color:var(--navy);margin-bottom:2px}
+.check-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:5px}
+.ref-box{background:var(--navy2);border-radius:8px;padding:1rem 1.25rem;margin-top:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.ref-text{font-size:13px;color:rgba(255,255,255,.6)}.ref-text strong{color:#fff}
+
+/* EMERG */
+.emerg-section{background:var(--red);padding:3.5rem 0}
+.emerg-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.emerg-text h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3.5vw,36px);font-weight:800;color:#fff;margin-bottom:.4rem}
+.emerg-text p{color:rgba(255,255,255,.75);font-size:15px}
+.emerg-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.emerg-phone{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:#fff}
+
+/* FOOTER */
+footer{background:var(--navy);padding:4rem 0 0}
+.footer-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem}
+.footer-addr{font-size:12px;color:rgba(255,255,255,.3);margin-top:.75rem;line-height:1.6}
+.footer-portal{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--accent);font-size:12px;font-weight:600;padding:8px 14px;border-radius:6px;margin-top:1rem;transition:all .15s}
+.footer-portal:hover{background:rgba(245,166,35,.18)}
+.footer-col h5{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);padding:4px 0;transition:color .12s}
+.footer-col a:hover{color:var(--teal-light)}
+.footer-social{display:flex;gap:8px;margin-top:.5rem}
+.social-btn{width:34px;height:34px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;transition:all .15s;color:rgba(255,255,255,.5);font-size:13px;font-weight:700}
+.social-btn:hover{background:rgba(13,143,126,.2);border-color:rgba(13,143,126,.4);color:var(--teal-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,.25);transition:color .12s}
+.footer-legal a:hover{color:rgba(255,255,255,.55)}
+
+/* MOBILE NAV */
+.mob-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;padding:1.5rem;overflow-y:auto;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.mob-close{background:none;border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mob-nav a{display:block;padding:14px 0;font-size:18px;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07);font-weight:500}
+.mob-nav-cta{margin-top:1.5rem;display:flex;flex-direction:column;gap:10px}
+.mob-cta-emergency,.mob-cta-portal{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:10px;text-decoration:none;transition:all .2s}
+.mob-cta-emergency{background:rgba(192,57,43,.18);border:1px solid rgba(220,80,80,.32)}
+.mob-cta-portal{background:rgba(13,110,140,.18);border:1px solid rgba(45,155,195,.28)}
+.mob-cta-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mob-cta-emergency .mob-cta-icon{background:rgba(220,70,70,.2);color:#f87171}
+.mob-cta-portal .mob-cta-icon{background:rgba(45,155,195,.18);color:#60c4e8}
+.mob-cta-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.mob-cta-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.mob-cta-emergency .mob-cta-label{color:rgba(252,165,165,.65)}
+.mob-cta-portal .mob-cta-label{color:rgba(103,196,232,.6)}
+.mob-cta-value{font-size:14px;font-weight:600;margin-top:3px;line-height:1}
+.mob-cta-emergency .mob-cta-value{color:#fca5a5}
+.mob-cta-portal .mob-cta-value{color:#a5d8f0}
+.mob-cta-pulse{width:8px;height:8px;border-radius:50%;background:#f87171;flex-shrink:0;animation:mob-pulse 1.8s ease-in-out infinite}
+@keyframes mob-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.mob-cta-arrow{color:rgba(103,196,232,.45);flex-shrink:0}
+
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:960px){
+  nav{display:none}.mob-toggle{display:flex}
+  .header-cta .phone-link,.header-cta .btn-accent{display:none}
+  .featured-grid{grid-template-columns:1fr}
+  .resources-grid{grid-template-columns:1fr 1fr}
+  .checklist-grid{grid-template-columns:1fr}
+  .filter-section{top:60px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .emerg-inner{flex-direction:column;text-align:center}
+  .emerg-actions{justify-content:center}
+  .search-box input{min-width:140px}
+}
+@media(max-width:600px){
+  .container{padding:0 1rem}
+  .header-inner{height:60px}
+  .logo-img{height:48px}
+  .resources-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .ann-bar span:last-child,.ann-bar .ann-sep:last-of-type{display:none}
+  .emerg-phone{font-size:22px}
+  .search-box{width:100%}
+  .filter-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann-bar">
+  <div class="ann-bar-inner">
+    <span><span class="ann-pulse" aria-hidden="true"></span></span>
+    <span><strong>Free Technical Resources</strong></span>
+    <span class="ann-sep">|</span>
+    <span>F-Gas guides, conversion checklists &amp; engineering advice</span>
+    <span class="ann-sep">|</span>
+    <span>Call: <strong>+44 151 440 3843</strong></span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="ANP_Web_Logo.png" style="mix-blend-mode:screen" alt="ANP Marine & Industrial" class="logo-img">
+    </a>
+    <nav aria-label="Main navigation">
+      <div class="nav-item">
+        <a class="nav-link" href="services.html">Services
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="services.html#refrigeration">Marine Refrigeration</a>
+          <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+          <a href="services.html#compressed-air">Compressed Air Systems</a>
+          <a href="services.html#fire-safety">Fire &amp; Safety Systems</a>
+          <a href="services.html#drydock">Dry Dock &amp; Port Call Support</a>
+          <div class="dropdown-divider"></div>
+          <a href="contact.html#emergency">Emergency Callout</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="spares.html">Spares
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="spares.html#refrigeration">Refrigeration Spares</a>
+          <a href="spares.html#hvac">HVAC &amp; AC Spares</a>
+          <a href="spares.html#compressed-air">Compressed Air Spares</a>
+          <a href="spares.html#fire-safety">Fire &amp; Safety Spares</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="markets.html">Markets</a></div>
+      <div class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></div>
+      <div class="nav-item"><a class="nav-link" href="ice.html">ICE</a></div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a></div>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+441514403843" class="phone-link">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +44 151 440 3843
+      </a>
+      <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="btn btn-accent" style="font-size:13px;padding:9px 16px;">ANP Online
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+    <button class="mob-toggle" id="mob-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mob-nav" role="dialog" aria-label="Mobile navigation">
+  <div class="mob-nav-top">
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff">ANP Marine &amp; Industrial</span>
+    <button class="mob-close" id="mob-close" aria-label="Close menu">
+      <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="spares.html">Spares</a>
+  <a href="markets.html">Markets</a>
+  <a href="resources.html">Resources</a>
+  <a href="ice.html">ICE AI Assistant</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-nav-cta">
+    <a href="tel:+441514403843" class="mob-cta-emergency">
+      <span class="mob-cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.64 3.35 2 2 0 013.62 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.4 6.4l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+      <span class="mob-cta-body"><span class="mob-cta-label">24/7 Emergency</span><span class="mob-cta-value">+44 151 440 3843</span></span>
+      <span class="mob-cta-pulse" aria-hidden="true"></span>
+    </a>
+    <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="mob-cta-portal">
+      <span class="mob-cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+      <span class="mob-cta-body"><span class="mob-cta-label">Customer Portal</span><span class="mob-cta-value">ANP Online</span></span>
+      <svg class="mob-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span style="color:rgba(255,255,255,.6)">Resources</span></div>
+    <div class="page-label">Knowledge Base</div>
+    <h1>Technical Guides, Checklists &amp; Engineering Resources</h1>
+    <p>Free technical documentation for ship superintendents, fleet managers and marine engineers. F-Gas compliance guides, refrigerant conversion checklists, buyer advice and engineering reference material — written by ANP Marine's own engineers.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="#library" class="btn btn-teal">Browse Resources
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="refrigerant-questionnaire.html" class="btn btn-outline">Refrigerant Questionnaire</a>
+    </div>
+  </div>
+  <div class="page-wave">
+    <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:50px;display:block;width:100%" aria-hidden="true"><path d="M0,30 C360,60 1080,0 1440,30 L1440,50 L0,50 Z" fill="#fff"/></svg>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured-section">
+  <div class="container">
+    <div class="section-label">Featured Resources</div>
+    <div class="featured-grid fade-up">
+
+      <div class="featured-card">
+        <div class="fc-type">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Interactive Tool
+        </div>
+        <div class="fc-title">Refrigerant Conversion Questionnaire — Chief Engineer On-Site Report</div>
+        <p class="fc-desc">A structured 7-step questionnaire for chief engineers to document vessel system details, current refrigerant, compressor data and photos before requesting a conversion assessment. Generates a PDF report for your superintendent and ANP engineers.</p>
+        <div class="fc-actions">
+          <a href="refrigerant-questionnaire.html" class="btn-fc-teal">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Open Questionnaire
+          </a>
+          <a href="ice.html" class="btn-fc-outline">Ask ICE for Help</a>
+        </div>
+      </div>
+
+      <div class="featured-card amber">
+        <div class="fc-type amber">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Buyer's Guide
+        </div>
+        <div class="fc-title">What to Gather Before Requesting a Refrigerant Conversion Quote</div>
+        <p class="fc-desc">The information you need to collect from the vessel before approaching any service company. Getting this right means faster quotations, accurate pricing and no surprises during the conversion. Written for superintendents and procurement teams.</p>
+        <div class="fc-actions">
+          <a href="#buyers-guide" onclick="openContent('buyers-guide')" class="btn-fc-teal">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Read Guide
+          </a>
+          <a href="contact.html" class="btn-fc-outline">Request Assessment</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FILTER + LIBRARY -->
+<div id="library">
+  <div class="filter-section">
+    <div class="container filter-inner">
+      <span class="filter-label">Filter:</span>
+      <div class="filter-group">
+        <span class="ftag active" onclick="filterResources('all',this)">All</span>
+        <span class="ftag" onclick="filterResources('guide',this)">Guides</span>
+        <span class="ftag" onclick="filterResources('checklist',this)">Checklists</span>
+        <span class="ftag" onclick="filterResources('regulation',this)">Regulations</span>
+        <span class="ftag" onclick="filterResources('tool',this)">Tools</span>
+        <span class="ftag" onclick="filterResources('template',this)">Templates</span>
+      </div>
+      <div class="filter-divider" aria-hidden="true"></div>
+      <div class="filter-group">
+        <span class="ftag" onclick="filterTopic('fgas',this)">F-Gas</span>
+        <span class="ftag" onclick="filterTopic('refrigerant',this)">Refrigerant</span>
+        <span class="ftag" onclick="filterTopic('hvac',this)">HVAC</span>
+        <span class="ftag" onclick="filterTopic('compressor',this)">Compressor</span>
+        <span class="ftag" onclick="filterTopic('compliance',this)">Compliance</span>
+      </div>
+      <div class="search-box" style="margin-left:auto">
+        <input type="text" id="res-search" placeholder="Search resources..." oninput="searchResources()" aria-label="Search resources">
+        <button onclick="searchResources()">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="resource-count">
+      <span>Showing <strong id="res-count">12</strong> resources</span>
+      <span style="font-size:12px;color:var(--muted)">Click any resource to read inline or follow the link</span>
+    </div>
+
+    <!-- INLINE CONTENT — Buyer's Guide -->
+    <div class="content-section" id="buyers-guide">
+      <div class="content-header" onclick="toggleContent('buyers-guide')">
+        <div class="content-title">What to Gather Before Requesting a Refrigerant Conversion Quote</div>
+        <svg class="content-chevron icon" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="content-body">
+        <p>Before you contact ANP Marine — or any refrigeration service company — for a refrigerant conversion quotation, gathering the right information from your vessel will save significant time and produce a more accurate quote. Incomplete enquiries result in assumptions, which result in surprises. This guide tells you exactly what to collect.</p>
+
+        <div class="warn-box"><strong>Why this matters:</strong> A refrigerant conversion is not a simple gas swap. The new refrigerant may require different oil, new filter driers, resized expansion valves, updated controls and revised system pressures. The more information you provide upfront, the more precise the quote — and the fewer unexpected costs during the job.</div>
+
+        <h3>1. Current Refrigerant Information</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Refrigerant designation</strong>R22, R404A, R407C, R410A, R134a or other. Check the nameplate and the F-Gas logbook.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Total system charge (kg)</strong>From the F-Gas equipment log, service records or nameplate. If unknown, note the receiver/cylinder sizes.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>GWP and CO₂-equivalent</strong>Used to determine leak check frequency under F-Gas regulations. Your current logbook should show this.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Current oil type</strong>Mineral, alkylbenzene (AB) or POE. This determines whether an oil flush is required for the new refrigerant.</div></div>
+        </div>
+
+        <h3>2. Compressor Details</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Make and model</strong>BITZER, Grasso, Carrier, Copeland, Mycom etc. Photograph the nameplate — do not rely on memory.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Serial number</strong>Required to identify correct valve plates, gaskets and approved refrigerant alternatives for that specific model.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Year of manufacture</strong>Older compressors may not be approved for certain HFO blends. Year determines available retrofit options.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Running hours</strong>Heavily run compressors may require overhaul before conversion. Include hours since last major service.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Compressor type</strong>Reciprocating, screw, scroll or rotary. This affects oil type, conversion approach and expected performance change.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Number of compressors and circuits</strong>How many independent refrigeration circuits does the system have? Are they stand-alone or connected?</div></div>
+        </div>
+
+        <h3>3. System Components</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Expansion valve type and model</strong>TEV (thermostatic), electronic or capillary tube. TEV may need resizing or replacement for the new refrigerant.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Filter drier size and connections</strong>Will almost always need replacing during conversion. Note the connection sizes (ODF, flare or solder).</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Condenser type</strong>Air-cooled, water-cooled or seawater-cooled. Affects heat rejection and suitability for higher-pressure refrigerants.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Evaporator type and application</strong>Provision plant, cargo hold, chiller barrel or direct expansion. Each has different requirements for the replacement gas.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Control system / thermostat</strong>Analogue pressostats or electronic controllers? Electronic systems may need recalibration or replacement for new refrigerant pressure ranges.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Sight glass and moisture indicator</strong>Note current colour — moisture present? Needs replacing with desiccant rated for new refrigerant.</div></div>
+        </div>
+
+        <h3>4. Current System Condition</h3>
+        <p>Provide an honest assessment of the system's condition. A conversion performed on a system with pre-existing faults will not resolve those faults and may introduce new ones.</p>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Known leaks or refrigerant loss</strong>Has refrigerant been topped up repeatedly? Where is the suspected leak? Conversion cannot mask a leaking system.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Current suction and discharge pressures</strong>Record at normal operating conditions. Helps engineers predict performance change with the new refrigerant.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Suction and discharge temperatures (°C)</strong>Superheat and subcooling values help assess TEV setting and whether the valve is correctly sized.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Compressor discharge temperature</strong>High discharge temperatures can indicate oil breakdown, wrong refrigerant charge or poor TEV operation.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Any history of contamination</strong>Moisture, air or non-condensables in the system? Acid test results if available. This affects conversion approach.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Recent service history</strong>What has been replaced or repaired in the last 2 years? This prevents duplication and helps scope the conversion correctly.</div></div>
+        </div>
+
+        <h3>5. Vessel and Operational Information</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Vessel name and IMO number</strong>Required for F-Gas documentation and class notification.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Flag state and classification society</strong>Some refrigerants require class approval before use. Your flag state may have specific documentation requirements.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Planned drydock or port call date</strong>Conversion timing relative to your next drydock determines the work scope and urgency. Earlier notice = better parts availability and pricing.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Vessel current location and next port</strong>Required for engineer mobilisation planning and parts delivery logistics.</div></div>
+        </div>
+
+        <h3>6. Photographs — These Are Essential</h3>
+        <p>No quotation can be fully accurate without photographs. Send clear, well-lit images of:</p>
+        <ul>
+          <li>Compressor nameplate (both sides if labels are on different faces)</li>
+          <li>Full system overview — compressor, condenser, evaporator in frame</li>
+          <li>Expansion valve — including the bulb and equaliser line if visible</li>
+          <li>Filter drier — showing the connections and any moisture indicator</li>
+          <li>Sight glass and any visible pipework</li>
+          <li>Any visible defects, corrosion, oil staining or frost patterns</li>
+          <li>Control panel or thermostat</li>
+        </ul>
+
+        <div class="info-box"><strong>Use the ANP Refrigerant Conversion Questionnaire</strong> — it guides the chief engineer through every point above, with photo upload prompts and system detail fields. The completed questionnaire produces a PDF that contains everything an engineer needs to produce an accurate quote. No back-and-forth, no missing information.</div>
+
+        <div class="ref-box">
+          <div class="ref-text"><strong>Ready to request a quote?</strong> Send completed information to Hello@ANPmarine.co.uk or use the questionnaire tool.</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a href="refrigerant-questionnaire.html" class="btn-fc-teal" style="font-size:13px;padding:10px 18px">Open Questionnaire</a>
+            <a href="contact.html" class="btn-fc-outline" style="font-size:13px;padding:10px 18px">Contact Engineers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INLINE CONTENT — F-Gas Compliance Guide -->
+    <div class="content-section" id="fgas-guide">
+      <div class="content-header" onclick="toggleContent('fgas-guide')">
+        <div class="content-title">F-Gas Compliance Guide for Vessels & Offshore Facilities</div>
+        <svg class="content-chevron icon" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="content-body">
+        <p>The UK F-Gas Regulation 2024 and EU Regulation 2024/573 impose specific legal obligations on operators of vessels and offshore platforms that contain fluorinated greenhouse gas systems. This guide summarises the key obligations for marine operators.</p>
+
+        <h3>Who is covered?</h3>
+        <p>Any vessel or offshore platform operated by a UK or EU-based entity, or calling at UK or EU ports, that contains refrigeration or HVAC systems using HFCs, PFCs or SF₆ is covered by F-Gas regulations. This includes provision plants, cargo refrigeration, HVAC chillers, split AC systems and compressed gas fire suppression systems.</p>
+
+        <h3>Key Obligations</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>Statutory leak checks</strong>Required at intervals determined by CO₂-equivalent charge: annually (5–50t), every 6 months (50–500t), every 3 months (500t+). Must be performed by a certified F-Gas engineer.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Refrigerant logbook</strong>All systems containing 5 tonnes CO₂-eq or more must have a written equipment log recording charges, recoveries, leak check results and service history. Retained for minimum 5 years.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Leak repair obligation</strong>Detected leaks must be repaired without undue delay. A mandatory re-check must be performed within 30 days of repair. You cannot top up a known leaking system.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Certified engineers only</strong>All refrigerant handling, leak checking and recovery must be performed by an individually certified F-Gas engineer. The certification number must appear on service records.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>No venting to atmosphere</strong>Release of fluorinated refrigerant is prohibited. All recovered refrigerant must be sent to an approved reclamation, recycling or destruction facility.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>Phase-down planning</strong>R404A, R410A and R407C face tightening quota restrictions through 2024–2030. Operators must plan conversions ahead of drydock schedules while supply is still manageable.</div></div>
+        </div>
+
+        <div class="info-box"><strong>ANP Marine carries full UK F-Gas certification.</strong> Every service we perform produces a complete documentation package — equipment log updates, leak check certificates, refrigerant recovery records and compliance statements — formatted for class surveyor and flag state inspection.</div>
+
+        <div class="ref-box">
+          <div class="ref-text"><strong>Full F-Gas guide with refrigerant conversion table and FAQ</strong> on the HVAC &amp; Refrigeration page.</div>
+          <a href="hvac-refrigeration.html#compliance" class="btn-fc-teal" style="font-size:13px;padding:10px 18px">Read Full Guide</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- INLINE CONTENT — Leak Check Intervals -->
+    <div class="content-section" id="leak-check">
+      <div class="content-header" onclick="toggleContent('leak-check')">
+        <div class="content-title">F-Gas Leak Check Frequency — Quick Reference Table</div>
+        <svg class="content-chevron icon" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="content-body">
+        <p>Leak check frequency under the UK F-Gas Regulation 2024 is determined by the CO₂-equivalent charge of the system. The table below applies to vessels and offshore facilities.</p>
+        <div style="overflow-x:auto;margin:1.25rem 0">
+          <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+            <thead>
+              <tr style="background:var(--navy)">
+                <th style="padding:.75rem 1rem;text-align:left;color:#fff;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">System Charge (CO₂-eq)</th>
+                <th style="padding:.75rem 1rem;text-align:left;color:#fff;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">Standard Frequency</th>
+                <th style="padding:.75rem 1rem;text-align:left;color:#fff;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">With Automatic Leak Detection</th>
+                <th style="padding:.75rem 1rem;text-align:left;color:#fff;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">Marine Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#fff">
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--light);font-weight:600;color:var(--navy)">5 to &lt;50 tonnes</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--light);color:var(--teal);font-weight:700">Every 12 months</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--light)">Every 24 months</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--light);color:var(--muted)">Small provision plants, split AC</td>
+              </tr>
+              <tr style="background:var(--light)">
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--mid);font-weight:600;color:var(--navy)">50 to &lt;500 tonnes</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--mid);color:var(--teal);font-weight:700">Every 6 months</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--mid)">Every 12 months</td>
+                <td style="padding:.75rem 1rem;border-bottom:1px solid var(--mid);color:var(--muted)">Cargo refrigeration, large chillers</td>
+              </tr>
+              <tr style="background:#fff">
+                <td style="padding:.75rem 1rem;font-weight:600;color:var(--navy)">500+ tonnes</td>
+                <td style="padding:.75rem 1rem;color:var(--red);font-weight:700">Every 3 months</td>
+                <td style="padding:.75rem 1rem">Every 6 months</td>
+                <td style="padding:.75rem 1rem;color:var(--muted)">Large FPSO/platform HVAC</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box"><strong>Converting to a lower-GWP refrigerant reduces your CO₂-equivalent charge</strong>, which can extend the period between mandatory leak checks. For example, converting from R404A (GWP 3,922) to R448A (GWP 1,387) reduces the CO₂-equivalent of a 30 kg system from 117.7 tonnes to 41.6 tonnes — moving it from the 6-month to the 12-month check bracket.</div>
+      </div>
+    </div>
+
+    <!-- INLINE CONTENT — R22 Conversion Guide -->
+    <div class="content-section" id="r22-guide">
+      <div class="content-header" onclick="toggleContent('r22-guide')">
+        <div class="content-title">R22 Conversion Guide — Marine Refrigeration</div>
+        <svg class="content-chevron icon" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="content-body">
+        <p>R22 (HCFC-22) has been banned from use in all equipment in the UK and EU since 2015. Any vessel still operating an R22 system is in breach of ozone and F-Gas regulations and faces enforcement risk at PSC inspections. Conversion is mandatory, not optional.</p>
+
+        <h3>Recommended R22 Replacement Refrigerants</h3>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-dot"></span><div><strong>R407F (GWP 1,825)</strong>Operates at similar pressures to R22. Good transitional option where system design limits other choices. Still subject to F-Gas phase-down — not a long-term solution.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>R448A (GWP 1,387)</strong>Lower GWP HFO blend. Preferred long-term alternative for most marine provision plant and cargo refrigeration applications. Requires POE oil change.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>R449A (GWP 1,397)</strong>Similar performance to R448A. Suitable for low and medium temperature marine applications. Requires POE oil change and filter drier replacement.</div></div>
+          <div class="check-item"><span class="check-dot"></span><div><strong>R32 (GWP 675)</strong>Very low GWP. Suitable for some HVAC applications but higher pressures require assessment of system design limits before use.</div></div>
+        </div>
+
+        <h3>What a Conversion Involves</h3>
+        <ul>
+          <li><strong>Refrigerant recovery</strong> — R22 must be recovered by a certified F-Gas engineer using certified recovery equipment. It cannot be vented.</li>
+          <li><strong>Oil flush and change</strong> — R22 systems typically use mineral or alkylbenzene oil. Most HFO alternatives require POE oil. The system must be flushed before recharging.</li>
+          <li><strong>Filter drier replacement</strong> — mandatory. The existing drier will be saturated with R22 and mineral oil residue.</li>
+          <li><strong>Expansion valve assessment</strong> — TEV may need resizing or replacement depending on the new refrigerant's thermodynamic properties.</li>
+          <li><strong>System leak test</strong> — full pressure test with nitrogen before recharging.</li>
+          <li><strong>Recharge and commissioning</strong> — new refrigerant charged to OEM specification for the replacement gas, not the original R22 charge weight.</li>
+          <li><strong>Documentation</strong> — updated F-Gas equipment log, refrigerant record, service certificate and class notification where required.</li>
+        </ul>
+
+        <div class="ref-box">
+          <div class="ref-text"><strong>Use the questionnaire</strong> to give ANP engineers everything they need to plan your R22 conversion.</div>
+          <a href="refrigerant-questionnaire.html" class="btn-fc-teal" style="font-size:13px;padding:10px 18px">Open Questionnaire</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESOURCE CARDS GRID -->
+    <div class="resources-grid" id="resources-grid">
+
+      <!-- 1 -->
+      <div class="resource-card" data-type="tool" data-topics="refrigerant fgas compressor" data-title="refrigerant conversion questionnaire chief engineer">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge tool">Interactive Tool</span>
+            <div class="rc-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          </div>
+          <div class="rc-title">Refrigerant Conversion Questionnaire</div>
+          <p class="rc-desc">7-step chief engineer on-site report. Documents vessel, compressor, refrigerant and system condition details. Generates a PDF for superintendent and engineering review.</p>
+          <div class="rc-tags"><span class="rc-tag">Refrigerant</span><span class="rc-tag">F-Gas</span><span class="rc-tag">Compressor</span><span class="rc-tag">All vessels</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15–20 min</span>
+          <div class="rc-actions"><a href="refrigerant-questionnaire.html" class="rc-btn rc-btn-teal">Open Tool</a></div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="resource-card" data-type="checklist" data-topics="refrigerant compressor" data-title="what to gather before refrigerant conversion quote buyer guide superintendent">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge checklist">Buyer's Guide</span>
+            <div class="rc-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          </div>
+          <div class="rc-title">What to Gather Before Requesting a Conversion Quote</div>
+          <p class="rc-desc">The complete information checklist for superintendents and procurement teams. Covers refrigerant, compressor, system components, condition data, photos and vessel details.</p>
+          <div class="rc-tags"><span class="rc-tag">Refrigerant</span><span class="rc-tag">Compressor</span><span class="rc-tag">Procurement</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min read</span>
+          <div class="rc-actions"><a href="#buyers-guide" onclick="openContent('buyers-guide')" class="rc-btn rc-btn-teal">Read Guide</a></div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="resource-card" data-type="guide" data-topics="fgas compliance refrigerant" data-title="f-gas compliance guide vessels offshore facilities uk regulation">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge guide">Technical Guide</span>
+            <div class="rc-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          </div>
+          <div class="rc-title">F-Gas Compliance Guide for Vessels &amp; Offshore Facilities</div>
+          <p class="rc-desc">Covers UK F-Gas Regulation 2024 and EU 2024/573 obligations — leak checking, record-keeping, certified engineers, refrigerant phase-down and class documentation requirements.</p>
+          <div class="rc-tags"><span class="rc-tag">F-Gas</span><span class="rc-tag">Compliance</span><span class="rc-tag">Regulation</span><span class="rc-tag">Offshore</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 10 min read</span>
+          <div class="rc-actions"><a href="#fgas-guide" onclick="openContent('fgas-guide')" class="rc-btn rc-btn-teal">Read Guide</a><a href="hvac-refrigeration.html" class="rc-btn rc-btn-outline">Full Page</a></div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="resource-card" data-type="checklist" data-topics="fgas refrigerant compliance" data-title="f-gas leak check frequency intervals marine vessels">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge checklist">Quick Reference</span>
+            <div class="rc-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          </div>
+          <div class="rc-title">F-Gas Leak Check Frequency — Quick Reference Table</div>
+          <p class="rc-desc">CO₂-equivalent thresholds and required leak check intervals under UK F-Gas Regulation 2024. Shows how converting to lower-GWP refrigerant reduces compliance frequency.</p>
+          <div class="rc-tags"><span class="rc-tag">F-Gas</span><span class="rc-tag">Leak Check</span><span class="rc-tag">Compliance</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 min read</span>
+          <div class="rc-actions"><a href="#leak-check" onclick="openContent('leak-check')" class="rc-btn rc-btn-teal">View Table</a></div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="resource-card" data-type="guide" data-topics="refrigerant fgas compliance" data-title="r22 conversion guide marine refrigeration replacement">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge guide">Technical Guide</span>
+            <div class="rc-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg></div>
+          </div>
+          <div class="rc-title">R22 Conversion Guide — Marine Refrigeration</div>
+          <p class="rc-desc">R22 is banned. This guide explains replacement options (R407F, R448A, R449A, R32), what conversion involves — oil flush, TEV resizing, filter drier replacement — and documentation required.</p>
+          <div class="rc-tags"><span class="rc-tag">R22</span><span class="rc-tag">R448A</span><span class="rc-tag">R407F</span><span class="rc-tag">Refrigerant</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 min read</span>
+          <div class="rc-actions"><a href="#r22-guide" onclick="openContent('r22-guide')" class="rc-btn rc-btn-teal">Read Guide</a></div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="resource-card" data-type="regulation" data-topics="fgas compliance refrigerant" data-title="refrigerant phase-down schedule uk eu f-gas 2024 2030">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge regulation">Regulation Summary</span>
+            <div class="rc-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          </div>
+          <div class="rc-title">HFC Phase-Down Schedule 2024–2030 — What Vessel Operators Must Know</div>
+          <p class="rc-desc">R404A and R410A face severe quota restrictions from 2025 onwards. This summary explains the phase-down timeline, price implications and why planning conversion now — not at drydock — is critical.</p>
+          <div class="rc-tags"><span class="rc-tag">F-Gas</span><span class="rc-tag">Phase-Down</span><span class="rc-tag">R404A</span><span class="rc-tag">R410A</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</span>
+          <div class="rc-actions"><a href="hvac-refrigeration.html#faq" class="rc-btn rc-btn-teal">Read FAQ</a></div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="resource-card" data-type="guide" data-topics="hvac compliance" data-title="mlc 2006 accommodation hvac compliance marine labour convention">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge guide">Technical Guide</span>
+            <div class="rc-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg></div>
+          </div>
+          <div class="rc-title">MLC 2006 — Accommodation HVAC Compliance for Vessels</div>
+          <p class="rc-desc">Maritime Labour Convention requirements for accommodation ventilation, temperature control and air quality. What class surveyors and flag state inspectors check, and how ANP can produce the required certification.</p>
+          <div class="rc-tags"><span class="rc-tag">MLC 2006</span><span class="rc-tag">HVAC</span><span class="rc-tag">Compliance</span><span class="rc-tag">Class</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min read</span>
+          <div class="rc-actions"><a href="services.html#hvac" class="rc-btn rc-btn-teal">View Service</a><a href="contact.html" class="rc-btn rc-btn-outline">Enquire</a></div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="resource-card" data-type="guide" data-topics="compressor hvac" data-title="starting air compressor overhaul guide marine hamworthy sperre">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge guide">Technical Guide</span>
+            <div class="rc-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+          </div>
+          <div class="rc-title">Starting Air Compressor Overhaul — What's Involved</div>
+          <p class="rc-desc">A guide to marine starting air compressor overhaul — valve pack replacement, inter-cooler inspection, pressure testing and typical parts requirements for Hamworthy, Sperre, Tanabe and Sauer compressors.</p>
+          <div class="rc-tags"><span class="rc-tag">Compressor</span><span class="rc-tag">Hamworthy</span><span class="rc-tag">Sperre</span><span class="rc-tag">Maintenance</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</span>
+          <div class="rc-actions"><a href="services.html#compressed-air" class="rc-btn rc-btn-teal">View Service</a><a href="spares.html#compressed-air" class="rc-btn rc-btn-outline">View Spares</a></div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="resource-card" data-type="checklist" data-topics="refrigerant fgas compliance" data-title="f-gas records what documentation engineer should provide after service">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge checklist">Checklist</span>
+            <div class="rc-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          </div>
+          <div class="rc-title">F-Gas Documentation Checklist — What to Request After Every Service</div>
+          <p class="rc-desc">The 5 documents every vessel operator should request and retain after F-Gas work. Covers engineer certification, leak check certificates, refrigerant records, recovery documentation and equipment logbook entries.</p>
+          <div class="rc-tags"><span class="rc-tag">F-Gas</span><span class="rc-tag">Documentation</span><span class="rc-tag">Compliance</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 min read</span>
+          <div class="rc-actions"><a href="hvac-refrigeration.html#faq" class="rc-btn rc-btn-teal">Read in FAQ</a></div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="resource-card" data-type="guide" data-topics="refrigerant hvac" data-title="drydock hvac refrigeration planning guide ship superintendent">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge guide">Planning Guide</span>
+            <div class="rc-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+          </div>
+          <div class="rc-title">Drydock HVAC &amp; Refrigeration Planning Guide</div>
+          <p class="rc-desc">How to plan and scope HVAC, refrigeration and compressed air work within a drydock window. Covers lead times, class coordination, multi-system sequencing, spares pre-positioning and certification handover.</p>
+          <div class="rc-tags"><span class="rc-tag">Drydock</span><span class="rc-tag">HVAC</span><span class="rc-tag">Refrigerant</span><span class="rc-tag">Planning</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min read</span>
+          <div class="rc-actions"><a href="services.html#drydock" class="rc-btn rc-btn-teal">Dry Dock Service</a><a href="contact.html?type=drydock" class="rc-btn rc-btn-outline">Request Work Pack</a></div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="resource-card" data-type="regulation" data-topics="fgas compliance refrigerant" data-title="refrigerant conversion table gwp status uk eu phase-down r404a r448a r449a">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge regulation">Reference Table</span>
+            <div class="rc-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+          </div>
+          <div class="rc-title">Refrigerant Conversion Table — GWP, Status &amp; Alternatives</div>
+          <p class="rc-desc">Comparison table of 8 common marine refrigerants showing GWP, UK/EU regulatory status, recommended alternative and ANP retrofit availability. R22 through R449A.</p>
+          <div class="rc-tags"><span class="rc-tag">R404A</span><span class="rc-tag">R448A</span><span class="rc-tag">R449A</span><span class="rc-tag">GWP</span><span class="rc-tag">F-Gas</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2 min scan</span>
+          <div class="rc-actions"><a href="hvac-refrigeration.html#refrigerant-conversion" class="rc-btn rc-btn-teal">View Table</a></div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="resource-card" data-type="tool" data-topics="refrigerant fgas hvac compressor" data-title="ice cira ai engineering assistant marine hvac refrigerant questions">
+        <div class="rc-top">
+          <div class="rc-type-row">
+            <span class="rc-type-badge tool">AI Assistant</span>
+            <div class="rc-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          </div>
+          <div class="rc-title">Ask ICE &amp; CIRA — 24/7 AI Engineering &amp; Commercial Support</div>
+          <p class="rc-desc">ICE answers technical questions on refrigerant conversion, fault diagnosis, F-Gas compliance and system specification. CIRA handles parts availability, pricing and delivery. Available 24 hours a day.</p>
+          <div class="rc-tags"><span class="rc-tag">AI</span><span class="rc-tag">Technical</span><span class="rc-tag">Commercial</span><span class="rc-tag">24/7</span></div>
+        </div>
+        <div class="rc-bottom">
+          <span class="rc-read-time"><svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Instant</span>
+          <div class="rc-actions"><a href="ice.html" class="rc-btn rc-btn-teal">Ask ICE</a></div>
+        </div>
+      </div>
+
+    </div><!-- /resources-grid -->
+  </div>
+</div>
+
+<!-- EMERGENCY -->
+<section class="emerg-section">
+  <div class="container emerg-inner">
+    <div class="emerg-text">
+      <h2>Need Engineering Support Now?</h2>
+      <p>Our on-call engineering team is available 24/7. Answered by a qualified marine engineer — not a call centre.</p>
+    </div>
+    <div class="emerg-actions">
+      <div class="emerg-phone">+44 151 440 3843</div>
+      <a href="tel:+441514403843" class="btn" style="background:#fff;color:var(--red);font-weight:700">Call Now</a>
+      <a href="contact.html" class="btn btn-outline">Send Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" style="display:inline-flex;margin-bottom:.5rem">
+          <img src="ANP_Web_Logo.png" alt="ANP Marine & Industrial" style="mix-blend-mode:screen;height:60px;width:auto">
+        </a>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.65;margin-top:.85rem;max-width:240px">Marine HVAC, refrigeration and compressed air specialists. UK-based, worldwide reach. 24/7 emergency cover.</p>
+        <div class="footer-addr">ANP Marine &amp; Industrial Ltd<br>Cholmondley House, Dee Hills Park<br>Chester, CH3 5AR, United Kingdom</div>
+        <a href="https://anpmarine.replit.app" target="_blank" rel="noopener" class="footer-portal">ANP Online — Customer Portal
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <div class="footer-social" style="margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61564650136333" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/company/104927595/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="https://x.com/ANPMarine" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+          <a href="https://www.instagram.com/anpmarine/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="refrigerant-questionnaire.html">Conversion Questionnaire</a>
+        <a href="#buyers-guide" onclick="openContent('buyers-guide')">Buyer's Guide</a>
+        <a href="#fgas-guide" onclick="openContent('fgas-guide')">F-Gas Guide</a>
+        <a href="#r22-guide" onclick="openContent('r22-guide')">R22 Conversion</a>
+        <a href="hvac-refrigeration.html#faq">F-Gas FAQ</a>
+        <a href="ice.html">Ask ICE &amp; CIRA</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html#refrigeration">Marine Refrigeration</a>
+        <a href="services.html#hvac">HVAC &amp; Air Conditioning</a>
+        <a href="services.html#compressed-air">Compressed Air</a>
+        <a href="services.html#drydock">Dry Dock Support</a>
+        <a href="hvac-refrigeration.html">F-Gas Services</a>
+        <a href="spares.html">Spare Parts</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+441514403843">+44 151 440 3843</a>
+        <a href="mailto:Hello@ANPmarine.co.uk">Hello@ANPmarine.co.uk</a>
+        <a href="contact.html">Request Engineering Support</a>
+        <a href="contact.html#emergency">Emergency Callout</a>
+        <a href="contact.html?type=drydock">Dry Dock Work Pack</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ANP Marine &amp; Industrial Ltd. Company No. 15925711. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+const tog=document.getElementById('mob-toggle');
+const mobNav=document.getElementById('mob-nav');
+const cls=document.getElementById('mob-close');
+if(tog)tog.addEventListener('click',()=>{mobNav.classList.add('open');tog.setAttribute('aria-expanded','true')});
+if(cls)cls.addEventListener('click',()=>{mobNav.classList.remove('open');tog.setAttribute('aria-expanded','false')});
+
+// Scroll animations
+const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// ── FILTER LOGIC ──
+let activeType = 'all';
+let activeTopic = '';
+let searchTerm = '';
+
+function filterResources(type, el) {
+  activeType = type;
+  document.querySelectorAll('.filter-group:first-of-type .ftag').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+
+function filterTopic(topic, el) {
+  if (activeTopic === topic) {
+    activeTopic = '';
+    el.classList.remove('active');
+  } else {
+    activeTopic = topic;
+    document.querySelectorAll('.filter-group:last-of-type .ftag').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+  }
+  applyFilters();
+}
+
+function searchResources() {
+  searchTerm = document.getElementById('res-search').value.toLowerCase().trim();
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.resource-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const type = card.dataset.type;
+    const topics = card.dataset.topics || '';
+    const title = card.dataset.title || '';
+    const typeMatch = activeType === 'all' || type === activeType;
+    const topicMatch = !activeTopic || topics.includes(activeTopic);
+    const searchMatch = !searchTerm || title.includes(searchTerm) || topics.includes(searchTerm);
+    if (typeMatch && topicMatch && searchMatch) {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  document.getElementById('res-count').textContent = visible;
+}
+
+// ── INLINE CONTENT TOGGLE ──
+function openContent(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('open');
+  el.querySelector('.content-chevron').style.transform = 'rotate(180deg)';
+  setTimeout(() => el.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+}
+
+function toggleContent(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOpen = el.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.content-section.open').forEach(s => {
+    s.classList.remove('open');
+    s.querySelector('.content-chevron').style.transform = '';
+  });
+  if (!isOpen) {
+    el.classList.add('open');
+    el.querySelector('.content-chevron').style.transform = 'rotate(180deg)';
+  }
+}
+
+// Handle hash links to inline content
+if (window.location.hash) {
+  const id = window.location.hash.replace('#','');
+  setTimeout(() => openContent(id), 300);
+}
+</script>
+</body>
+</html>
