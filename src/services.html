@@ -891,5 +891,36 @@ window.addEventListener('scroll',()=>{
   });
 },{passive:true});
 </script>
+<!-- FLOATING ICE BUBBLE -->
+<div id="ice-bubble" style="position:fixed; bottom:30px; right:30px; width:68px; height:68px; background:var(--teal); border-radius:50%; box-shadow:0 8px 25px rgba(13,143,126,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:9999; font-size:32px; color:white; border:3px solid rgba(255,255,255,0.3); transition:all .3s ease;">
+  ❄️
+</div>
+
+<div id="ice-tooltip" style="position:fixed; bottom:105px; right:40px; background:var(--navy); color:white; padding:12px 20px; border-radius:8px; font-size:14px; white-space:nowrap; box-shadow:0 6px 20px rgba(0,0,0,0.35); display:none; z-index:10000;">
+  Chat with ICE &amp; CIRA
+</div>
+
+<script>
+// Floating ICE Bubble
+document.addEventListener('DOMContentLoaded', function() {
+  const bubble = document.getElementById('ice-bubble');
+  const tooltip = document.getElementById('ice-tooltip');
+
+  if (!bubble) return;
+
+  bubble.addEventListener('click', () => {
+    window.open('/ice.html', '_blank');
+  });
+
+  bubble.addEventListener('mouseenter', () => tooltip.style.display = 'block');
+  bubble.addEventListener('mouseleave', () => tooltip.style.display = 'none');
+
+  // Pulse
+  setInterval(() => {
+    bubble.style.transform = 'scale(1.12)';
+    setTimeout(() => bubble.style.transform = 'scale(1)', 180);
+  }, 5000);
+});
+</script>
 </body>
 </html>
