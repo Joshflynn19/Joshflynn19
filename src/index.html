@@ -17,44 +17,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
-/* ── MOBILE / TABLET MENU ── */
-@media (max-width: 900px) {
-  .mob-toggle {
-    display: flex !important;
-  }
-
-  nav,
-  .main-nav {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: var(--navy);
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    z-index: 9999;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  nav.open,
-  .main-nav.open {
-    transform: translateX(0);
-  }
-
-  nav a,
-  .main-nav a {
-    padding: 16px 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    font-size: 16px;
-  }
-}
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -127,43 +89,15 @@ nav{display:flex;align-items:center;gap:0}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.6}
 .hero-glow{position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(13,143,126,.15) 0%,transparent 70%)}
 .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 540px;gap:3rem;align-items:start;padding-bottom:4rem}
-<script>
-/* ── MOBILE / TABLET MENU ── */
-@media (max-width: 900px) {
-  .mob-toggle {
-    display: flex !important;
-  }
-
-  nav,
-  .main-nav {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: var(--navy);
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    z-index: 9999;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  nav.open,
-  .main-nav.open {
-    transform: translateX(0);
-  }
-
-  nav a,
-  .main-nav a {
-    padding: 16px 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    font-size: 16px;
-  }
-}
+@media(max-width:1100px){.hero-content{grid-template-columns:1fr;gap:2rem}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(13,143,126,.15);border:1px solid rgba(13,143,126,.35);color:var(--teal-light);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.25rem}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5.5vw,68px);font-weight:800;color:#fff;line-height:1;letter-spacing:.5px;margin-bottom:1.25rem}
+.hero h1 .accent{color:var(--teal-light);display:block}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.65;max-width:520px;margin-bottom:2rem}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-stats{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.hstat-num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:var(--accent);line-height:1}
+.hstat-label{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 
 /* Hero card */
 .hero-card{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem}
@@ -777,7 +711,7 @@ footer{background:var(--navy);padding:4rem 0 0}
         </div>
         <div class="ice-demo-input">
           <span>Type your technical question...</span>
-					<div class="ice-demo-send" onclick="window.open('/ice.html', '_blank')" role="button" tabindex="0" style="cursor:pointer">
+          <div class="ice-demo-send" onclick="window.ICE&&window.ICE.open()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.ICE&&window.ICE.open()}" role="button" tabindex="0">Send</div>
         </div>
       </div>
     </div>
@@ -1098,73 +1032,18 @@ footer{background:var(--navy);padding:4rem 0 0}
       </div>
     </div>
   </div>
-<!-- FOOTER already ends here -->
-<script>
-// ── MOBILE MENU ──
-document.addEventListener('DOMContentLoaded', function() {
-  const tog = document.getElementById('mob-toggle');
-  const nav = document.querySelector('nav') || document.querySelector('.main-nav');
-
-  if (!tog || !nav) {
-    console.warn('Mobile menu elements not found');
-    return;
-  }
-
-  tog.addEventListener('click', function() {
-    nav.classList.toggle('open');
-    tog.classList.toggle('active');
-  });
-
-  // Close when clicking links
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      tog.classList.remove('active');
-    });
-  });
-
-  // Close on desktop resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
-      nav.classList.remove('open');
-      tog.classList.remove('active');
-    }
-  });
-});
-</script>
-
-<!-- FLOATING ICE BUBBLE -->
-<div id="ice-bubble" style="position:fixed; bottom:30px; right:30px; width:68px; height:68px; background:var(--teal); border-radius:50%; box-shadow:0 8px 25px rgba(13,143,126,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:9999; font-size:32px; color:white; border:3px solid rgba(255,255,255,0.3); transition:all .3s ease;">
-  ❄️
-</div>
-
-<div id="ice-tooltip" style="position:fixed; bottom:105px; right:40px; background:var(--navy); color:white; padding:12px 20px; border-radius:8px; font-size:14px; white-space:nowrap; box-shadow:0 6px 20px rgba(0,0,0,0.35); display:none; z-index:10000;">
-  Chat with ICE &amp; CIRA
-</div>
+</footer>
 
 <script>
-// Clean Floating ICE Bubble
-document.addEventListener('DOMContentLoaded', function() {
-  const bubble = document.getElementById('ice-bubble');
-  const tooltip = document.getElementById('ice-tooltip');
-  if (!bubble) return;
-
-  bubble.addEventListener('click', () => {
-    window.open('/ice.html', '_blank');
-  });
-
-  bubble.addEventListener('mouseenter', () => tooltip.style.display = 'block');
-  bubble.addEventListener('mouseleave', () => tooltip.style.display = 'none');
-
-  // Pulse animation
-  setInterval(() => {
-    bubble.style.transform = 'scale(1.12)';
-    setTimeout(() => bubble.style.transform = 'scale(1)', 180);
-  }, 5000);
-});
+const tog=document.getElementById('mob-toggle');
+const nav=document.getElementById('mob-nav');
+const cls=document.getElementById('mob-close');
+if(tog)tog.addEventListener('click',()=>{nav.classList.add('open');tog.setAttribute('aria-expanded','true')});
+if(cls)cls.addEventListener('click',()=>{nav.classList.remove('open');tog.setAttribute('aria-expanded','false')});
+const obs=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+document.querySelectorAll('.scat').forEach(cat=>{cat.addEventListener('click',()=>{document.querySelectorAll('.scat').forEach(c=>c.classList.remove('active'));cat.classList.add('active');});});
 </script>
-
-</body>
-</html>
+<script src="/ice-widget.js" defer></script>
 </body>
 </html>
