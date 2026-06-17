@@ -89,15 +89,34 @@ nav{display:flex;align-items:center;gap:0}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;opacity:.6}
 .hero-glow{position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(13,143,126,.15) 0%,transparent 70%)}
 .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 540px;gap:3rem;align-items:start;padding-bottom:4rem}
-@media(max-width:1100px){.hero-content{grid-template-columns:1fr;gap:2rem}}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(13,143,126,.15);border:1px solid rgba(13,143,126,.35);color:var(--teal-light);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.25rem}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5.5vw,68px);font-weight:800;color:#fff;line-height:1;letter-spacing:.5px;margin-bottom:1.25rem}
-.hero h1 .accent{color:var(--teal-light);display:block}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.65;max-width:520px;margin-bottom:2rem}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem}
-.hero-stats{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
-.hstat-num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:var(--accent);line-height:1}
-.hstat-label{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+/* Mobile & Tablet Menu */
+@media (max-width: 900px) {
+  .mob-toggle {
+    display: flex !important;
+  }
+  
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  
+  .main-nav.open {
+    display: flex !important;
+  }
+  
+  .main-nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
 
 /* Hero card */
 .hero-card{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem}
