@@ -1047,5 +1047,35 @@ document.querySelectorAll('.scat').forEach(cat=>{cat.addEventListener('click',()
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="w9QBhzl6S69s463ue7QW5";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+❄️
+</div>
+
+<div id="ice-tooltip" style="position:fixed; bottom:105px; right:35px; background:var(--navy); color:white; padding:10px 18px; border-radius:8px; font-size:14px; white-space:nowrap; box-shadow:0 6px 20px rgba(0,0,0,0.3); display:none; z-index:10000; pointer-events:none;">
+  Chat with ICE &amp; CIRA
+</div>
+
+<script>
+// Floating ICE Bubble
+const bubble = document.getElementById('ice-bubble');
+const tooltip = document.getElementById('ice-tooltip');
+
+bubble.addEventListener('click', () => {
+  window.open('/ice.html', '_blank');
+});
+
+bubble.addEventListener('mouseenter', () => {
+  tooltip.style.display = 'block';
+});
+
+bubble.addEventListener('mouseleave', () => {
+  tooltip.style.display = 'none';
+});
+
+// Gentle pulse animation
+setInterval(() => {
+  bubble.style.transform = 'scale(1.12)';
+  setTimeout(() => { bubble.style.transform = 'scale(1)'; }, 180);
+}, 4500);
+</script>
 </body>
 </html>
