@@ -1084,12 +1084,11 @@ footer{background:var(--navy);padding:4rem 0 0}
     </div>
   </div>
 <!-- FOOTER already ends here -->
-
 <script>
-// Mobile Menu Toggle
+// ── MOBILE MENU ──
 document.addEventListener('DOMContentLoaded', function() {
   const tog = document.getElementById('mob-toggle');
-  const nav = document.querySelector('.main-nav') || document.querySelector('nav.main-nav') || document.querySelector('nav');
+  const nav = document.querySelector('nav') || document.querySelector('.main-nav');
 
   if (!tog || !nav) {
     console.warn('Mobile menu elements not found');
@@ -1118,6 +1117,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
 <!-- FLOATING ICE BUBBLE -->
 <div id="ice-bubble" style="position:fixed; bottom:30px; right:30px; width:68px; height:68px; background:var(--teal); border-radius:50%; box-shadow:0 8px 25px rgba(13,143,126,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:9999; font-size:32px; color:white; border:3px solid rgba(255,255,255,0.3); transition:all .3s ease;">
   ❄️
@@ -1132,7 +1132,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const bubble = document.getElementById('ice-bubble');
   const tooltip = document.getElementById('ice-tooltip');
-
   if (!bubble) return;
 
   bubble.addEventListener('click', () => {
@@ -1150,5 +1149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+</body>
+</html>
 </body>
 </html>
