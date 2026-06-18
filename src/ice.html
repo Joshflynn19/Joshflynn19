@@ -1,22 +1,3 @@
-<script>
-(function(){
-  var ep='https://anpmarine.replit.app/api/behaviour/collect';
-  var k='_anp_vid';
-  var vid=localStorage.getItem(k);
-  if(!vid){vid=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem(k,vid);}
-  var t0=Date.now(),sent=false;
-  function send(){
-    if(sent)return;sent=true;
-    var d=/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop';
-    var payload=JSON.stringify({visitorId:vid,page:location.pathname,title:document.title.slice(0,200),referrer:document.referrer||'',device:d,durationSeconds:Math.round((Date.now()-t0)/1000),startedAt:new Date(t0).toISOString()});
-    try{navigator.sendBeacon(ep,new Blob([payload],{type:'application/json'}));}
-    catch(e){try{fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true});}catch(e2){}}
-  }
-  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send();});
-  window.addEventListener('pagehide',send);
-  setTimeout(send,30000);
-})();
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -890,12 +871,13 @@ function detectPersonaFromInput(text) {
   return null;
 }
 
-// ── SEND MESSAGE (Streaming) ──
+// ── SEND MESSAGE ──
 async function sendMessage() {
   const input = document.getElementById('chat-input');
   const text = input.value.trim();
   if (!text || isLoading) return;
 
+  // Check if user explicitly names a persona
   const explicitPersona = detectPersonaFromInput(text);
   if (explicitPersona) selectPersona(explicitPersona);
 
@@ -912,85 +894,58 @@ async function sendMessage() {
 
   try {
     console.log('[ICE] POST ->', ICE_API_URL);
+    let response;
+    try {
+      response = await fetch(ICE_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1000,
+          system: SYSTEM_PROMPT,
+          messages: conversationHistory,
+        })
+      });
+    } catch (netErr) {
+      // request never completed: bad URL, worker not deployed, DNS, or CORS-blocked
+      throw new Error('Could not reach the proxy at ' + ICE_API_URL + ' (' + netErr.message + '). Likely: wrong URL, worker not deployed, or CORS blocked.');
+    }
 
-    const response = await fetch(ICE_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-4-5-sonnet-20241022',
-        max_tokens: 1200,
-        system: SYSTEM_PROMPT,
-        messages: conversationHistory,
-        stream: true
-      })
-    });
-
+    console.log('[ICE] status', response.status);
+    const raw = await response.text();
     if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Proxy error ${response.status}: ${errText}`);
+      throw new Error('Proxy returned HTTP ' + response.status + '. Body: ' + raw.slice(0, 400));
     }
 
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
-    let fullReply = '';
+    let data;
+    try { data = JSON.parse(raw); }
+    catch (_) { throw new Error('Proxy did not return JSON. Body: ' + raw.slice(0, 400)); }
+    if (data.error) { throw new Error('Anthropic error: ' + JSON.stringify(data.error).slice(0, 400)); }
 
-    removeTyping();
+    const replyText = (data.content || []).map(b => b.text || '').join('') || '(empty response from model)';
 
-    // Create live-updating message bubble
-    const p = personas[currentPersona];
-    const msgs = document.getElementById('chat-messages');
-    const div = document.createElement('div');
-    div.className = 'msg';
-    div.innerHTML = `
-      <div class="msg-avatar ${p.avatarClass}">${p.avatarText}</div>
-      <div class="msg-body">
-        <div class="msg-sender ${p.senderClass}">${p.name}</div>
-        <div class="msg-bubble ${p.bubbleClass}" id="live-reply"></div>
-      </div>`;
-    msgs.appendChild(div);
-    const liveBubble = document.getElementById('live-reply');
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-
-      for (let i = 0; i < lines.length - 1; i++) {
-        const line = lines[i].trim();
-        if (line.startsWith('data: ') && line !== 'data: [DONE]') {
-          try {
-            const data = JSON.parse(line.slice(6));
-            const token = data.delta?.text || '';
-            if (token) {
-              fullReply += token;
-              liveBubble.textContent = fullReply;
-              msgs.scrollTop = msgs.scrollHeight;
-            }
-          } catch (e) {}
-        }
-      }
-      buffer = lines[lines.length - 1];
-    }
-
-    const respondingPersona = detectPersonaFromResponse(fullReply);
+    // Detect which persona responded
+    const respondingPersona = detectPersonaFromResponse(replyText);
     if (respondingPersona !== currentPersona) selectPersona(respondingPersona);
 
-    conversationHistory.push({ role: 'assistant', content: fullReply });
+    removeTyping();
+    addMessage(respondingPersona, replyText);
+    conversationHistory.push({ role: 'assistant', content: replyText });
 
   } catch (err) {
     removeTyping();
     console.error('[ICE]', err);
+    // DIAGNOSTIC MODE: show the real reason in the chat. Set DEBUG=false once ICE works
+    // to restore the friendly fallback message.
+    const DEBUG = true;
     const friendly = 'I apologise — there was a connection issue. Please try again, or call us directly on +44 151 440 3843 for immediate assistance.\n\n— ' + personas[currentPersona].name;
-    addMessage(currentPersona, friendly);
+    addMessage(currentPersona, DEBUG ? ('[diagnostic] ' + (err && err.message ? err.message : String(err))) : friendly);
   } finally {
     isLoading = false;
     document.getElementById('send-btn').disabled = false;
     input.focus();
   }
-}	
+}
 
 function sendQuickPrompt(text) {
   document.getElementById('chat-input').value = text;
