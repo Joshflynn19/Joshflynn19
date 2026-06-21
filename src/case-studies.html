@@ -247,7 +247,7 @@ footer{background:var(--navy);padding:4rem 0 0}
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-</head>
+<script>(function(){var ep='https://anpmarine.replit.app/api/behaviour/collect';var k='_anp_vid';var vid=localStorage.getItem(k);if(!vid){vid=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem(k,vid);}var t0=Date.now(),sent=false;function send(){if(sent)return;sent=true;var d=/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop';var payload=JSON.stringify({visitorId:vid,page:location.pathname,title:document.title.slice(0,200),referrer:document.referrer||'',device:d,durationSeconds:Math.round((Date.now()-t0)/1000),startedAt:new Date(t0).toISOString()});try{navigator.sendBeacon(ep,new Blob([payload],{type:'application/json'}));}catch(e){try{fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true});}catch(e2){}}}document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send();});window.addEventListener('pagehide',send);setTimeout(send,30000);})();</script></head>
 <body>
 
 <!-- ANN BAR -->
