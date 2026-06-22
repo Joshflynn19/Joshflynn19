@@ -1,0 +1,111 @@
+<!-- ANP Marine Header (Reusable) -->
+<header>
+  <div class="header-inner container">
+    <a href="index.html" class="logo-wrap">
+      <img src="ANP_Web_Logo.png" alt="ANP Marine & Industrial" class="logo-img">
+    </a>
+    
+    <nav>
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="services.html" class="nav-link">Services</a>
+      </div>
+      <div class="nav-item">
+        <a href="spares.html" class="nav-link">Spares</a>
+        <div class="dropdown">
+          <a href="tool-kits.html">Marine Tool Kits</a>
+          <!-- Add more sub-items as needed -->
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="markets.html" class="nav-link">Markets</a>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html" class="nav-link">Resources</a>
+      </div>
+      <div class="nav-item">
+        <a href="ice.html" class="nav-link">ICE AI Assistant</a>
+      </div>
+      <div class="nav-item">
+        <a href="refrigerants.html" class="nav-link">Refrigerants</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About Us</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+441514403843" class="phone-link">
+        +44 151 440 3843
+      </a>
+    </div>
+
+    <button class="mob-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Styles -->
+<style>
+@media (max-width: 768px) {
+  .mob-toggle { display: flex !important; }
+  
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 1rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 2001;
+  }
+  nav.mobile-open { max-height: 700px; }
+  
+  .nav-item { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-link { height: auto; padding: 14px 20px; justify-content: space-between; }
+  .dropdown { position: static; display: none; background: transparent; padding: 0 20px 10px; }
+  .nav-item.open .dropdown { display: block; }
+  .nav-item.open .nav-link { color: #fff; }
+}
+</style>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.mob-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('mobile-open');
+      this.classList.toggle('active');
+    });
+  }
+
+  // Submenu toggle
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    if (link && item.querySelector('.dropdown')) {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          item.classList.toggle('open');
+        }
+      });
+    }
+  });
+});
+</script>
