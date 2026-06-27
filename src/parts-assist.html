@@ -79,6 +79,8 @@ nav{display:flex;align-items:center}
 .page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5vw,56px);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1rem}
 .page-hero h1 span{color:var(--teal-light)}
 .page-hero p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:620px}
+.pa-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.pa-chip{font-size:12px;font-weight:600;background:rgba(13,143,126,.12);border:1px solid rgba(13,143,126,.28);color:var(--teal-light);padding:5px 12px;border-radius:20px}
 
 /* FOOTER */
 footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255,255,.07)}
@@ -138,7 +140,7 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
 
   #anp-tool{--navy:#0c1e35;--navy2:#112847;--teal:#0d8f7e;--teal2:#12b09c;--steel:#9fb3c8;--pale:#d5dce8;--light:#edf1f7;--ink:#1c2b3a;--mute:#6b7c93;}
   #anp-tool .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
-  #anp-tool .wrap{position:relative;background:#fff;border:1px solid var(--pale);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;height:min(76vh,760px);min-height:520px;box-shadow:0 1px 3px rgba(12,30,53,.08);}
+  #anp-tool .wrap{position:relative;background:#fff;border:1px solid var(--pale);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;height:calc(100vh - 230px);min-height:540px;box-shadow:0 1px 3px rgba(12,30,53,.08);}
   #anp-tool .tool-bar{display:flex;align-items:center;gap:14px;padding:13px 18px;background:#fff;border-bottom:1px solid var(--pale);flex-shrink:0;}
   #anp-tool .tool-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--navy);letter-spacing:.3px;}
   #anp-tool .hsearch-wrap{margin-left:auto;position:relative;}
@@ -194,6 +196,39 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
   #anp-tool .primary:hover{background:var(--teal2);}
   #anp-tool .primary[disabled]{opacity:.5;cursor:not-allowed;}
 
+
+/* --- design pass --- */
+#anp-tool .wrap{box-shadow:0 12px 34px rgba(12,30,53,.10);border-color:#e3e8ef;}
+#anp-tool .tool-bar{gap:12px;padding:12px 16px;box-shadow:0 1px 0 var(--pale);}
+#anp-tool .tool-title{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.2px;white-space:nowrap;}
+#anp-tool .hsearch-wrap{flex:1;max-width:480px;}
+#anp-tool .hsearch{width:100%;max-width:none;padding:11px 32px 11px 38px;border:1.5px solid var(--mid);border-radius:8px;font-size:14px;transition:border-color .15s,box-shadow .15s;}
+#anp-tool .hsearch:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(13,143,126,.12);}
+#anp-tool .search-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);display:flex;pointer-events:none;}
+#anp-tool .search-ico svg{width:16px;height:16px;}
+#anp-tool .hsearch-x{right:11px;}
+#anp-tool .grid{grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:14px;}
+#anp-tool .tile{padding:16px;border-radius:12px;border-color:#e3e8ef;}
+#anp-tool .tile-ico{flex-direction:row;align-items:center;gap:14px;}
+#anp-tool .tico{width:46px;height:46px;border-radius:11px;background:rgba(13,143,126,.09);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .16s,color .16s;}
+#anp-tool .tico svg{width:24px;height:24px;}
+#anp-tool .tile-ico:hover .tico{background:var(--teal);color:#fff;}
+#anp-tool .tbody{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px;}
+#anp-tool .tile .name{font-size:16px;}
+#anp-tool .pill{background:rgba(13,143,126,.10);color:#0a6f61;}
+#anp-tool .pncode{display:inline-block;font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12.5px;color:var(--navy);background:var(--light);border:1px solid var(--mid);border-radius:5px;padding:2px 8px;}
+#anp-tool td.pn{white-space:nowrap;}
+#anp-tool .dash{color:var(--muted);}
+#anp-tool tr.row.comp{box-shadow:inset 3px 0 0 var(--teal);}
+#anp-tool .add-btn{border-radius:7px;}
+#anp-tool .add-btn:not(.in)::before{content:"+";font-weight:800;margin-right:5px;font-size:14px;line-height:1;}
+#anp-tool .sec-bar{border-left:3px solid var(--teal);padding-left:14px;font-size:11.5px;}
+#anp-tool .sec-bar.common{border-left-color:#cfdae6;}
+@media(max-width:560px){#anp-tool .grid{grid-template-columns:1fr;}}
+/* size to content on browse screens; bounded scroll on lists */
+#anp-tool .wrap{height:auto;min-height:auto;}
+#anp-tool .pad{max-height:64vh;}
+#anp-tool .scroll{max-height:64vh;}
 
 </style>
 <script>(function(){var ep='https://anpmarine.replit.app/api/behaviour/collect';var k='_anp_vid';var vid=localStorage.getItem(k);if(!vid){vid=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem(k,vid);}var t0=Date.now(),sent=false;function send(){if(sent)return;sent=true;var d=/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop';var payload=JSON.stringify({visitorId:vid,page:location.pathname,title:document.title.slice(0,200),referrer:document.referrer||'',device:d,durationSeconds:Math.round((Date.now()-t0)/1000),startedAt:new Date(t0).toISOString()});try{navigator.sendBeacon(ep,new Blob([payload],{type:'application/json'}));}catch(e){try{fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true});}catch(e2){}}}document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send();});window.addEventListener('pagehide',send);setTimeout(send,30000);})();</script>
@@ -284,6 +319,7 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
     <div class="page-label">Spares</div>
     <h1>ANP Parts <span>Assist</span></h1>
     <p>Find refrigeration, compressed air and HVAC spares by market, brand, series and model &mdash; then add the parts you need and send an enquiry to our team.</p>
+    <div class="pa-chips"><span class="pa-chip">Bitzer</span><span class="pa-chip">Sabroe</span><span class="pa-chip">Bock</span><span class="pa-chip">Danfoss</span><span class="pa-chip">Carrier</span><span class="pa-chip">Bauer</span><span class="pa-chip">Sperre</span><span class="pa-chip">J P Sauer</span></div>
   </div>
 </section>
 
@@ -385,23 +421,30 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
     return d;
   }
 
-  function tilesHTML(items,level,metaFn,monoFlag){
+  var ICONS={
+    "Refrigeration & Air Conditioning":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="3.5" y1="7" x2="20.5" y2="17"/><line x1="20.5" y1="7" x2="3.5" y2="17"/><path d="M12 2l2.2 2.4M12 2l-2.2 2.4M12 22l2.2-2.4M12 22l-2.2-2.4"/></svg>',
+    "Compressed Air":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-2.5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><path d="M12 4v1.6M20 12h-1.6M12 20v-1.6M4 12h1.6"/></svg>',
+    "Breathing Air":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="15" rx="3"/><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><line x1="9.5" y1="11" x2="14.5" y2="11"/></svg>',
+    "Tools & Consumables":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L3 18l3 3 6.5-6.5a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6z"/></svg>',
+    _:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
+  };
+  function tilesHTML(items,level,metaFn,monoFlag,iconFn){
     return '<div class="grid">'+items.map(function(it){
-      var name=it[0],n=it[1];
-      return '<button class="tile" data-act="pick" data-level="'+att(level)+'" data-val="'+att(name)+'">'+
-        '<div class="name'+(monoFlag?' mono':'')+'">'+esc(name)+'</div>'+
-        '<div class="tile-meta"><span class="m">'+esc(metaFn(name))+'</span>'+
-        '<span class="pill">'+nf.format(n)+(level==="mk"?'':' '+(n===1?'part':'parts'))+'</span></div></button>';
+      var name=it[0],n=it[1],ico=iconFn?iconFn(name):null;
+      var nm='<div class="name'+(monoFlag?' mono':'')+'">'+esc(name)+'</div>';
+      var meta='<div class="tile-meta"><span class="m">'+esc(metaFn(name))+'</span><span class="pill">'+nf.format(n)+(level==="mk"?'':' '+(n===1?'part':'parts'))+'</span></div>';
+      if(ico) return '<button class="tile tile-ico" data-act="pick" data-level="'+att(level)+'" data-val="'+att(name)+'"><span class="tico">'+ico+'</span><div class="tbody">'+nm+meta+'</div></button>';
+      return '<button class="tile" data-act="pick" data-level="'+att(level)+'" data-val="'+att(name)+'">'+nm+meta+'</button>';
     }).join('')+'</div>';
   }
 
   function addCell(p){var inc=!!S.cart[keyOf(p)];
     return '<td style="text-align:right"><button class="add-btn'+(inc?' in':'')+'" data-act="add" data-k="'+att(keyOf(p))+'">'+(inc?'Added \u2713':'Add')+'</button></td>';}
 
-  function partsTable(list,toolsHdr){
+  function partsTable(list,toolsHdr,isComp){
     var h='<table><thead><tr><th>Part No</th><th>Description</th><th>'+(toolsHdr?'Type':'Series')+'</th><th></th></tr></thead><tbody>';
     h+=list.map(function(p){
-      return '<tr class="row"><td class="pn">'+esc(p.p||'\u2014')+'</td>'+
+      return '<tr class="row'+(isComp?' comp':'')+'"><td class="pn">'+(p.p?'<span class="pncode">'+esc(p.p)+'</span>':'<span class="dash">\u2014</span>')+'</td>'+
         '<td class="desc">'+esc(p.d||'\u2014')+'</td>'+
         '<td class="ser">'+esc(p.sg||p.tc||'\u2014')+'</td>'+addCell(p)+'</tr>';
     }).join('');
@@ -419,9 +462,10 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
 
   function build(){
     var d=derive();
+    var srchIco='<span class="search-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>';
     var h='<div class="tool-bar">'+
       '<div class="tool-title">Find a part</div>'+
-      '<div class="hsearch-wrap"><input id="gs" class="hsearch" data-model="gs" placeholder="Search part or model (e.g. fx4)" value="'+att(S.gs)+'">'+
+      '<div class="hsearch-wrap">'+srchIco+'<input id="gs" class="hsearch" data-model="gs" placeholder="Search by part number or model \u2014 e.g. fx4, CMO28, 12086" value="'+att(S.gs)+'">'+
       (S.gs?'<button class="hsearch-x" data-act="clearGs">\u2715</button>':'')+'</div>'+
       '<button class="cart-btn" data-act="openDrawer">Enquiry'+(d.cartCount>0?'<span class="cart-badge">'+d.cartCount+'</span>':'')+'</button>'+
       '</div>';
@@ -432,11 +476,11 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
       h+='<div class="pad"><div class="stage-title">Select a market</div>'+
         tilesHTML(d.industries,"i",function(n){
           var arr=ROWS.filter(function(r){return r.i===n;});
-          return n==="Tools & Consumables"?(distinct(arr,"tc")+" types"):(distinct(arr,"b")+" brands");},false)+'</div>';
+          return n==="Tools & Consumables"?(distinct(arr,"tc")+" types"):(distinct(arr,"b")+" brands");},false,function(n){return ICONS[n]||ICONS._;})+'</div>';
     }
     else if(d.stage==="toolcats"){
       h+='<div class="pad"><div class="stage-title">Select a type</div>'+
-        tilesHTML(d.toolcats,"tc",function(n){return distinct(d.afterInd.filter(function(r){return r.tc===n;}),"b")+" brand(s)";},false)+'</div>';
+        tilesHTML(d.toolcats,"tc",function(n){return distinct(d.afterInd.filter(function(r){return r.tc===n;}),"b")+" brand(s)";},false,function(){return ICONS["Tools & Consumables"];})+'</div>';
     }
     else if(d.stage==="brands"){
       h+='<div class="pad"><div class="stage-title">Select a brand</div>'+
@@ -466,7 +510,7 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
       } else {
         h+='<table><thead><tr><th>Part No</th><th>Description</th><th>Brand</th><th>Series / Model</th><th></th></tr></thead><tbody>';
         h+=d.results.map(function(p){
-          return '<tr class="row"><td class="pn">'+esc(p.p||'\u2014')+'</td>'+
+          return '<tr class="row"><td class="pn">'+(p.p?'<span class="pncode">'+esc(p.p)+'</span>':'<span class="dash">\u2014</span>')+'</td>'+
             '<td class="desc">'+esc(p.d||'\u2014')+(p.t==="compressor"?'<span class="comp-tag">compressor</span>':'')+'</td>'+
             '<td class="mono" style="color:var(--ink)">'+esc(p.b||'')+'</td>'+
             '<td class="ser">'+esc([p.sg||p.tc,p.mk].filter(Boolean).join(" \u00b7 ")||'\u2014')+'</td>'+addCell(p)+'</tr>';
@@ -479,7 +523,7 @@ footer{background:var(--navy);padding:4rem 0 0;border-top:1px solid rgba(255,255
         '<div class="list-head"><span style="font-size:12.5px;color:var(--mute)">'+nf.format(d.parts.length)+' '+(d.parts.length===1?'item':'items')+'</span>'+
         '<input id="q" class="filter" data-model="q" placeholder="Filter parts\u2026" value="'+att(S.q)+'"></div><div class="scroll">';
       if(d.compressors.length>0){
-        h+='<div class="sec-bar">Compressor'+(d.compressors.length>1?'s':'')+'</div><div style="background:#fbfcfd">'+partsTable(d.compressors,d.TOOLS)+'</div>';
+        h+='<div class="sec-bar">Compressor'+(d.compressors.length>1?'s':'')+'</div><div style="background:#fbfcfd">'+partsTable(d.compressors,d.TOOLS,true)+'</div>';
       }
       if(d.specific){
         h+='<div class="sec-bar">Spare parts for '+esc(S.mk)+' ('+nf.format(d.modelSpares.length)+')</div>';
